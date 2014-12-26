@@ -183,6 +183,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -195,17 +196,75 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\jquery.mousewheel.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.widget.min.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-accordion.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-button-set.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-calendar.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-carousel.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-core.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-countdown.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-date-format.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-datepicker.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-dialog.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-drag-tile.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-dropdown.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-fluentmenu.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-global.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-hint.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-initiator.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-input-control.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-listview.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-live-tile.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-loader.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-locale.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-notify.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-panel.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-plugin-template.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-progressbar.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-pull.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-rating.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-scroll.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-slider.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-stepper.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-streamer.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-tab-control.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-table.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-tile-transform.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-times.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-touch-handler.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-treeview.js" />
+    <Content Include="Areas\Admin\Scripts\Metor\metro-wizard.js" />
+    <Content Include="Areas\Admin\Scripts\metro.min.js" />
+    <Content Include="Content\admin\iconFont.css" />
+    <Content Include="Content\admin\iconFont.min.css" />
+    <Content Include="Content\admin\metro-bootstrap-responsive.css" />
+    <Content Include="Content\admin\metro-bootstrap-responsive.min.css" />
+    <Content Include="Content\admin\metro-bootstrap.css" />
+    <Content Include="Content\admin\metro-bootstrap.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\iconFont.dev.svg" />
+    <Content Include="Content\fonts\iconFont.svg" />
+    <Content Include="Content\fonts\metroSysIcons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Content\fonts\iconFont.eot" />
+    <Content Include="Content\fonts\iconFont.json" />
+    <Content Include="Content\fonts\iconFont.ttf" />
+    <Content Include="Content\fonts\iconFont.woff" />
+    <Content Include="Content\fonts\metroSysIcons.ttf" />
+    <Content Include="Content\fonts\metroSysIcons.woff" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -229,7 +288,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
@@ -256,11 +314,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
