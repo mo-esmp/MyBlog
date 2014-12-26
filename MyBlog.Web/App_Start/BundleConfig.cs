@@ -23,15 +23,15 @@ namespace MyBlog.Web
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/metrojs").Include(
-                "~/Areas/MemberArea/Scripts/jquery.widget.min.js",
-                "~/Areas/MemberArea/Scripts/metro.min.js",
-                "~/Areas/MemberArea/Scripts/metro/metro-global.js",
-                "~/Areas/MemberArea/Scripts/metro/metro-core.js",
-                "~/Areas/MemberArea/Scripts/metro/metro-locale.js",
-                "~/Areas/MemberArea/Scripts/metro/metro-touch-handler.js",
-                "~/Areas/MemberArea/Scripts/metro/metro-dropdown.js",
-                "~/Areas/MemberArea/Scripts/metro/metro-input-control.js",
-                "~/Areas/MemberArea/Scripts/metro/metro-initiator.js"));
+                "~/Areas/Admin/Scripts/jquery.widget.min.js",
+                "~/Areas/Admin/Scripts/metro.min.js",
+                "~/Areas/Admin/Scripts/metro/metro-global.js",
+                "~/Areas/Admin/Scripts/metro/metro-core.js",
+                //"~/Areas/Admin/Scripts/metro/metro-locale.js",
+                "~/Areas/Admin/Scripts/metro/metro-touch-handler.js",
+                "~/Areas/Admin/Scripts/metro/metro-dropdown.js",
+                "~/Areas/Admin/Scripts/metro/metro-input-control.js",
+                "~/Areas/Admin/Scripts/metro/metro-initiator.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -40,6 +40,7 @@ namespace MyBlog.Web
             bundles.Add(new StyleBundle("~/content/admincss").Include(
                       "~/content/admin/metro-bootstrap.css",
                       "~/content/admin/metro-bootstrap-responsive.css",
+                      "~/content/admin/metro-override.css",
                       "~/content/admin/iconfont.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,

@@ -1,44 +1,91 @@
 ﻿<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    @Styles.Render("~/content/admincss")
+    @RenderSection("header", false)
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+<body class="metro">
+
+    <header class="bg-darkCyan">
+        <div class="navigation-bar fixed-top shadow">
+            <div class="navigation-bar-content container">
+                <a href="/" class="element"><span class="icon-grid-view"></span> MyBlog</a>
+                <span class="element-divider"></span>
+
+                <a class="element1 pull-menu" href="/"></a>
+
+                <div class="no-tablet-portrait no-phone">
+                    <div class="element place-right" title="Admin menu">
+                        <a class="dropdown-toggle" href="#"><span class="icon-user"></span> Admin</a>
+                        <ul class="dropdown-menu" data-role="dropdown">
+                            <li><a href="#">Change password</a></li>
+                            <li>
+                                <a href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="element-divider place-right"></span>
+                    <div class="element place-right" title="Received messages">
+                        <a class="dropdown-toggle" href="#">
+                            <span class="icon-mail"></span>
+                            <sup class="label" id="totalNewMessages">2</sup>
+                        </a>
+                        <ul class="dropdown-menu menu" data-role="dropdown">
+                            <li>
+                                <a href="#">
+                                    <h4> Mohsen Esmailpour <small><span class="icon-clock"></span> 7 days ago</small> </h4>
+                                    <p> some message for this stuf </p>
+                                </a>
+                            </li>
+                            <li class="footer"><a href="#">View all messages</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+        </div>
+    </header>
+
+    <div class="tile double quadro-vertical bg-darkCyan ol-transparent">
+        <div class="tile-content">
+            <div class="brand">
+                <nav class="sidebar">
+                    <ul>
+                        <li class="active">
+                            <a href="#"><i class="icon-home"></i>Dashboard</a>
+                        </li>
+                        <li class="stick">
+                            <a class="dropdown-toggle" href="#">
+                                <i class="icon-newspaper"></i>Post
+                            </a>
+                            <ul class="dropdown-menu" data-role="dropdown">
+                                <li><a href=""><i class="icon-plus-2"></i>Add new post</a></li>
+                                <li><a href=""><i class="icon-list"></i>Post list</a></li>
+                            </ul>
+                        </li>
+                        <li class="stick"><a href="#">Thread item</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
+    <div class="container">
+        <div class="grid fluid">
+            <div class="row">
+
+                <div class="span10">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/metrojs")
+    @RenderSection("scripts", false)
 </body>
 </html>
