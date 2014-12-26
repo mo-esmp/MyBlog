@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +42,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\BaseService.cs" />
+    <Compile Include="Contracts\IBaseService.cs" />
+    <Compile Include="Contracts\ITagService.cs" />
+    <Compile Include="Contracts\IPostService.cs" />
+    <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyBlog.Common\MyBlog.Common.csproj">
+      <Project>{f0513f73-4cf7-41f6-93f6-64d640923eac}</Project>
+      <Name>MyBlog.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyBlog.Data\MyBlog.Data.csproj">
+      <Project>{e84097ef-15cf-42d7-8624-5bc73a57fde0}</Project>
+      <Name>MyBlog.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyBlog.Domain\MyBlog.Domain.csproj">
+      <Project>{99ca2391-9118-44ff-ab75-1b2fe4de2a4c}</Project>
+      <Name>MyBlog.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

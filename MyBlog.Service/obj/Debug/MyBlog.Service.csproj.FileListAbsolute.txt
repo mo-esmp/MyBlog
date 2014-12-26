@@ -2,3 +2,20 @@ C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\bin\
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.csprojResolveAssemblyReference.cache
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\EntityFramework.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Common.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Data.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Common.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Data.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\EntityFramework.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
