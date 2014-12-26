@@ -1,0 +1,16 @@
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\MyBlog.Domain.dll.config
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\MyBlog.Domain.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\MyBlog.Domain.pdb
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\obj\Debug\MyBlog.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\obj\Debug\MyBlog.Domain.NameAndMessage.resources
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\obj\Debug\MyBlog.Domain.csproj.GenerateResource.Cache
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\obj\Debug\MyBlog.Domain.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Domain\obj\Debug\MyBlog.Domain.pdb

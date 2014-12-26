@@ -1,0 +1,6 @@
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Common\bin\Debug\MyBlog.Common.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Common\bin\Debug\MyBlog.Common.pdb
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Common\obj\Debug\MyBlog.Common.csprojResolveAssemblyReference.cache
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Common\obj\Debug\MyBlog.Common.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Common\obj\Debug\MyBlog.Common.pdb

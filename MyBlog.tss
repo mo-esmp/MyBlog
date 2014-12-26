@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Web\App_Start\IdentityConfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\mohsen\documents\visual studio 2013\projects\myblog\myblog.web\controllers\managecontroller.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\mohsen\documents\visual studio 2013\projects\myblog\myblog.web\app_start\startup.auth.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\mohsen\documents\visual studio 2013\projects\myblog\myblog.web\controllers\accountcontroller.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\mohsen\documents\visual studio 2013\projects\myblog\myblog.web\app_start\autofacconfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Web\Startup.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

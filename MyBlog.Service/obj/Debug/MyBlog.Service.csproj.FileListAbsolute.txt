@@ -1,0 +1,4 @@
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
+C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
