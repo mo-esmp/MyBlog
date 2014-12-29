@@ -16,3 +16,21 @@ C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Data\obj\Deb
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.pdb
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.Migrations.IntialMigration.resources
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.csproj.GenerateResource.Cache
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Data.dll.config
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Data.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Data.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Domain.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Domain.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.csprojResolveAssemblyReference.cache
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.Migrations.IntialMigration.resources
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.csproj.GenerateResource.Cache
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.pdb

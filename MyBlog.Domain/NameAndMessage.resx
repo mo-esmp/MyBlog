@@ -118,69 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DropDownSelectError" xml:space="preserve">
-    <value>لطفا یک گزینه را انتخاب نمایید.</value>
-  </data>
-  <data name="Manufacture" xml:space="preserve">
-    <value>سازنده</value>
-  </data>
-  <data name="MaxLengthError" xml:space="preserve">
-    <value>حداکثر طول {0} نباید از {1} بیشتر باشد.</value>
-  </data>
-  <data name="RangeError" xml:space="preserve">
-    <value>مقدار قابل قبول برای {0} باید بین {1} و {2} باشد.</value>
-  </data>
-  <data name="Required" xml:space="preserve">
-    <value>{0} را وارد نمایید.</value>
-  </data>
-  <data name="SelectItem" xml:space="preserve">
-    <value>{0} را انتخاب کنید</value>
-  </data>
-  <data name="Type" xml:space="preserve">
-    <value>نوع</value>
-  </data>
-  <data name="IsEnbaled" xml:space="preserve">
-    <value>فعال باشد</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>توضیحات</value>
-  </data>
-  <data name="CreateDate" xml:space="preserve">
-    <value>تاریخ ایجاد</value>
-  </data>
-  <data name="NewsContent" xml:space="preserve">
-    <value>متن خبر</value>
-  </data>
-  <data name="NewsSummary" xml:space="preserve">
-    <value>خلاصه خبر</value>
-  </data>
-  <data name="NewsTitle" xml:space="preserve">
-    <value>عنوان خبر</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>ایمیل</value>
-  </data>
-  <data name="Message" xml:space="preserve">
-    <value>پیام</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>نام</value>
+    <value>No item selected.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
-    <value>فرمت ایمیل وارد شده نامعتبر است.</value>
+    <value>Email is not valid.</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>درباره ما</value>
+  <data name="MaxLengthError" xml:space="preserve">
+    <value>Maximum lenght for {0} is {1}.</value>
   </data>
-  <data name="Contact" xml:space="preserve">
-    <value>ارتباط با ما</value>
-  </data>
-  <data name="Content" xml:space="preserve">
-    <value>متن صفحه</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>صفحه اصلی</value>
-  </data>
-  <data name="PageTitle" xml:space="preserve">
-    <value>عنوان صفحه</value>
+  <data name="Required" xml:space="preserve">
+    <value>{0} is required.</value>
   </data>
 </root>

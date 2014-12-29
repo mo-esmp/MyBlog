@@ -69,3 +69,12 @@
     position: fixed;
     width: 250px;
 }
+
+.metro .container .row .content-header {
+    background: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    padding: 15px 15px 10px 20px;
+}

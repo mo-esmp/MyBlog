@@ -61,52 +61,7 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to درباره ما.
-        /// </summary>
-        internal static string About {
-            get {
-                return ResourceManager.GetString("About", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ارتباط با ما.
-        /// </summary>
-        internal static string Contact {
-            get {
-                return ResourceManager.GetString("Contact", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to متن صفحه.
-        /// </summary>
-        internal static string Content {
-            get {
-                return ResourceManager.GetString("Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to تاریخ ایجاد.
-        /// </summary>
-        internal static string CreateDate {
-            get {
-                return ResourceManager.GetString("CreateDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to توضیحات.
-        /// </summary>
-        internal static string Description {
-            get {
-                return ResourceManager.GetString("Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to لطفا یک گزینه را انتخاب نمایید..
+        ///   Looks up a localized string similar to No item selected..
         /// </summary>
         internal static string DropDownSelectError {
             get {
@@ -115,25 +70,7 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ایمیل.
-        /// </summary>
-        internal static string Email {
-            get {
-                return ResourceManager.GetString("Email", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to صفحه اصلی.
-        /// </summary>
-        internal static string Home {
-            get {
-                return ResourceManager.GetString("Home", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to فرمت ایمیل وارد شده نامعتبر است..
+        ///   Looks up a localized string similar to Email is not valid..
         /// </summary>
         internal static string InvalidEmail {
             get {
@@ -142,25 +79,7 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to فعال باشد.
-        /// </summary>
-        internal static string IsEnbaled {
-            get {
-                return ResourceManager.GetString("IsEnbaled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to سازنده.
-        /// </summary>
-        internal static string Manufacture {
-            get {
-                return ResourceManager.GetString("Manufacture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to حداکثر طول {0} نباید از {1} بیشتر باشد..
+        ///   Looks up a localized string similar to Maximum lenght for {0} is {1}..
         /// </summary>
         internal static string MaxLengthError {
             get {
@@ -169,92 +88,11 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to پیام.
-        /// </summary>
-        internal static string Message {
-            get {
-                return ResourceManager.GetString("Message", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to نام.
-        /// </summary>
-        internal static string Name {
-            get {
-                return ResourceManager.GetString("Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to متن خبر.
-        /// </summary>
-        internal static string NewsContent {
-            get {
-                return ResourceManager.GetString("NewsContent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to خلاصه خبر.
-        /// </summary>
-        internal static string NewsSummary {
-            get {
-                return ResourceManager.GetString("NewsSummary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to عنوان خبر.
-        /// </summary>
-        internal static string NewsTitle {
-            get {
-                return ResourceManager.GetString("NewsTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to عنوان صفحه.
-        /// </summary>
-        internal static string PageTitle {
-            get {
-                return ResourceManager.GetString("PageTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to مقدار قابل قبول برای {0} باید بین {1} و {2} باشد..
-        /// </summary>
-        internal static string RangeError {
-            get {
-                return ResourceManager.GetString("RangeError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} را وارد نمایید..
+        ///   Looks up a localized string similar to {0} is required..
         /// </summary>
         internal static string Required {
             get {
                 return ResourceManager.GetString("Required", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} را انتخاب کنید.
-        /// </summary>
-        internal static string SelectItem {
-            get {
-                return ResourceManager.GetString("SelectItem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to نوع.
-        /// </summary>
-        internal static string Type {
-            get {
-                return ResourceManager.GetString("Type", resourceCulture);
             }
         }
     }
