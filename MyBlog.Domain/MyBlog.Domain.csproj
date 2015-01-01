@@ -55,11 +55,7 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="CommentEntity.cs" />
-    <Compile Include="NameAndMessage-fa.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NameAndMessage-fa.resx</DependentUpon>
-    </Compile>
+    <Compile Include="ContactMessageEntity.cs" />
     <Compile Include="NameAndMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,10 +68,6 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="NameAndMessage-fa.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>NameAndMessage-fa.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="NameAndMessage.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NameAndMessage.Designer.cs</LastGenOutput>

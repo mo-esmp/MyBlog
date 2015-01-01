@@ -1,91 +1,121 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html lang="fa">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/content/admincss")
+    <title>@ViewBag.Title - پایون پلیمر</title>
+    @Styles.Render("~/Content/admincss")
     @RenderSection("header", false)
 </head>
-<body class="metro">
+<body class="skin-black" dir="rtl">
+    <header class="header">
+        <a href="/" class="logo" target="_blank">
+            <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            MyBlog
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="dropdown messages-menu">
+                        @{Html.RenderAction("NewMessage", "Base");}
+                    </li>
 
-    <header class="bg-dark">
-        <div class="navigation-bar fixed-top shadow">
-            <div class="navigation-bar-content container">
-                <a href="/" class="element"><span class="icon-grid-view"></span> MyBlog</a>
-                <span class="element-divider"></span>
-
-                <a class="element1 pull-menu" href="/"></a>
-
-                <div class="no-tablet-portrait no-phone">
-                    <div class="element place-right" title="Admin menu">
-                        <a class="dropdown-toggle" href="#"><span class="icon-user"></span> Admin</a>
-                        <ul class="dropdown-menu" data-role="dropdown">
-                            <li><a href="#">Change password</a></li>
-                            <li>
-                                <a href="#">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class="element-divider place-right"></span>
-                    <div class="element place-right" title="Received messages">
-                        <a class="dropdown-toggle" href="#">
-                            <span class="icon-mail"></span>
-                            <sup class="label" id="totalNewMessages">2</sup>
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span><i class="fa fa-user"></i> ادمین </span>
                         </a>
-                        <ul class="dropdown-menu menu" data-role="dropdown">
-                            <li>
-                                <a href="#">
-                                    <h4> Mohsen Esmailpour <small><span class="icon-clock"></span> 7 days ago</small> </h4>
-                                    <p> some message for this stuf </p>
-                                </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-footer">
+                                <div class="pull-right">
+                                    <a href="@Url.Action("ChangePassword", "Account", new {area = ""})" class="btn btn-default btn-flat">
+                                        <i class="fa fa-lock"></i>
+                                        تغییر رمز عبور
+                                    </a>
+                                </div>
+                                <div class="pull-left">
+                                    <a href="@Url.Action("LogOff", "Account", new {area = ""})" class="btn btn-default btn-flat">
+                                        <i class="fa fa-sign-out"></i>
+                                        خروج
+                                    </a>
+                                </div>
                             </li>
-                            <li class="footer"><a href="#">View all messages</a></li>
                         </ul>
-                    </div>
-                </div>
+
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <div class="tile double quadro-vertical bg-dark ol-transparent">
-        <div class="tile-content">
-            <div class="brand">
-                <nav class="sidebar">
-                    <ul>
-                        <li class="active">
-                            <a href="#"><i class="icon-home"></i>Dashboard</a>
-                        </li>
-                        <li class="stick">
-                            <a class="dropdown-toggle" href="#">
-                                <i class="icon-newspaper"></i>Post
-                            </a>
-                            <ul class="dropdown-menu" data-role="dropdown">
-                                <li><a href=""><i class="icon-plus-2"></i>Add new post</a></li>
-                                <li><a href=""><i class="icon-list"></i>Post list</a></li>
-                            </ul>
-                        </li>
-                        <li class="stick"><a href="#"><i class="icon-comments-4"></i>Comment List</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+    <div class="wrapper row-offcanvas row-offcanvas-right">
 
-    <div class="container">
-        <div class="grid fluid">
-            <div class="row">
+        <aside class="right-side sidebar-offcanvas">
 
-                <div class="span10">
-                    @RenderBody()
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-right info">
+                        <p>خوش آمدید</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">
+                            <i class="fa fa-home"></i> <span>صفحه اصلی</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-mobile-phone"></i>
+                            <span>مقاله</span>
+                            <i class="fa fa-angle-right pull-left"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create", "Post")"><i class="fa fa-angle-double-left"></i> افزودن مقاله</a></li>
+                            <li><a href="@Url.Action("Index", "Post")"><i class="fa fa-angle-double-left"></i> لیست مقاله ها</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="@Url.Action("Index", "ContactMessage")"><i class="fa fa-comment-o"></i> پیامها</a> </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <aside class="left-side">
+            <section class="content-header">
+                @RenderSection("ContentHeader", true)
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                </div>
+            </section>
+        </aside>
     </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/metrojs")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/adminjs")
     @RenderSection("scripts", false)
 </body>
 </html>

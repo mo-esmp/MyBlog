@@ -1,6 +1,4 @@
 ﻿using Elev.Data.Conventions;
-
-//using Elev.Data.Migrations;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MyBlog.Data.Contracts;
 using MyBlog.Data.Mapping;
@@ -36,6 +34,8 @@ namespace MyBlog.Data
         #region DbSets
 
         public DbSet<CommentEntity> Comments { get; set; }
+
+        public DbSet<ContactMessageEntity> ContactMessages { get; set; }
 
         public DbSet<PostEntity> Posts { get; set; }
 

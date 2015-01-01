@@ -22,26 +22,19 @@ namespace MyBlog.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/metrojs").Include(
-                "~/Areas/Admin/Scripts/jquery.widget.min.js",
-                "~/Areas/Admin/Scripts/metro.min.js",
-                "~/Areas/Admin/Scripts/metro/metro-global.js",
-                "~/Areas/Admin/Scripts/metro/metro-core.js",
-                //"~/Areas/Admin/Scripts/metro/metro-locale.js",
-                "~/Areas/Admin/Scripts/metro/metro-touch-handler.js",
-                "~/Areas/Admin/Scripts/metro/metro-dropdown.js",
-                "~/Areas/Admin/Scripts/metro/metro-input-control.js",
-                "~/Areas/Admin/Scripts/metro/metro-initiator.js"));
+            bundles.Add(new ScriptBundle("~/bundles/adminjs").Include(
+                      "~/Areas/Admin/Scripts/jquery.slimscroll.js",
+                      "~/Areas/Admin/Scripts/icheck.js",
+                      "~/Areas/Admin/Scripts/startup.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/content/admincss").Include(
-                      "~/content/admin/metro-bootstrap.css",
-                      "~/content/admin/metro-bootstrap-responsive.css",
-                      "~/content/admin/metro-override.css",
-                      "~/content/admin/iconfont.css"));
+                      "~/content/admin/bootstrap.css",
+                      "~/content/admin/font-awesome.css",
+                      "~/content/admin/adminlte.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

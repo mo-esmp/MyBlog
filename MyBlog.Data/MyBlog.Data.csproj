@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\ContactMessageMap.cs" />
     <Compile Include="Contracts\IQueryableContext.cs" />
     <Compile Include="Conventions\IdConvention.cs" />
     <Compile Include="DataContext.cs" />

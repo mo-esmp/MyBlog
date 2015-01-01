@@ -29,5 +29,4 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\bin\Debug\EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\obj\Debug\MyBlog.Domain.NameAndMessage-fa.resources
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\obj\Debug\MyBlog.Domain.NameAndMessage.resources

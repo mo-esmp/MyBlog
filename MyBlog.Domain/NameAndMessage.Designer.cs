@@ -61,7 +61,25 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Content.
+        ///   Looks up a localized string similar to درباره ما.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارتباط با ما.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to متن صفحه.
         /// </summary>
         public static string Content {
             get {
@@ -70,7 +88,7 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Date.
+        ///   Looks up a localized string similar to تاریخ ایجاد.
         /// </summary>
         public static string CreateDate {
             get {
@@ -79,7 +97,16 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No item selected..
+        ///   Looks up a localized string similar to توضیحات.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا یک گزینه را انتخاب نمایید..
         /// </summary>
         public static string DropDownSelectError {
             get {
@@ -88,7 +115,16 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable.
+        ///   Looks up a localized string similar to ایمیل.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فعال.
         /// </summary>
         public static string Enabled {
             get {
@@ -97,7 +133,16 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email is not valid..
+        ///   Looks up a localized string similar to صفحه اصلی.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فرمت ایمیل وارد شده نامعتبر است..
         /// </summary>
         public static string InvalidEmail {
             get {
@@ -106,7 +151,25 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximum lenght for {0} is {1}..
+        ///   Looks up a localized string similar to فعال باشد.
+        /// </summary>
+        public static string IsEnbaled {
+            get {
+                return ResourceManager.GetString("IsEnbaled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سازنده.
+        /// </summary>
+        public static string Manufacture {
+            get {
+                return ResourceManager.GetString("Manufacture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حداکثر طول {0} نباید از {1} بیشتر باشد..
         /// </summary>
         public static string MaxLengthError {
             get {
@@ -115,7 +178,43 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is required..
+        ///   Looks up a localized string similar to پیام.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عنوان صفحه.
+        /// </summary>
+        public static string PageTitle {
+            get {
+                return ResourceManager.GetString("PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مقدار قابل قبول برای {0} باید بین {1} و {2} باشد..
+        /// </summary>
+        public static string RangeError {
+            get {
+                return ResourceManager.GetString("RangeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} را وارد نمایید..
         /// </summary>
         public static string Required {
             get {
@@ -124,16 +223,16 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to {0} را انتخاب کنید.
         /// </summary>
-        public static string s {
+        public static string SelectItem {
             get {
-                return ResourceManager.GetString("s", resourceCulture);
+                return ResourceManager.GetString("SelectItem", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title.
+        ///   Looks up a localized string similar to عنوان.
         /// </summary>
         public static string Title {
             get {
@@ -142,7 +241,16 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update Date.
+        ///   Looks up a localized string similar to نوع.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ بروز رسانی.
         /// </summary>
         public static string UpdateDate {
             get {

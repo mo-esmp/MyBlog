@@ -2,6 +2,8 @@
 using Autofac.Integration.Mvc;
 using MyBlog.Data;
 using MyBlog.Data.Contracts;
+using MyBlog.Service.Contracts;
+using MyBlog.Service.Implementation;
 using System.Reflection;
 
 namespace MyBlog.Web
@@ -14,6 +16,7 @@ namespace MyBlog.Web
 
             //var x = new DataContext();
             builder.RegisterType<DataContext>().As<IQueryableContext>().InstancePerRequest();
+            builder.RegisterType<ContactMessageService>().As<IContactMessageService>().InstancePerRequest();
             //builder.Register(c => x).InstancePerLifetimeScope();
         }
     }

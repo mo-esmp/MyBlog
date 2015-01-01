@@ -50,6 +50,7 @@ CKEDITOR.editorConfig = function (config) {
         { name: 'pbckcode' }
     ];
 
+    config.contentsLangDirection = 'rtl';
     config.autoParagraph = false;
     config.font_names = 'Tahoma;Arial;Times New Roman;Verdana;';
     config.allowedContent = true;

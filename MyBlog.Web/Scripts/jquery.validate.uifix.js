@@ -28,14 +28,14 @@ function validateEditor(id, triggerValidation) {
 $.validator.setDefaults({
     ignore: ":hidden:not(textarea)",
     highlight: function (element) {
-        $(element).closest('.input-control').addClass('error-state');
+        $(element).closest('.form-group').addClass('has-error');
     },
     unhighlight: function (element) {
-        if ($(element).is('textarea:hidden')) {
-            $(element).closest('.finput-control').addClass('success').removeClass('error-state');
-        } else {
-            $(element).attr('data-state', 'success').closest('.finput-control').removeClass('error-state');
-        }
+        //if ($(element).is('textarea:hidden')) {
+        //$(element).closest('.finput-control').addClass('success').removeClass('error-state');
+        //} else {
+        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+        //}
     },
     errorElement: 'span',
     errorClass: 'help-block',
@@ -69,15 +69,14 @@ $.validator.addMethod("required", function (value, element, param) {
 
 $(function () {
     $('form').each(function () {
-        $(this).find('div.input-control').each(function () {
+        $(this).find('div.form-group').each(function () {
             if ($(this).find('span.field-validation-error').length > 0) {
-                $(this).addClass('error-state');
+                $(this).addClass('has-error');
             }
         });
     });
     setTimeout(function () {
         for (var i in CKEDITOR.instances) {
-            /* this returns the names of the textareas/id of the instances. */
             var name = CKEDITOR.instances[i].name;
             var editor = $('.cke_wysiwyg_frame').contents().find('body.cke_editable');
             if (editor.length > 0) {
@@ -86,5 +85,5 @@ $(function () {
                 });
             }
         }
-    }, 2000);
+    }, 1000);
 });

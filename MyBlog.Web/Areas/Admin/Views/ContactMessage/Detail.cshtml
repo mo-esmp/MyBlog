@@ -1,0 +1,43 @@
+﻿@model MyBlog.Domain.ContactMessageEntity
+@{
+    ViewBag.Title = "پیام";
+}
+
+
+@section ContentHeader
+{
+}
+
+<div class="col-md-10">
+    <div class="box box-success">
+        <div class="box-header">
+            <i class="fa fa-comment-o"></i>
+            <small class="text-muted pull-left" style="padding: 12px 10px;"><i class="fa fa-clock-o"></i> @Model.CreateDate.TimeAgo()</small>
+            <h3 class="box-title">پیام</h3>
+        </div>
+        <div class="box-body chat" id="chat-box">
+            <!-- chat item -->
+            <div class="item" style="display: inline-block">
+                <p class="message" style="margin: 0">
+                    <a href="#" class="name" style="margin-bottom: 5px">
+                        @Model.Name - @Model.Email
+                    </a>
+                    @Model.Message
+                </p>
+            </div><!-- /.item -->
+        </div><!-- /.chat -->
+        <div class="box-footer">
+            <div class="input-group">
+                @*<input class="form-control" placeholder="Type message...">
+                <div class="input-group-btn">
+                    <button class="btn btn-success"><i class="fa fa-plus"></i></button>
+                </div>*@
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        @Html.ActionLink("بازگشت به لیست", "Index")
+    </div>
+</div>
+
