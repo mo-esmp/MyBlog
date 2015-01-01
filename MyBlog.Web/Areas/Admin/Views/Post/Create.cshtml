@@ -1,0 +1,68 @@
+﻿@model MyBlog.Domain.PostEntity
+
+@{
+    ViewBag.Title = "Create new post";
+}
+
+<section class="content-header">
+    <h2>Create new post</h2>
+</section>
+
+<div class="example">
+    @Html.ValidationSummary()
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <fieldset>
+            <legend>Add Post</legend>
+
+            @Html.LabelFor(m => m.Title)
+            <div class="input-control text" data-role="input-control">
+                @Html.EditorFor(m => m.Title)
+                @Html.ValidationMessageFor(m => m.Title)
+            </div>
+
+            @Html.LabelFor(m => m.Content)
+            <div class="input-control text" data-role="input-control">
+                @Html.EditorFor(m => m.Content)
+                @Html.ValidationMessageFor(m => m.Content, null, new { id = "descriptionError" })
+            </div>
+
+            <div class="input-control checkbox" data-role="input-control">
+                <label>
+                    @Html.EditorFor(m => m.IsEnabled)
+                    <span class="check"></span>
+                    Enbale
+                </label>
+            </div>
+
+
+            @*@Html.LabelFor(m => m.TagString)
+                <div class="input-control text" data-role="input-control">
+                    @Html.TextBoxFor(m => m.TagString)
+                    @Html.ValidationMessageFor(m => m.TagString)
+                </div>*@
+            <div><input type="submit" value="Submit"></div>
+            
+        </fieldset>
+    }
+    
+    <hr/>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/Areas/Admin/Scripts/ckeditor/ckeditor.js")
+    <script>
+        CKEDITOR.replace(
+            '@Html.IdFor(m => m.Content)',
+            {
+                filebrowserImageUploadUrl: 'Home/UploadImage'
+            });
+    </script>
+}

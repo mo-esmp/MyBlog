@@ -1,4 +1,17 @@
-﻿.metro header {
+﻿
+.metro span.field-validation-error {
+    background-color: #e51400;
+    border: 1px solid #f62511;
+    color: white;
+    margin-bottom: 10px;
+    padding: 0 5px 1px 5px;
+}
+
+.metro .input-control.text.error-state .cke_reset {
+    border-color: #e51400;
+}
+
+.metro header {
     margin-bottom: 45px;
 }
 
@@ -68,6 +81,11 @@
     background-color: inherit;
     position: fixed;
     width: 250px;
+}
+
+.metro .grid .row {
+    left: 5%;
+    position: relative;
 }
 
 .metro .container .row .content-header {

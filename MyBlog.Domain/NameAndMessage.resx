@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
   <data name="DropDownSelectError" xml:space="preserve">
     <value>No item selected.</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Enable</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Email is not valid.</value>
@@ -128,5 +137,14 @@
   </data>
   <data name="Required" xml:space="preserve">
     <value>{0} is required.</value>
+  </data>
+  <data name="s" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="UpdateDate" xml:space="preserve">
+    <value>Update Date</value>
   </data>
 </root>
