@@ -9,9 +9,7 @@ namespace MyBlog.Service.Contracts
     {
         void AddPost(PostEntity post);
 
-        void EditPost(PostEntity post);
-
-        void EditPost(IEnumerable<int> idList, bool isNew);
+        void EditPost(PostEntity editedPost);
 
         void DeletePost(Expression<Func<PostEntity, bool>> predicate);
 
@@ -19,8 +17,8 @@ namespace MyBlog.Service.Contracts
 
         PostEntity GetPost(int postId);
 
-        PostEntity GetPost(Expression<Func<PostEntity, bool>> predicate);
+        PostEntity GetPost(Expression<Func<PostEntity, bool>> predicate, params Expression<Func<PostEntity, object>>[] includes);
 
-        IEnumerable<PostEntity> GetPosts(Expression<Func<PostEntity, bool>> predicate = null);
+        IEnumerable<PostEntity> GetPosts(Expression<Func<PostEntity, bool>> predicate = null, params Expression<Func<PostEntity, object>>[] includes);
     }
 }

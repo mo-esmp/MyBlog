@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace MyBlog.Common.Helpers
 {
-    public class UriHelper
+    public class UrlHelper
     {
         public static string GenerateSlug(string value)
         {

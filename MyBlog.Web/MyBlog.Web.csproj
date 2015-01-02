@@ -197,6 +197,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyBlogWebContext.cs" />
+    <Compile Include="Areas\Admin\Models\PostViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -593,8 +594,14 @@
     <Content Include="Areas\Admin\Scripts\helper.js" />
     <Content Include="Areas\Admin\Scripts\icheck.js" />
     <Content Include="Areas\Admin\Scripts\jquery.slimscroll.js" />
+    <Content Include="Areas\Admin\Scripts\pages\post.js" />
     <Content Include="Areas\Admin\Scripts\startup.js" />
     <Content Include="Content\admin\adminlte.css" />
+    <Content Include="Content\admin\bootstrap-tagsinput.css" />
+    <Content Include="Content\admin\bootstrap-tagsinput.min.css">
+      <DependentUpon>bootstrap-tagsinput.css</DependentUpon>
+    </Content>
+    <Content Include="Content\admin\bootstrap-tokenfield.css" />
     <Content Include="Content\admin\bootstrap.css" />
     <Content Include="Content\admin\font-awesome.css" />
     <Content Include="Content\admin\iCheck\all.css" />
@@ -718,6 +725,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-tagsinput.js" />
+    <Content Include="Scripts\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\bootstrap-tokenfield.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -767,8 +777,6 @@
     <Content Include="Areas\Admin\Scripts\ckeditor\skins\bootstrapck\scss\config\_defaults.scss" />
     <Content Include="Areas\Admin\Scripts\ckeditor\skins\bootstrapck\scss\dialog\dialog.scss" />
     <Content Include="Areas\Admin\Views\Post\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
     <Content Include="Areas\Admin\Scripts\slimScroll.jquery.json" />
@@ -784,7 +792,10 @@
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.otf" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\bootstrap-tagsinput.min.js.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.typeahead.bundle.js" />
+    <Content Include="Scripts\bootstrap.typeahead.bundle.min.js" />
     <Content Include="Scripts\bootstrap.typeahead.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -839,7 +850,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -26,7 +26,7 @@ function validateEditor(id, triggerValidation) {
 }
 
 $.validator.setDefaults({
-    ignore: ":hidden:not(textarea)",
+    ignore: ':hidden:not(textarea, input#Tags)',
     highlight: function (element) {
         $(element).closest('.form-group').addClass('has-error');
     },

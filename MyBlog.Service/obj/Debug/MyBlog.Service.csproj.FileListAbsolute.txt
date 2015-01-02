@@ -19,3 +19,5 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.xml

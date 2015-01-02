@@ -56,7 +56,7 @@
     <Compile Include="Helpers\CryptographyHelper.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Helpers\UriHelper.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

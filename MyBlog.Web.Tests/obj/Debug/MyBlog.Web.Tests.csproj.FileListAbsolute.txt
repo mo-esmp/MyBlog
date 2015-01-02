@@ -124,3 +124,5 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\obj\Debug\MyBlog.Web.Tests.d
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\obj\Debug\MyBlog.Web.Tests.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Service.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Service.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Common.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Common.pdb

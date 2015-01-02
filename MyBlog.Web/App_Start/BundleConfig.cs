@@ -22,6 +22,14 @@ namespace MyBlog.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/typehead").Include(
+                      "~/Scripts/bootstrap-tokenfield.js",
+                      "~/Scripts/bootstrap.typeahead.bundle.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/tagsinput").Include(
+                      "~/Scripts/bootstrap-tagsinput.js",
+                      "~/Scripts/bootstrap.typeahead.bundle.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/adminjs").Include(
                       "~/Areas/Admin/Scripts/jquery.slimscroll.js",
                       "~/Areas/Admin/Scripts/icheck.js",

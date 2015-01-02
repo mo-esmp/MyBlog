@@ -306,7 +306,7 @@ img {
 }
 
 .bg-red {
-    background-color: #f56954 !important;
+    background-color: #EF4228 !important;
 }
 
 .bg-yellow {
@@ -362,7 +362,7 @@ img {
 }
 /* Text colors */
 .text-red {
-    color: #f56954 !important;
+    color: #EF4228 !important;
 }
 
 .text-yellow {
@@ -579,12 +579,12 @@ Gradient Background colors
 }
 
 .bg-red-gradient {
-    background: #f56954 !important;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f56954), color-stop(1, #f89384)) !important;
-    background: -ms-linear-gradient(bottom, #f56954, #f89384) !important;
-    background: -moz-linear-gradient(center bottom, #f56954 0%, #f89384 100%) !important;
-    background: -o-linear-gradient(#f89384, #f56954) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f89384', endColorstr='#f56954', GradientType=0) !important;
+    background: #EF4228 !important;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #EF4228), color-stop(1, #f89384)) !important;
+    background: -ms-linear-gradient(bottom, #EF4228, #f89384) !important;
+    background: -moz-linear-gradient(center bottom, #EF4228 0%, #f89384 100%) !important;
+    background: -o-linear-gradient(#f89384, #EF4228) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f89384', endColorstr='#EF4228', GradientType=0) !important;
     color: #fff;
 }
 
@@ -1151,7 +1151,7 @@ body > .header {
                 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.danger,
                 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.danger,
                 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.danger {
-                    background: #f56954;
+                    background: #EF4228;
                 }
 
                 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.warning,
@@ -1462,21 +1462,21 @@ body > .header {
 }
 
 .form-group.has-error label {
-    color: #f56954;
+    color: #EF4228;
 }
 
 .form-group.has-error .form-control {
-    border-color: #f56954 !important;
+    border-color: #EF4228 !important;
     box-shadow: none;
 }
 
 .form-group.has-error .cke {
-    border-color: #f56954 !important;
+    border-color: #EF4228 !important;
     box-shadow: none;
 }
 
 .text-danger {
-    background-color: #f56954;
+    background-color: #EF4228;
     color: #fff !important;
     display: block;
     padding: 0 5px;
@@ -1591,7 +1591,7 @@ body > .header {
 
 .progress-bar-red,
 .progress-bar-danger {
-    background-color: #f56954;
+    background-color: #EF4228;
 }
 
 .progress-striped .progress-bar-red,
@@ -1749,7 +1749,7 @@ body > .header {
     }
 
     .box.box-danger {
-        border-top-color: #f56954;
+        border-top-color: #EF4228;
     }
 
     .box.box-warning {
@@ -1968,8 +1968,8 @@ body > .header {
 
     .box.box-solid.box-danger > .box-header {
         color: #fff;
-        background: #f56954;
-        background-color: #f56954;
+        background: #EF4228;
+        background-color: #EF4228;
     }
 
         .box.box-solid.box-danger > .box-header a {
@@ -2045,7 +2045,7 @@ body > .header {
         }
 
         .box .todo-list > li.danger {
-            border-left-color: #f56954;
+            border-left-color: #EF4228;
         }
 
         .box .todo-list > li.warning {
@@ -2082,7 +2082,7 @@ body > .header {
         .box .todo-list > li .tools {
             display: none;
             float: right;
-            color: #f56954;
+            color: #EF4228;
         }
 
             .box .todo-list > li .tools > .fa,
@@ -2147,7 +2147,7 @@ body > .header {
             }
 
             .box .chat .item > img.offline {
-                border: 2px solid #f56954;
+                border: 2px solid #EF4228;
             }
 
         .box .chat .item > .message {
@@ -2387,7 +2387,7 @@ Component: timeline
         }
 
     .btn.btn-danger {
-        background-color: #f56954;
+        background-color: #EF4228;
         border-color: #f4543c;
     }
 

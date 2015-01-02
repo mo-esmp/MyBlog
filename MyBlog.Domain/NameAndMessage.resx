@@ -183,4 +183,7 @@
   <data name="UpdateDate" xml:space="preserve">
     <value>تاریخ بروز رسانی</value>
   </data>
+  <data name="Tag" xml:space="preserve">
+    <value>تگ</value>
+  </data>
 </root>

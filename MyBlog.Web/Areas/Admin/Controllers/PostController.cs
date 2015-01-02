@@ -1,39 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using MyBlog.Domain;
+using MyBlog.Service.Contracts;
+using MyBlog.Web.Areas.Admin.Models;
+using Newtonsoft.Json;
+using System;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MyBlog.Domain;
-using MyBlog.Web.Models;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
 {
     public class PostController : Controller
     {
-        private MyBlogWebContext db = new MyBlogWebContext();
+        private readonly Lazy<IPostService> _postService;
+        private readonly Lazy<ITagService> _tagService;
+
+        public PostController(Lazy<IPostService> postService, Lazy<ITagService> tagService)
+        {
+            _postService = postService;
+            _tagService = tagService;
+        }
 
         // GET: Admin/Post
         public ActionResult Index()
         {
-            return View(db.PostEntities.ToList());
-        }
-
-        // GET: Admin/Post/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PostEntity postEntity = db.PostEntities.Find(id);
-            if (postEntity == null)
-            {
-                return HttpNotFound();
-            }
-            return View(postEntity);
+            var posts = _postService.Value.GetPosts(null, p => p.Tags).OrderByDescending(p => p.CreateDate);
+            return View(posts);
         }
 
         // GET: Admin/Post/Create
@@ -43,20 +34,20 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         }
 
         // POST: Admin/Post/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IsEnabled,Slug,Title,Content,CreateDate,UpdateDte")] PostEntity postEntity)
+        public ActionResult Create([Bind(Exclude = "Post.Id,Post.UpdateDte")] PostViewModel potViewModel)
         {
             if (ModelState.IsValid)
             {
-                db.PostEntities.Add(postEntity);
-                db.SaveChanges();
+                //db.PostEntities.Add(postEntity);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(postEntity);
+            return View();
         }
 
         // GET: Admin/Post/Edit/5
@@ -66,16 +57,16 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PostEntity postEntity = db.PostEntities.Find(id);
-            if (postEntity == null)
-            {
-                return HttpNotFound();
-            }
-            return View(postEntity);
+            //PostEntity postEntity = db.PostEntities.Find(id);
+            //if (postEntity == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            return View();
         }
 
         // POST: Admin/Post/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -83,26 +74,11 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(postEntity).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(postEntity).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(postEntity);
-        }
-
-        // GET: Admin/Post/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PostEntity postEntity = db.PostEntities.Find(id);
-            if (postEntity == null)
-            {
-                return HttpNotFound();
-            }
-            return View(postEntity);
+            return View();
         }
 
         // POST: Admin/Post/Delete/5
@@ -110,19 +86,17 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PostEntity postEntity = db.PostEntities.Find(id);
-            db.PostEntities.Remove(postEntity);
-            db.SaveChanges();
+            //PostEntity postEntity = db.PostEntities.Find(id);
+            //db.PostEntities.Remove(postEntity);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+        public string GetTags()
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            var tags = _tagService.Value.GetTags();
+            var tagStr = JsonConvert.SerializeObject(tags.Select(t => new { value = t.Id, text = t.Name }));
+            return tagStr;
         }
     }
 }

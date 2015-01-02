@@ -17,6 +17,8 @@ namespace MyBlog.Web
             //var x = new DataContext();
             builder.RegisterType<DataContext>().As<IQueryableContext>().InstancePerRequest();
             builder.RegisterType<ContactMessageService>().As<IContactMessageService>().InstancePerRequest();
+            builder.RegisterType<PostService>().As<IPostService>().InstancePerRequest();
+            builder.RegisterType<TagService>().As<ITagService>().InstancePerRequest();
             //builder.Register(c => x).InstancePerLifetimeScope();
         }
     }

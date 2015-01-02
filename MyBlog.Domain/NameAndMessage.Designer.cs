@@ -232,6 +232,15 @@ namespace MyBlog.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تگ.
+        /// </summary>
+        public static string Tag {
+            get {
+                return ResourceManager.GetString("Tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to عنوان.
         /// </summary>
         public static string Title {

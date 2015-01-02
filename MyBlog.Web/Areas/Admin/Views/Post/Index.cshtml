@@ -1,45 +1,73 @@
 ﻿@model IEnumerable<MyBlog.Domain.PostEntity>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "لیست مقالات";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IsEnabled)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsEnabled)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@section ContentHeader
+{
+    <h2>لیست مقالات</h2>
 }
 
-</table>
+<div class="col-md-10">
+    <div class="box">
+        <div class="box-header">
+            <p class="box-title">
+                @Html.ActionLink("ایجاد مقاله جدید", "Create")
+            </p>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreateDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsEnabled)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tags)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @item.CreateDate.ToJalaliDateTimeString()
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsEnabled)
+                        </td>
+                        <td>
+                            @foreach (var tag in item.Tags)
+                            {
+                            <text>tag.Name &nbsp;</text>
+                            }
+                        </td>
+                        <td>
+                            @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
+                            <a href="#" data-id="@item.Id" class="delete-item">حذف</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        helper.deleteFromTable('@Url.Action("Delete")', '.delete-item');
+    </script>
+}
+
+
