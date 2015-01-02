@@ -75,6 +75,10 @@ $(function () {
             }
         });
     });
+
+    if (typeof CKEDITOR === "undefined") {
+        return;
+    }
     setTimeout(function () {
         for (var i in CKEDITOR.instances) {
             var name = CKEDITOR.instances[i].name;

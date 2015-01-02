@@ -33,6 +33,7 @@ namespace MyBlog.Web
             bundles.Add(new ScriptBundle("~/bundles/adminjs").Include(
                       "~/Areas/Admin/Scripts/jquery.slimscroll.js",
                       "~/Areas/Admin/Scripts/icheck.js",
+                      "~/Areas/Admin/Scripts/helper.js",
                       "~/Areas/Admin/Scripts/startup.js"));
 
             bundles.Add(new StyleBundle("~/content/css").Include(
