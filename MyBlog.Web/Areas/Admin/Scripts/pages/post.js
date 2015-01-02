@@ -1,5 +1,4 @@
 ﻿$(function () {
-    $.validator.setDefaults({ ignore: '' });
     CKEDITOR.replace('Post_Content', {
         contentsLangDirection: 'rtl',
         filebrowserImageUploadUrl: '/base/uploadimage'

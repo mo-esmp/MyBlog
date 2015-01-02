@@ -34,20 +34,20 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         }
 
         // POST: Admin/Post/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Exclude = "Post.Id,Post.UpdateDte")] PostViewModel potViewModel)
         {
             if (ModelState.IsValid)
             {
-                //db.PostEntities.Add(postEntity);
-                //db.SaveChanges();
-                return RedirectToAction("Index");
+                _postService.Value.AddPost(potViewModel.Post, potViewModel.Tags);
+                if (_tagService.Value.Commit())
+                    return RedirectToAction("Index");
+
+                ModelState.AddModelError("Save", "هنگام ثبت مقاله خطایی رخ داده است.");
             }
 
-            return View();
+            return View(potViewModel);
         }
 
         // GET: Admin/Post/Edit/5

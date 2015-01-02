@@ -26,10 +26,10 @@
                         @Html.DisplayNameFor(model => model.CreateDate)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.IsEnabled)
+                        @Html.DisplayNameFor(model => model.Tags)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Tags)
+                        @Html.DisplayNameFor(model => model.IsEnabled)
                     </th>
                     <th></th>
                 </tr>
@@ -45,13 +45,13 @@
                             @item.CreateDate.ToJalaliDateTimeString()
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.IsEnabled)
-                        </td>
-                        <td>
                             @foreach (var tag in item.Tags)
                             {
-                            <text>tag.Name &nbsp;</text>
+                                <text>@tag.Name &nbsp;</text>
                             }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsEnabled)
                         </td>
                         <td>
                             @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
