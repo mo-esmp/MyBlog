@@ -292,7 +292,7 @@ namespace MyBlog.Service.Contracts
         /// <summary>
         /// Rollbacks the changes.
         /// </summary>
-        public void RollbackChanges()
+        public void Rollback()
         {
             _queryableContext.RollbackChanges();
         }

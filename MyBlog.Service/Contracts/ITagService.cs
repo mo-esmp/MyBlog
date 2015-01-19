@@ -54,5 +54,12 @@ namespace MyBlog.Service.Contracts
         /// <param name="predicate">The predicate.</param>
         /// <returns>IEnumerable&lt;TagEntity&gt;.</returns>
         IEnumerable<TagEntity> GetTags(Expression<Func<TagEntity, bool>> predicate = null);
+
+        /// <summary>
+        /// Gets the tags.
+        /// </summary>
+        /// <param name="idList">The list of id.</param>
+        /// <returns>IEnumerable&lt;TagEntity&gt;.</returns>
+        IEnumerable<TagEntity> GetTags(IEnumerable<int> idList);
     }
 }

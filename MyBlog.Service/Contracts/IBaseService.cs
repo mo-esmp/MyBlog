@@ -3,5 +3,7 @@
     public interface IBaseService
     {
         bool Commit();
+
+        void Rollback();
     }
 }

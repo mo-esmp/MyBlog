@@ -1,5 +1,4 @@
-﻿using MyBlog.Domain;
-using MyBlog.Service.Contracts;
+﻿using MyBlog.Service.Contracts;
 using MyBlog.Web.Areas.Admin.Models;
 using Newtonsoft.Json;
 using System;
@@ -36,7 +35,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         // POST: Admin/Post/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Exclude = "Post.Id,Post.UpdateDte")] PostViewModel potViewModel)
+        public ActionResult Create([Bind(Exclude = "Post.Id,Post.CreateDate,Post.UpdateDate")] PostViewModel potViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -44,6 +43,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
                 if (_tagService.Value.Commit())
                     return RedirectToAction("Index");
 
+                _tagService.Value.Rollback();
                 ModelState.AddModelError("Save", "هنگام ثبت مقاله خطایی رخ داده است.");
             }
 
@@ -54,14 +54,12 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         public ActionResult Edit(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            //PostEntity postEntity = db.PostEntities.Find(id);
-            //if (postEntity == null)
-            //{
-            //    return HttpNotFound();
-            //}
+
+            var food = _postService.Value.GetPost(id.Value);
+            if (food == null)
+                return HttpNotFound();
+
             return View();
         }
 
@@ -70,15 +68,19 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,IsEnabled,Slug,Title,Content,CreateDate,UpdateDte")] PostEntity postEntity)
+        public ActionResult Edit([Bind(Exclude = "Post.Id,Post.CreateDate,Post.UpdateDate")] PostViewModel potViewModel)
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(postEntity).State = EntityState.Modified;
-                //db.SaveChanges();
-                return RedirectToAction("Index");
+                _postService.Value.EditPost(potViewModel.Post, potViewModel.Tags);
+                if (_tagService.Value.Commit())
+                    return RedirectToAction("Index");
+
+                _tagService.Value.Rollback();
+                ModelState.AddModelError("Save", "هنگام ویرایش مقاله خطایی رخ داده است.");
             }
-            return View();
+
+            return View(potViewModel);
         }
 
         // POST: Admin/Post/Delete/5

@@ -21,7 +21,8 @@ namespace MyBlog.Service.Contracts
         /// Edits the post.
         /// </summary>
         /// <param name="editedPost">The edited post.</param>
-        void EditPost(PostEntity editedPost);
+        /// <param name="tagsId">The concatenated tags identifier .</param>
+        void EditPost(PostEntity editedPost, string tagsId);
 
         /// <summary>
         /// Deletes the post.

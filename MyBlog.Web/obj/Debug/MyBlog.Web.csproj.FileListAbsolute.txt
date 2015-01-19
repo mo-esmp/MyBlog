@@ -72,6 +72,7 @@ C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Web\bin\MyBl
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Web\bin\MyBlog.Domain.pdb
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Web\bin\Autofac.Integration.Mvc.Owin.xml
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Web\bin\Autofac.Integration.Owin.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.csprojResolveAssemblyReference.cache
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Web.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Web.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Antlr3.Runtime.dll
@@ -97,6 +98,7 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Web.Infrastructure.d
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Common.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Data.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Domain.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Service.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Newtonsoft.Json.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Owin.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Net.Http.Formatting.dll
@@ -113,6 +115,7 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\WebGrease.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Common.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Data.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Domain.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Service.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Autofac.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Autofac.Integration.Mvc.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Autofac.Integration.Mvc.Owin.xml
@@ -143,8 +146,5 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.OAuth.
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.Google.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.csprojResolveAssemblyReference.cache
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.pdb
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Service.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Service.pdb

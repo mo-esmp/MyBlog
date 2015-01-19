@@ -188,6 +188,7 @@
     <Compile Include="Areas\Admin\Controllers\ContactMessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TagController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -793,6 +794,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.otf" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Scripts\bootstrap-tagsinput.min.js.map" />
+    <Content Include="Areas\Admin\Views\Tag\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.min.js" />

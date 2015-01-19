@@ -82,12 +82,14 @@ $(function () {
     setTimeout(function () {
         for (var i in CKEDITOR.instances) {
             var name = CKEDITOR.instances[i].name;
-            var editor = $('.cke_wysiwyg_frame').contents().find('body.cke_editable');
-            if (editor.length > 0) {
-                $(editor).keyup(function () {
-                    validateEditor(name, true);
-                });
-            }
+            CKEDITOR.on('instanceReady', function (evt) {
+                var editor = $('.cke_wysiwyg_frame').contents().find('body.cke_editable');
+                if (editor.length > 0) {
+                    $(editor).keyup(function () {
+                        validateEditor(name, true);
+                    });
+                }
+            });
         }
     }, 1000);
 });
