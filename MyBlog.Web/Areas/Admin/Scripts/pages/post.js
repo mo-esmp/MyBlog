@@ -4,6 +4,10 @@
         filebrowserImageUploadUrl: '/base/uploadimage'
     });
 
+    setTimeout(function () { $('.cke_top').addClass('cke_rtl'); }, 1000);
+});
+
+function initializeTagsInput(tagsToAdd) {
     var tags = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -22,6 +26,15 @@
         }
     });
 
+    if (typeof tagsToAdd === 'undefined') {
+        return;
+    }
+
+    $.each(tagsToAdd, function (index, tag) {
+        elt.tagsinput('add', { 'value': tag.value, 'text': tag.text });
+    });
+
     $('.bootstrap-tagsinput').addClass('left-text form-control').css({ 'border-radius': '0', 'width': '100%;' });
-    setTimeout(function () { $('.cke_top').addClass('cke_rtl'); }, 1000);
-});
+
+    ;
+}

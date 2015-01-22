@@ -186,4 +186,7 @@
   <data name="Tag" xml:space="preserve">
     <value>تگ</value>
   </data>
+  <data name="TagName" xml:space="preserve">
+    <value>نام تگ</value>
+  </data>
 </root>

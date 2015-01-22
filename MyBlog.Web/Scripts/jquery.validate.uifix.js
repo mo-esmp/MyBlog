@@ -76,7 +76,7 @@ $(function () {
         });
     });
 
-    if (typeof CKEDITOR === "undefined") {
+    if (typeof CKEDITOR === 'undefined') {
         return;
     }
     setTimeout(function () {

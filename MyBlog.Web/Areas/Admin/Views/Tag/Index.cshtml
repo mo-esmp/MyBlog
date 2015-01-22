@@ -1,7 +1,55 @@
-﻿
+﻿@model IEnumerable<MyBlog.Domain.TagEntity>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "لیست تگ ها";
 }
 
-<h2>Index</h2>
+@section ContentHeader
+{
+    <h2>لیست تگ ها</h2>
+}
 
+<div class="col-md-10">
+    <div class="box">
+        <div class="box-header">
+            <p class="box-title">
+                @Html.ActionLink("ایجاد تگ جدید", "Create")
+            </p>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Slug)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Slug)
+                        </td>
+                        <td>
+                            @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
+                            <a href="#" data-id="@item.Id" class="delete-item">حذف</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts {
+    <script>
+        helper.deleteFromTable('@Url.Action("Delete")', '.delete-item');
+    </script>
+}

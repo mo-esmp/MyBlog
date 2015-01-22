@@ -56,16 +56,19 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             if (id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var food = _postService.Value.GetPost(id.Value);
-            if (food == null)
+            var post = _postService.Value.GetPost(p => p.Id == id.Value, p => p.Tags);
+            if (post == null)
                 return HttpNotFound();
 
-            return View();
+            var postViewModel = new PostViewModel
+            {
+                Post = post,
+            };
+
+            return View(postViewModel);
         }
 
         // POST: Admin/Post/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Exclude = "Post.Id,Post.CreateDate,Post.UpdateDate")] PostViewModel potViewModel)
@@ -83,15 +86,25 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             return View(potViewModel);
         }
 
-        // POST: Admin/Post/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        // POST: Admin/Tag/Delete/5
+        [HttpPost]
+        public JsonResult Delete(int? id)
         {
-            //PostEntity postEntity = db.PostEntities.Find(id);
-            //db.PostEntities.Remove(postEntity);
-            //db.SaveChanges();
-            return RedirectToAction("Index");
+            if (id == null)
+            {
+                Response.StatusCode = 400;
+                return Json("Bad Request", JsonRequestBehavior.AllowGet);
+            }
+
+            _postService.Value.DeletePost(p => p.Id == id.Value);
+            if (_postService.Value.Commit() == false)
+            {
+                _postService.Value.Rollback();
+                Response.StatusCode = 404;
+                return Json("Not Found", JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(true, JsonRequestBehavior.AllowGet);
         }
 
         public string GetTags()

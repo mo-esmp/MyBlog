@@ -597,6 +597,12 @@
     <Content Include="Areas\Admin\Scripts\jquery.slimscroll.js" />
     <Content Include="Areas\Admin\Scripts\pages\post.js" />
     <Content Include="Areas\Admin\Scripts\startup.js" />
+    <Content Include="Areas\Admin\Views\Tag\Create.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Views\Tag\Edit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Content\admin\adminlte.css" />
     <Content Include="Content\admin\bootstrap-tagsinput.css" />
     <Content Include="Content\admin\bootstrap-tagsinput.min.css">
@@ -718,14 +724,24 @@
     <Content Include="Content\admin\iCheck\square\yellow.css" />
     <Content Include="Content\admin\iCheck\square\yellow.png" />
     <Content Include="Content\admin\iCheck\square\_all.css" />
+    <Content Include="Content\bootstrap-rtl.css" />
+    <Content Include="Content\bootstrap-rtl.min.css" />
+    <Content Include="Content\bootstrap-theme-rtl.css" />
+    <Content Include="Content\bootstrap-theme-rtl.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font.css" />
     <Content Include="Content\fonts\bbc-nassim-bold.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\irsans.svg" />
     <Content Include="Content\fonts\WebYekan.svg" />
+    <Content Include="Content\images\home-bg.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-rtl.js" />
+    <Content Include="Scripts\bootstrap-rtl.min.js" />
     <Content Include="Scripts\bootstrap-tagsinput.js" />
     <Content Include="Scripts\bootstrap-tagsinput.min.js" />
     <Content Include="Scripts\bootstrap-tokenfield.js" />
@@ -795,6 +811,14 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Scripts\bootstrap-tagsinput.min.js.map" />
     <Content Include="Areas\Admin\Views\Tag\Index.cshtml" />
+    <Content Include="Scripts\bootstrap-rtl.min.js.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\irsans.eot" />
+    <Content Include="Content\fonts\irsans.otf" />
+    <Content Include="Content\fonts\irsans.ttf" />
+    <Content Include="Content\fonts\irsans.woff" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.min.js" />
@@ -810,6 +834,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\startup.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

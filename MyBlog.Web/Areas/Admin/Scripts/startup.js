@@ -105,6 +105,7 @@ $(function () {
             $(".right-side, html, body").css("min-height", height + "px");
         }
     }
+
     //Fire upon load
     fix();
 
@@ -134,6 +135,8 @@ $(function () {
             $(this).parent('li').addClass('active').parent('ul').css('display', 'block').parent('li').addClass('active');
         }
     });
+
+    typeDirection();
 });
 
 function fixSidebar() {
@@ -147,6 +150,17 @@ function fixSidebar() {
         height: ($(window).height() - $(".header").height()) + "px",
         color: "rgba(0,0,0,0.2)"
     });
+}
+
+function typeDirection() {
+    var inputs = $('.type-direction');
+    if (inputs.length > 0) {
+        inputs.bind('keyup', function () {
+            var inputValue = $(this).val();
+            var rtl = inputValue.match(/^[^a-z]*[^\x00-\x7E]/ig);
+            $(this).css({ 'direction': rtl ? 'rtl' : 'ltr', 'text-align': rtl ? 'right' : 'left' });
+        });
+    }
 }
 
 (function ($) {

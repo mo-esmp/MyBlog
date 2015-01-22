@@ -59,6 +59,16 @@ namespace MyBlog.Common.Helpers
         }
 
         /// <summary>
+        /// Clear the item from the cache.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="regionName">Name of the region which cache entry can be added.</param>
+        public static void ClearItem(string key, string regionName = null)
+        {
+            Cache.Remove(key, regionName);
+        }
+
+        /// <summary>
         /// Clears the all entries in cache.
         /// </summary>
         /// <param name="regionName">Name of the region.</param>

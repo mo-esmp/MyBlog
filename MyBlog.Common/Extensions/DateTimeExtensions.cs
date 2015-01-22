@@ -12,7 +12,7 @@ namespace MyBlog.Common.Extensions
         /// Converts and formats only date without time in the Jalali (Shamsi) calendar.
         /// </summary>
         /// <param name="dateTime">The date time.</param>
-        /// <param name="date">The date to convert to Jalali.</param>
+        /// <param name="date">The date to convert to jalali.</param>
         /// <param name="leftToRight">if set to <c>true</c> represents date in inverse format.</param>
         /// <param name="cultureInfo">The culture information.</param>
         /// <returns>System.String.</returns>
@@ -33,7 +33,7 @@ namespace MyBlog.Common.Extensions
         /// <summary>
         /// Converts and formats only date without time in the Jalali (Shamsi) calendar.
         /// </summary>
-        /// <param name="dateTime">The current date to convert to Jalali.</param>
+        /// <param name="dateTime">The current date to convert to jalali.</param>
         /// <param name="leftToRight">if set to <c>true</c> represents date in inverse format.</param>
         /// <param name="cultureInfo">The culture information.</param>
         /// <returns>System.String.</returns>
@@ -55,7 +55,7 @@ namespace MyBlog.Common.Extensions
         /// Converts and formats date in the Jalali (Shamsi) calendar.
         /// </summary>
         /// <param name="dateTime">The date time.</param>
-        /// <param name="date">The date to convert to Jalali.</param>
+        /// <param name="date">The date to convert to jalali.</param>
         /// <param name="leftToRight">if set to <c>true</c> represents date in inverse format.</param>
         /// <param name="cultureInfo">The culture information.</param>
         /// <returns>System.String.</returns>
@@ -86,7 +86,7 @@ namespace MyBlog.Common.Extensions
         /// <summary>
         /// Converts and formats date in the Jalali (Shamsi) calendar.
         /// </summary>
-        /// <param name="dateTime">The current date to convert to Jalali.</param>
+        /// <param name="dateTime">The current date to convert to jalali.</param>
         /// <param name="leftToRight">if set to <c>true</c> represents date in inverse format.</param>
         /// <param name="cultureInfo">The culture information.</param>
         /// <returns>System.String.</returns>

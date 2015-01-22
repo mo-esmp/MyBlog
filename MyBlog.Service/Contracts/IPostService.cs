@@ -31,12 +31,6 @@ namespace MyBlog.Service.Contracts
         void DeletePost(Expression<Func<PostEntity, bool>> predicate);
 
         /// <summary>
-        /// Deletes the post.
-        /// </summary>
-        /// <param name="postId">The post identifier.</param>
-        void DeletePost(int postId);
-
-        /// <summary>
         /// Gets the post.
         /// </summary>
         /// <param name="postId">The post identifier.</param>

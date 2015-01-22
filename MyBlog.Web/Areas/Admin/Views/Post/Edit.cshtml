@@ -1,7 +1,7 @@
 ﻿@model MyBlog.Web.Areas.Admin.Models.PostViewModel
 
 @{
-    ViewBag.Title = "ویرایش مقاله جدید";
+    ViewBag.Title = "ویرایش مقاله";
 }
 
 @section header {
@@ -24,7 +24,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Post.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Post.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Post.Title, new { htmlAttributes = new { @class = "form-control type-direction" } })
                         @Html.ValidationMessageFor(model => model.Post.Title, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="box-footer">
-                <input type="submit" value="ایجاد" class="btn btn-primary" />
+                <input type="submit" value="ویرایش" class="btn btn-primary" />
             </div>
         }
     </div>
@@ -73,4 +73,10 @@
     @Scripts.Render("~/Areas/Admin/Scripts/ckeditor/ckeditor.js")
     @Scripts.Render("~/bundles/tagsinput")
     @Scripts.Render("~/Areas/Admin/Scripts/pages/post.js")
+    <script>
+        $(function () {
+            var tags = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Post.Tags.Select(t => new { value = t.Id, text = t.Name })));
+            initializeTagsInput(tags);
+        });
+    </script>
 }
