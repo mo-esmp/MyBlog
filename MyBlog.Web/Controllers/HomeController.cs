@@ -1,12 +1,22 @@
-﻿using System.Web.Mvc;
+﻿using MyBlog.Service.Contracts;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace MyBlog.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IPostService _postService;
+
+        public HomeController(IPostService postService)
+        {
+            _postService = postService;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var posts = _postService.GetPostsSummary(p => p.IsEnabled).OrderByDescending(p => p.CreateDate);
+            return View(posts);
         }
 
         public ActionResult About()

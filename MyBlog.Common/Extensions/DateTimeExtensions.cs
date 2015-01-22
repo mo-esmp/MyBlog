@@ -295,6 +295,83 @@ namespace MyBlog.Common.Extensions
         }
 
         /// <summary>
+        /// Gets the Jalali (Shamsi) day name.
+        /// </summary>
+        /// <param name="dateTime">The current date.</param>
+        /// <returns>System.String.</returns>
+        public static string GetJalaliDayName(this DateTime dateTime)
+        {
+            var pc = new PersianCalendar();
+            var day = pc.GetDayOfWeek(dateTime);
+
+            switch (day)
+            {
+                case DayOfWeek.Saturday:
+                    return "شنبه";
+
+                case DayOfWeek.Sunday:
+                    return "یکشنبه";
+
+                case DayOfWeek.Monday:
+                    return "دوشنبه";
+
+                case DayOfWeek.Tuesday:
+                    return "سه شنبه";
+
+                case DayOfWeek.Wednesday:
+                    return "چهارشنبه";
+
+                case DayOfWeek.Thursday:
+                    return "پنج شنبه";
+
+                case DayOfWeek.Friday:
+                    return "جمعه";
+
+                default:
+                    return "";
+            }
+        }
+
+        /// <summary>
+        /// Gets the Jalali (Shamsi) day name.
+        /// </summary>
+        /// <param name="dateTime">The date time.</param>
+        /// <param name="date">The date.</param>
+        /// <returns>System.String.</returns>
+        public static string GetJalaliDayName(this DateTime dateTime, DateTime date)
+        {
+            var pc = new PersianCalendar();
+            var day = pc.GetDayOfWeek(date);
+
+            switch (day)
+            {
+                case DayOfWeek.Saturday:
+                    return "شنبه";
+
+                case DayOfWeek.Sunday:
+                    return "یکشنبه";
+
+                case DayOfWeek.Monday:
+                    return "دوشنبه";
+
+                case DayOfWeek.Tuesday:
+                    return "سه شنبه";
+
+                case DayOfWeek.Wednesday:
+                    return "چهارشنبه";
+
+                case DayOfWeek.Thursday:
+                    return "پنج شنبه";
+
+                case DayOfWeek.Friday:
+                    return "جمعه";
+
+                default:
+                    return "";
+            }
+        }
+
+        /// <summary>
         /// Times the ago.
         /// </summary>
         /// <param name="dateTime">The date time.</param>
@@ -391,6 +468,26 @@ namespace MyBlog.Common.Extensions
 
             var years = Convert.ToInt32(Math.Floor((double)ts.Days / 365));
             return years <= 1 ? "یک سال قبل" : years + " سال قبل";
+        }
+
+        public static string ToJalaliDateTimeFullString(this DateTime dateTime)
+        {
+            var year = GetJalaliYear(dateTime);
+            var monthName = GetJalaliMonthName(dateTime);
+            var dayNam = GetJalaliDayName(dateTime);
+            var day = GetJalaliDay(dateTime);
+            var convertedDate = string.Format("{0} {1} {2} {3}", dayNam, day, monthName, year);
+            return convertedDate;
+        }
+
+        public static string ToJalaliDateTimeFullString(this DateTime dateTime, DateTime date)
+        {
+            var year = GetJalaliYear(date);
+            var monthName = GetJalaliMonthName(date);
+            var dayNam = GetJalaliDayName(date);
+            var day = GetJalaliDay(date);
+            var convertedDate = string.Format("{0} {1} {2} {3}", dayNam, day, monthName, year);
+            return convertedDate;
         }
     }
 }

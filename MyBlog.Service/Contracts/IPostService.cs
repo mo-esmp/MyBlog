@@ -1,4 +1,5 @@
 using MyBlog.Domain;
+using MyBlog.Service.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -52,5 +53,7 @@ namespace MyBlog.Service.Contracts
         /// <param name="includes">The includes.</param>
         /// <returns>IEnumerable&lt;PostEntity&gt;.</returns>
         IEnumerable<PostEntity> GetPosts(Expression<Func<PostEntity, bool>> predicate = null, params Expression<Func<PostEntity, object>>[] includes);
+
+        IEnumerable<PostSummaryModel> GetPostsSummary(Expression<Func<PostEntity, bool>> predicate = null);
     }
 }

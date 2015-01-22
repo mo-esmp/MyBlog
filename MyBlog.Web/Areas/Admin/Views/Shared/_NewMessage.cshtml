@@ -22,7 +22,7 @@
                                 @message.Name
                                 <small><i class="fa fa-clock-o"></i> @message.CreateDate.TimeAgo()</small>
                             </h4>
-                            <p>@Html.TurncateString(message.Message, 50)</p>
+                            <p>@message.Message.Truncate(50)</p>
                         </a>
                     </li>
                 }

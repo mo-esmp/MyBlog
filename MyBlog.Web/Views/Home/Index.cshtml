@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MyBlog.Domain.PostEntity>
+﻿@model IEnumerable<MyBlog.Service.Model.PostSummaryModel>
 
 @{
     ViewBag.Title = "صفحه اصلی";
@@ -11,16 +11,18 @@
             <h2 class="post-title">
                 @post.Title
             </h2>
-            <h3 class="post-subtitle">
-                @Html.Raw(post.Content.TruncateHtml(100))
-            </h3>
+            <div class="post-subtitle">
+                @Html.Raw(post.Content) ...
+            </div>
         </a>
         <p class="post-meta">
-            تگها: @foreach (var tag in post.Tags)
-            {<text>@tag.Name </text>}
-            <a href="#">در تاریخ: </a> @post.CreateDate.ToJalaliDateTimeString()
+            <a><i class="glyphicon glyphicon-calendar"></i></a>&nbsp;<span class="date">@post.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits()</span> <span class="divider-vertical"></span>
+            <a><i class="glyphicon glyphicon-comment"></i></a>&nbsp;<span class="date">@post.CommentCount.ToString().ToPersianDigits()</span> <span class="divider-vertical"></span>
+            <a> <i class="glyphicon glyphicon-tag"></i></a>&nbsp;
+            <span dir="ltr">@post.Tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag)).TrimStart(',')</span>
         </p>
     </div>
+    <hr />
 }
 
 <!-- Pager -->

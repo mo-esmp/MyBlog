@@ -5,13 +5,14 @@
  */
 
 body {
-    font-family: 'Iran Sans', Tahoma, Arial;
-    font-size: 20px;
+    font-family: 'segoe ui light', Tahoma, Arial;
+    font-size: 18px;
     color: #404040;
 }
 
 p {
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.3;
     margin: 30px 0;
 }
 
@@ -43,11 +44,19 @@ blockquote {
     font-style: italic;
 }
 
-hr.small {
+hr.small, hr.x-small {
     max-width: 100px;
-    margin: 15px auto;
-    border-width: 4px;
     border-color: white;
+}
+
+hr.small {
+    border-width: 4px;
+    margin: 15px auto;
+}
+
+hr.x-small {
+    border-width: 1px;
+    margin: 5px auto;
 }
 
 .navbar-custom {
@@ -89,6 +98,7 @@ hr.small {
         .navbar-custom .nav li a {
             color: white;
             font-family: 'Iran Sans';
+            font-size: 16px;
             padding: 20px;
         }
 
@@ -194,7 +204,7 @@ hr.small {
         font-size: 24px;
         line-height: 1.1;
         display: block;
-        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: 'segoe ui light', tahoma;
         font-weight: 300;
         margin: 10px 0 0;
     }
@@ -202,7 +212,8 @@ hr.small {
 @media only screen and (min-width: 768px) {
     .intro-header .site-heading h1,
     .intro-header .page-heading h1 {
-        font-size: 80px;
+        font-family: 'segoe ui light';
+        font-size: 36px;
     }
 }
 
@@ -261,10 +272,14 @@ hr.small {
     }
 
     .post-preview > a > .post-subtitle {
+        font-family: 'segoe ui light';
         margin: 0;
-        font-weight: 300;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
+
+        .post-preview > a > .post-subtitle > p {
+            margin: 0;
+        }
 
 .post-preview > .post-meta {
     color: #808080;
@@ -284,9 +299,14 @@ hr.small {
             text-decoration: underline;
         }
 
+        .post-preview > .post-meta > a > i.glyphicon {
+            font-size: 16px;
+        }
+
 @media only screen and (min-width: 768px) {
     .post-preview > a > .post-title {
-        font-size: 36px;
+        font-size: 32px;
+        line-height: 40px;
     }
 }
 
@@ -308,7 +328,7 @@ hr.small {
 }
 
 footer {
-    padding: 50px 0 65px;
+    padding: 10px 0 40px;
 }
 
     footer .list-inline {
@@ -457,4 +477,12 @@ img::-moz-selection {
 
 body {
     -webkit-tap-highlight-color: #0085a1;
+}
+
+
+.divider-vertical {
+    height: 20px;
+    margin: 0 9px;
+    border-right: 1px solid #888;
+    border-left: 1px solid #999;
 }
