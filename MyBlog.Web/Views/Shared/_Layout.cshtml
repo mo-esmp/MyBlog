@@ -25,14 +25,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">بلاگ من</a>
+                <a class="navbar-brand" href="/">بلاگ من</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <a href="index.html">صفحه اصلی</a> </li>
-                    <li> <a href="about.html">درباره</a> </li>
-                    <li> <a href="post.html">تماس</a> </li>
+                    <li> <a href="/">صفحه اصلی</a> </li>
+                    <li> <a href="@Url.Action("About", "Home")">درباره</a> </li>
+                    <li> <a href="@Url.Action("Contact", "Home")">تماس</a> </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,7 +70,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="copyright text-muted">&copy; @DateTime.Now.GetJalaliYear().ToString().ToPersianDigits() Mohsen.es </p>
                 </div>
             </div>
         </div>
