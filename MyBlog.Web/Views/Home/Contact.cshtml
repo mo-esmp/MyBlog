@@ -8,6 +8,7 @@
 
 @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { role = "form" }))
 {
+    @Html.AntiForgeryToken()
     <div class="row control-group">
         <div class="form-group col-xs-12 floating-label-form-group controls">
             @Html.LabelFor(m => m.Name)

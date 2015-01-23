@@ -92,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyBlog.Service\MyBlog.Service.csproj">
+      <Project>{0D50A96C-0D91-4C56-93BD-F0EF73BFC292}</Project>
+      <Name>MyBlog.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyBlog.Web\MyBlog.Web.csproj">
       <Project>{3C8E98FF-B4E5-49D5-B785-654743BC4CCF}</Project>
       <Name>MyBlog.Web</Name>

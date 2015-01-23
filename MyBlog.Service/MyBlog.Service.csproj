@@ -41,12 +41,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Mvc.Mailer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvcMailer.4.5\lib\45\Mvc.Mailer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,10 +66,12 @@
     <Compile Include="Contracts\BaseService.cs" />
     <Compile Include="Contracts\IBaseService.cs" />
     <Compile Include="Contracts\IContactMessageService.cs" />
+    <Compile Include="Contracts\IMailerService.cs" />
     <Compile Include="Contracts\ITagService.cs" />
     <Compile Include="Contracts\IPostService.cs" />
     <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Implementation\ContactMessageService.cs" />
+    <Compile Include="Implementation\MailService.cs" />
     <Compile Include="Implementation\PostService.cs" />
     <Compile Include="Implementation\TagService.cs" />
     <Compile Include="Model\PostSummaryModel.cs" />
@@ -79,6 +90,9 @@
       <Project>{99ca2391-9118-44ff-ab75-1b2fe4de2a4c}</Project>
       <Name>MyBlog.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -126,3 +126,4 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\System.Net.Http.Fo
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Common.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\obj\Debug\MyBlog.Web.Tests.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\obj\Debug\MyBlog.Web.Tests.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\Mvc.Mailer.dll

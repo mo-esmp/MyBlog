@@ -21,3 +21,10 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Ide
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Mvc.Mailer.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Mvc.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Mvc.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.xml
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Deployment.xml
