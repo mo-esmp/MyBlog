@@ -99,12 +99,13 @@ namespace MyBlog.Service.Implementation
             var posts = _dataContext.Posts.Where(predicate).OrderByDescending(p => p.CreateDate).Select(
                 p => new PostSummaryModel
             {
-                Content = p.Content.Substring(0, 300),
+                Summary = p.Content.Substring(0, 400),
                 CreateDate = p.CreateDate,
+                Id = p.Id,
                 Slug = p.Slug,
                 Title = p.Title,
                 CommentCount = p.Comments.Count(),
-                Tags = p.Tags.Select(t => t.Name)
+                Tags = p.Tags
             });
 
             return posts;

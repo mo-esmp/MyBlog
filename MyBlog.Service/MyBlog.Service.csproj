@@ -66,7 +66,7 @@
     <Compile Include="Contracts\BaseService.cs" />
     <Compile Include="Contracts\IBaseService.cs" />
     <Compile Include="Contracts\IContactMessageService.cs" />
-    <Compile Include="Contracts\IMailerService.cs" />
+    <Compile Include="Contracts\IMailService.cs" />
     <Compile Include="Contracts\ITagService.cs" />
     <Compile Include="Contracts\IPostService.cs" />
     <Compile Include="Contracts\ICommentService.cs" />

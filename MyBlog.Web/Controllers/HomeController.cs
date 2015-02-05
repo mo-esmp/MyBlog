@@ -21,14 +21,14 @@ namespace MyBlog.Web.Controllers
             _postService = postService;
         }
 
-        // GET/Home
+        // GET: Home
         public ActionResult Index()
         {
             var posts = _postService.Value.GetPostsSummary(p => p.IsEnabled).OrderByDescending(p => p.CreateDate);
             return View(posts);
         }
 
-        // GET/Home/About
+        // GET: Home/About
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -36,28 +36,28 @@ namespace MyBlog.Web.Controllers
             return View();
         }
 
-        // GET/Home/Contact
+        // GET: Home/Contact
         public ActionResult Contact()
         {
             return View();
         }
 
-        // POST/Home/Contact
+        // POST: Home/Contact
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Contact(ContactMessageEntity message)
+        public async Task<ActionResult> Contact(ContactMessageEntity contactMessage)
         {
             if (!ModelState.IsValid)
-                return View(message);
+                return View(contactMessage);
 
-            _contactMessageService.Value.AddMessage(message);
+            _contactMessageService.Value.AddMessage(contactMessage);
             if (_contactMessageService.Value.Commit() == false)
             {
-                TempData["Failed"] = true;
-                return View(message);
+                ModelState.AddModelError("Create", "هنگام ثبت پیام خطایی رخ داده است. لطفا بعدا سعی نمایید.");
+                return View(contactMessage);
             }
 
-            await _mailService.Value.ContactMail(message.Name, message.Email, message.Message).SendAsync();
+            await _mailService.Value.ContactMail(contactMessage.Name, contactMessage.Email, contactMessage.Message).SendAsync();
             TempData["Successful"] = true;
             ModelState.Clear();
 

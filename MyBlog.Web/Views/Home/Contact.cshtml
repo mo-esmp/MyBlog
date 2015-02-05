@@ -6,6 +6,22 @@
 
 <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
 
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        @Html.ValidationSummary()
+    </div>
+}
+
+@if (TempData["Successful"] != null)
+{
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>با تشکر پیام شما با موفقیت ثبت شد.</strong>
+    </div>
+}
+
 @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -31,7 +47,6 @@
         </div>
     </div>
     <br>
-    <div id="success"></div>
     <div class="row">
         <div class="form-group col-xs-12">
             <button type="submit" class="btn btn-default">ارسال</button>

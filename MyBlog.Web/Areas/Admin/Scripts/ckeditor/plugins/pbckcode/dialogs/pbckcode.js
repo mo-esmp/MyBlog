@@ -1,33 +1,11 @@
 CKEDITOR.dialog.add('pbckcodeDialog', function (editor) {
     "use strict";
 
-    // if there is no user settings
-    // create an empty object
-    if (editor.config.pbckcode === undefined) {
-        editor.config.pbckcode = {};
-    }
-
-    // default settings object
-    var DEFAULT_SETTINGS = {
-        cls      : '',
-        modes    : [
-			['HTML', 'html'],
-			['CSS', 'css'],
-			['PHP', 'php'],
-			['JS', 'javascript']
-        ],
-        theme    : 'textmate',
-        tab_size : 4
-    };
-
     var tab_sizes = ["1", "2", "4", "8"];
 
-    // merge user settings with default settings
-    var settings = CKEDITOR.tools.extend(DEFAULT_SETTINGS, editor.config.pbckcode, true);
-
-	// CKEditor variables
-	var dialog;
-    var shighlighter = new PBSyntaxHighlighter(settings.highlighter);
+    // CKEditor variables
+    var dialog;
+    var shighlighter = new PBSyntaxHighlighter(editor.settings.highlighter);
 
     // ACE variables
     var aceEditor, aceSession, whitespace;
@@ -43,9 +21,10 @@ CKEDITOR.dialog.add('pbckcodeDialog', function (editor) {
                     {
                         type      : 'select',
                         id        : 'code-select',
+                        className : 'cke_pbckcode_form',
                         label     : editor.lang.pbckcode.mode,
-                        items     : settings.modes,
-                        'default' : settings.modes[0][1],
+                        items     : editor.settings.modes,
+                        'default' : editor.settings.modes[0][1],
                         setup     : function (element) {
                             if (element) {
                                 element = element.getAscendant('pre', true);
@@ -58,13 +37,14 @@ CKEDITOR.dialog.add('pbckcodeDialog', function (editor) {
                                 element.setAttribute("data-pbcklang", this.getValue());
                             }
                         },
-                        onChange  : function (element) {
+                        onChange  : function () {
                             aceSession.setMode("ace/mode/" + this.getValue());
                         }
                     },
                     {
                         type      : 'select',
                         id        : 'code-tabsize-select',
+                        className : 'cke_pbckcode_form',
                         label     : 'Tab size',
                         items     : tab_sizes,
                         'default' : tab_sizes[2],
@@ -90,24 +70,26 @@ CKEDITOR.dialog.add('pbckcodeDialog', function (editor) {
                 ]
             },
             {
-                type   : 'html',
-                html   : '<div></div>',
-                id     : 'code-textarea',
-                style  : 'position: absolute; top: 80px; left: 10px; right: 10px; bottom: 50px;',
-                setup  : function (element) {
+                type      : 'html',
+                html      : '<div></div>',
+                id        : 'code-textarea',
+                className : 'cke_pbckcode_ace',
+                style     : 'position: absolute; top: 80px; left: 10px; right: 10px; bottom: 50px;',
+                setup     : function (element) {
                     // get the value of the editor
                     var code = element.getHtml();
 
                     // replace some regexp
-                    code = code.replace(new RegExp('<br/>', 'g'), '\n');
-                    code = code.replace(new RegExp('<br>', 'g'), '\n');
-                    code = code.replace(new RegExp('&lt;', 'g'), '<');
-                    code = code.replace(new RegExp('&gt;', 'g'), '>');
-                    code = code.replace(new RegExp('&amp;', 'g'), '&');
+                    code = code.replace(new RegExp('<br/>', 'g'), '\n')
+                        .replace(new RegExp('<br>', 'g'), '\n')
+                        .replace(new RegExp('&lt;', 'g'), '<')
+                        .replace(new RegExp('&gt;', 'g'), '>')
+                        .replace(new RegExp('&amp;', 'g'), '&')
+                        .replace(new RegExp('&nbsp;', 'g'), ' ');
 
                     aceEditor.setValue(code);
                 },
-                commit : function (element) {
+                commit    : function (element) {
                     element.setText(aceEditor.getValue());
                 }
             }
@@ -125,21 +107,21 @@ CKEDITOR.dialog.add('pbckcodeDialog', function (editor) {
             editorPanel
         ],
         onLoad    : function () {
-			dialog = this;
+            dialog = this;
             // we load the ACE plugin to our div
             aceEditor = ace.edit(dialog.getContentElement('editor', 'code-textarea')
-            	.getElement().getId());
+                .getElement().getId());
             // save the aceEditor into the editor object for the resize event
             editor.aceEditor = aceEditor;
 
             // set default settings
-            aceEditor.setTheme("ace/theme/" + settings.theme);
-			aceEditor.setHighlightActiveLine(true);
+            aceEditor.setTheme("ace/theme/" + editor.settings.theme);
+            aceEditor.setHighlightActiveLine(true);
 
             aceSession = aceEditor.getSession();
-			aceSession.setMode("ace/mode/" + settings.modes[0][1]);
-            aceSession.setTabSize(settings.tab_size);
-			aceSession.setUseSoftTabs(true);
+            aceSession.setMode("ace/mode/" + editor.settings.modes[0][1]);
+            aceSession.setTabSize(editor.settings.tab_size);
+            aceSession.setUseSoftTabs(true);
 
             // load ace extensions
             whitespace = ace.require('ace/ext/whitespace');
@@ -172,6 +154,9 @@ CKEDITOR.dialog.add('pbckcodeDialog', function (editor) {
             // get the element to fill the inputs
             this.element = element;
 
+            // focus on the editor
+            aceEditor.focus();
+
             // we empty the editor
             aceEditor.setValue('');
 
@@ -197,7 +182,7 @@ CKEDITOR.dialog.add('pbckcodeDialog', function (editor) {
             this.commitContent(element);
 
             // set the full class to the code tag
-            shighlighter.setCls(pre.getAttribute("data-pbcklang") + " " + settings.cls);
+            shighlighter.setCls(pre.getAttribute("data-pbcklang") + " " + editor.settings.cls);
 
             element.setAttribute('class', shighlighter.getCls());
 

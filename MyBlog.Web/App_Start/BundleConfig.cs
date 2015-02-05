@@ -36,6 +36,14 @@ namespace MyBlog.Web
                       "~/Areas/Admin/Scripts/helper.js",
                       "~/Areas/Admin/Scripts/startup.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/syntaxhighlighter").Include(
+                      "~/Scripts/syntaxhighlighter/shCore.js",
+                      "~/Scripts/syntaxhighlighter/shBrushCSharp.js",
+                      "~/Scripts/syntaxhighlighter/shBrushCss.js",
+                      "~/Scripts/syntaxhighlighter/shBrushJScript.js",
+                      "~/Scripts/syntaxhighlighter/shBrushSql.js",
+                      "~/Scripts/syntaxhighlighter/shBrushXml.js"));
+
             bundles.Add(new StyleBundle("~/content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
@@ -44,6 +52,10 @@ namespace MyBlog.Web
                       "~/content/admin/bootstrap.css",
                       "~/content/admin/font-awesome.css",
                       "~/content/admin/adminlte.css"));
+
+            bundles.Add(new StyleBundle("~/content/syntaxhighlighter").Include(
+                      "~/content/syntaxhighlighter/shCore.css",
+                      "~/content/syntaxhighlighter/shThemedefault.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

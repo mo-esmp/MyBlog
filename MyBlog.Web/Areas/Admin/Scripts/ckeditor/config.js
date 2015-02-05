@@ -63,11 +63,11 @@ CKEDITOR.editorConfig = function (config) {
         cls: '',
 
         // The syntax highlighter you will use in the output view
-        highlighter: 'PRETTIFY',
+        highlighter: 'PRISM',
         // An array of the available modes for you plugin.
         // The key corresponds to the string shown in the select tag.
         // The value correspond to the loaded file for ACE Editor.
-        modes: [['HTML', 'html'], ['CSS', 'css'], ['JS', 'javascript'], ['XML', 'xml'], ['C#', 'csharp'], ['Java', 'java'], ['SQL', 'sql']],
+        modes: [['HTML', 'html'], ['CSS', 'css'], ['JS', 'javascript'], ['XML', 'xml'], ['C#', 'csharp'], ['SQL', 'sql']],
 
         theme: 'textmate',
 

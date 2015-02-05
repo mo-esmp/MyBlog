@@ -17,7 +17,6 @@ p {
 }
 
     p a {
-        text-decoration: underline;
     }
 
 h1, h2, h3, h4, h5, h6 {
@@ -305,7 +304,7 @@ hr.x-small {
 
 @media only screen and (min-width: 768px) {
     .post-preview > a > .post-title {
-        font-size: 32px;
+        font-size: 28px;
         line-height: 40px;
     }
 }
@@ -428,11 +427,10 @@ form .row:first-child .floating-label-form-group {
 
     .pager li > a,
     .pager li > span {
-        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: 'iran sans', 'segoe ui', Tahoma;
         text-transform: uppercase;
         font-size: 14px;
         font-weight: 800;
-        letter-spacing: 1px;
         padding: 15px 25px;
         background-color: white;
         border-radius: 0;

@@ -7,19 +7,25 @@
 @foreach (var post in Model)
 {
     <div class="post-preview">
-        <a href="post.html">
+        <a href="@Url.Action("PostDetail", "Post", new { id = post.Id, slug = post.Slug })">
             <h2 class="post-title">
                 @post.Title
             </h2>
             <div class="post-subtitle">
-                @Html.Raw(post.Content) ...
+                @Html.Raw(post.Summary.TruncateHtml(350))
             </div>
         </a>
         <p class="post-meta">
             <a><i class="glyphicon glyphicon-calendar"></i></a>&nbsp;<span class="date">@post.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits()</span> <span class="divider-vertical"></span>
             <a><i class="glyphicon glyphicon-comment"></i></a>&nbsp;<span class="date">@post.CommentCount.ToString().ToPersianDigits()</span> <span class="divider-vertical"></span>
             <a> <i class="glyphicon glyphicon-tag"></i></a>&nbsp;
-            <span dir="ltr">@post.Tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag)).TrimStart(',')</span>
+            @*<span dir="ltr">@post.Tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag)).TrimStart(',')</span>*@
+            <span>
+                @foreach (var tag in post.Tags)
+                {
+                    <a href="@Url.Action("PostsByTag", "Post", new { slug = tag.Slug })">@tag.Name</a><text>&nbsp;</text>
+                }
+            </span>
         </p>
     </div>
     <hr />
@@ -28,6 +34,6 @@
 <!-- Pager -->
 <ul class="pager">
     <li class="next">
-        <a href="#">Older Posts &rarr;</a>
+        <a href="#">پست های قدیمی تر &rarr;</a>
     </li>
 </ul>
