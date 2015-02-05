@@ -14,7 +14,7 @@ body {
 p {
     font-size: 18px;
     line-height: 1.4;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -473,8 +473,8 @@ img::-moz-selection {
 }
 
 .divider-vertical {
+    margin: 0 9px 0 10px;
     height: 20px;
-    margin: 0 9px;
     border-right: 1px solid #888;
     border-left: 1px solid #999;
 }

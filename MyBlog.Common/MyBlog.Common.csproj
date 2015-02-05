@@ -51,6 +51,7 @@
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtension.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Extensions\LinqExtension.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\CacheHelper.cs" />
     <Compile Include="Helpers\CryptographyHelper.cs" />

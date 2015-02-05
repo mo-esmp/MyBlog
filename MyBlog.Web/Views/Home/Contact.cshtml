@@ -4,10 +4,14 @@
     ViewBag.Title = "تماس";
 }
 
+@section header {
+    @Styles.Render("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+}
+
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-    <p>برای ارتباط با من میتوانید از فرم زیر استفاده نمایید.</p>
-    <p>Email: info [at] mohsen [dot] es</p>
+    <p><i class="fa fa-envelope-o"></i> info [at] mohsen [dot] es</p>
+    <p><i class="fa fa-send-o"></i> برای ارتباط با من میتوانید از فرم زیر استفاده نمایید.</p>
 
     @if (!ViewData.ModelState.IsValid)
     {
@@ -29,14 +33,14 @@
     {
         @Html.AntiForgeryToken()
         <div class="row control-group">
-            <div class="form-group col-xs-12 floating-label-form-group controls">
+            <div class="form-group col-xs-8 floating-label-form-group controls">
                 @Html.LabelFor(m => m.Name)
                 @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control type-direction", placeholder = "نام" } })
                 @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
             </div>
         </div>
         <div class="row control-group">
-            <div class="form-group col-xs-12 floating-label-form-group controls">
+            <div class="form-group col-xs-8 floating-label-form-group controls">
                 @Html.LabelFor(m => m.Email)
                 @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control left-text", placeholder = "ایمیل" } })
                 @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })

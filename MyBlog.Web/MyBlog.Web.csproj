@@ -210,6 +210,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyBlogWebContext.cs" />
     <Compile Include="Areas\Admin\Models\PostViewModel.cs" />
+    <Compile Include="Models\PostDetailViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

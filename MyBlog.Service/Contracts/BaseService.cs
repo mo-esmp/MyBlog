@@ -1,8 +1,10 @@
-﻿using MyBlog.Data.Contracts;
+﻿using MyBlog.Common.Extensions;
+using MyBlog.Data.Contracts;
 using MyBlog.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -107,6 +109,32 @@ namespace MyBlog.Service.Contracts
             return query;
         }
 
+        /// <summary>
+        /// Gets the items.
+        /// </summary>
+        /// <typeparam name="TKey">The type of the t key.</typeparam>
+        /// <param name="predicate">The predicate.</param>
+        /// <param name="keySelector">The property to sort with.</param>
+        /// <param name="order">The sort direction.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>Task&lt;List&lt;TEntity&gt;&gt;.</returns>
+        public IQueryable<TEntity> GetItems<TKey>(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TKey>> keySelector, SortOrder order, params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            var query = predicate == null ? EntitySet() : EntitySet().Where(predicate);
+            if (includeProperties != null)
+                query = ApplyIncludesOnQuery(query, includeProperties);
+
+            query = query.SortBy(keySelector, order);
+
+            return query;
+        }
+
+        /// <summary>
+        /// Gets the items asynchronous.
+        /// </summary>
+        /// <param name="predicate">The predicate.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>Task&lt;List&lt;TEntity&gt;&gt;.</returns>
         public Task<List<TEntity>> GetItemsAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)
         {
             var query = predicate == null ? EntitySet() : EntitySet().Where(predicate);
@@ -116,26 +144,25 @@ namespace MyBlog.Service.Contracts
             return query.ToListAsync();
         }
 
-        ///// <summary>
-        ///// Gets the items.
-        ///// </summary>
-        ///// <param name="predicate">The predicate.</param>
-        ///// <param name="take">The take.</param>
-        ///// <param name="skip">The skip.</param>
-        ///// <param name="sortOrder">The sort order.</param>
-        ///// <param name="sortColumn">The sort column.</param>
-        ///// <param name="includeProperties">The include properties.</param>
-        ///// <returns>IQueryable{`0}.</returns>
-        //public IQueryable<TEntity> GetItems(Filter predicate, int take, int skip, SortOrder sortOrder, string sortColumn,
-        //    params Expression<Func<TEntity, object>>[] includeProperties)
-        //{
-        //    var query = predicate != null ? EntitySet().FilterData(predicate) : EntitySet();
-        //    if (includeProperties != null)
-        //        query = ApplyIncludesOnQuery(query, includeProperties);
-        //    query = query.SortBy(sortOrder, sortColumn).Skip(skip).Take(take);
+        /// <summary>
+        /// Gets the items asynchronous.
+        /// </summary>
+        /// <typeparam name="TKey">The type of the t key.</typeparam>
+        /// <param name="predicate">The predicate.</param>
+        /// <param name="keySelector">The property to sort with.</param>
+        /// <param name="order">The sort direction.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>Task&lt;List&lt;TEntity&gt;&gt;.</returns>
+        public Task<List<TEntity>> GetItemsAsync<TKey>(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TKey>> keySelector, SortOrder order, params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            var query = predicate == null ? EntitySet() : EntitySet().Where(predicate);
+            if (includeProperties != null)
+                query = ApplyIncludesOnQuery(query, includeProperties);
 
-        //    return query;
-        //}
+            query = query.SortBy(keySelector, order);
+
+            return query.ToListAsync();
+        }
 
         /// <summary>
         /// Gets the item.

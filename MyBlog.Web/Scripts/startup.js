@@ -7,12 +7,12 @@
 // Contact Form Scripts
 
 // Floating label headings for the contact form
-$(function() {
-    $("body").on("input propertychange", ".floating-label-form-group", function(e) {
+$(function () {
+    $("body").on("input propertychange", ".floating-label-form-group", function (e) {
         $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-    }).on("focus", ".floating-label-form-group", function() {
+    }).on("focus", ".floating-label-form-group", function () {
         $(this).addClass("floating-label-form-group-with-focus");
-    }).on("blur", ".floating-label-form-group", function() {
+    }).on("blur", ".floating-label-form-group", function () {
         $(this).removeClass("floating-label-form-group-with-focus");
     });
 
@@ -23,7 +23,7 @@ $(function() {
         var headerHeight = $('.navbar-custom').height();
         $(window).on('scroll', {
             previousTop: 0
-        }, function() {
+        }, function () {
             var currentTop = $(window).scrollTop();
             //check if user is scrolling up
             if (currentTop < this.previousTop) {
@@ -42,6 +42,12 @@ $(function() {
         });
     }
 
+    var windowHeight = $(window).height();
+    var bodyHeight = $('body').height();
+    if (windowHeight > bodyHeight) {
+        $('footer').css({ 'bottom': '0', 'position': 'absolute', 'width': '100%' });
+    }
+
     typeDirection();
     autoSize();
 });
@@ -49,7 +55,7 @@ $(function() {
 function typeDirection() {
     var inputs = $('.type-direction');
     if (inputs.length > 0) {
-        inputs.bind('keyup', function() {
+        inputs.bind('keyup', function () {
             var inputValue = $(this).val();
             if ($.trim(inputValue).length === 0) {
                 $(this).css({ 'direction': 'rtl', 'text-align': 'right' });

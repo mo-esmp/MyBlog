@@ -74,7 +74,6 @@
     <Compile Include="Implementation\MailService.cs" />
     <Compile Include="Implementation\PostService.cs" />
     <Compile Include="Implementation\TagService.cs" />
-    <Compile Include="Model\PostSummaryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

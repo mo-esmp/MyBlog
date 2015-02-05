@@ -3,11 +3,10 @@ using MyBlog.Data;
 using MyBlog.Data.Contracts;
 using MyBlog.Domain;
 using MyBlog.Service.Contracts;
-using MyBlog.Service.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -95,43 +94,17 @@ namespace MyBlog.Service.Implementation
             return posts;
         }
 
-        public IEnumerable<PostSummaryModel> GetPostsSummary(Expression<Func<PostEntity, bool>> predicate = null)
+        public IEnumerable<PostEntity> GetPosts<TKey>(Expression<Func<PostEntity, bool>> predicate,
+            Expression<Func<PostEntity, TKey>> selector, SortOrder sortOrder, params Expression<Func<PostEntity, object>>[] includes)
         {
-            predicate = predicate ?? (p => true);
-            var posts = _dataContext.Posts.Where(predicate).OrderByDescending(p => p.CreateDate).Select(
-                p => new PostSummaryModel
-            {
-                Summary = p.Content.Substring(0, 400),
-                CreateDate = p.CreateDate,
-                Id = p.Id,
-                Slug = p.Slug,
-                Title = p.Title,
-                CommentCount = p.Comments.Count(),
-                Tags = p.Tags
-            });
-
+            var posts = GetItems(predicate, selector, sortOrder, includes);
             return posts;
         }
 
-        #endregion IPostService Members
-
-        #region IPostService Members
-
-        public async Task<IEnumerable<PostSummaryModel>> GetPostsSummaryAsync(Expression<Func<PostEntity, bool>> predicate = null)
+        public async Task<IEnumerable<PostEntity>> GetPostsAsync<TKey>(Expression<Func<PostEntity, bool>> predicate,
+          Expression<Func<PostEntity, TKey>> selector, SortOrder sortOrder, params Expression<Func<PostEntity, object>>[] includes)
         {
-            predicate = predicate ?? (p => true);
-            var posts = await _dataContext.Posts.Where(predicate).OrderByDescending(p => p.CreateDate).Select(
-                p => new PostSummaryModel
-                {
-                    Summary = p.Content.Substring(0, 400),
-                    CreateDate = p.CreateDate,
-                    Id = p.Id,
-                    Slug = p.Slug,
-                    Title = p.Title,
-                    CommentCount = p.Comments.Count(),
-                    Tags = p.Tags
-                }).ToListAsync();
-
+            var posts = await GetItemsAsync(predicate, selector, sortOrder, includes);
             return posts;
         }
 

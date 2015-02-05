@@ -2,7 +2,7 @@
 using MyBlog.Service.Contracts;
 using MyBlog.Web.Models;
 using System;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -31,13 +31,10 @@ namespace MyBlog.Web.Controllers
         // GET: Home
         public async Task<ActionResult> Index()
         {
-            var posts = await _postService.Value.GetPostsSummaryAsync(p => p.IsEnabled);
-            var tags = await _tagService.Value.GetTagsAsync();
-
             var homeViewModel = new HomeViewModel
             {
-                Posts = posts.OrderByDescending(p => p.CreateDate),
-                Tags = tags
+                Posts = await _postService.Value.GetPostsAsync(p => p.IsEnabled, p => p.CreateDate, SortOrder.Descending, p => p.Tags),
+                Tags = await _tagService.Value.GetTagsAsync()
             };
 
             return View(homeViewModel);

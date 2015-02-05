@@ -1,6 +1,10 @@
 ﻿using MyBlog.Service.Contracts;
+using MyBlog.Web.Models;
+using System;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace MyBlog.Web.Controllers
@@ -8,12 +12,15 @@ namespace MyBlog.Web.Controllers
     public class PostController : Controller
     {
         private readonly IPostService _postService;
+        private readonly Lazy<ITagService> _tagService;
 
-        public PostController(IPostService postService)
+        public PostController(IPostService postService, Lazy<ITagService> tagService)
         {
             _postService = postService;
+            _tagService = tagService;
         }
 
+        // GET: Post/PostDetail
         public ActionResult PostDetail(int id, string slug)
         {
             var post = _postService.GetPost(p => p.IsEnabled && p.Id == id && p.Slug == slug);
@@ -23,13 +30,20 @@ namespace MyBlog.Web.Controllers
             return View(post);
         }
 
-        public ActionResult PostsByTag(string slug)
+        // GET: Post/PostsByTag
+        public async Task<ActionResult> PostsByTag(string slug)
         {
             if (string.IsNullOrEmpty(slug))
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var posts = _postService.GetPostsSummary(p => p.Tags.Any(t => t.Slug == slug));
-            return View("~/Views/Home/Index.cshtml", posts);
+            var posts = _postService.GetPosts(p => p.IsEnabled && p.Tags.Any(t => t.Slug == slug));
+
+            var homeViewModel = new HomeViewModel
+            {
+                Posts = await _postService.GetPostsAsync(p => p.IsEnabled && p.Tags.Any(t => t.Slug == slug), p => p.CreateDate, SortOrder.Descending, p => p.Tags),
+                Tags = await _tagService.Value.GetTagsAsync()
+            };
+            return View("~/Views/Home/Index.cshtml", homeViewModel);
         }
     }
 }

@@ -16,11 +16,10 @@ namespace MyBlog.Domain
         [Display(Name = "CreateDate", ResourceType = typeof(NameAndMessage))]
         public DateTime CreateDate { get; set; }
 
-        [DataType(DataType.EmailAddress)]
         [Display(Name = "Email", ResourceType = typeof(NameAndMessage))]
         [StringLength(100, ErrorMessageResourceName = "MaxLengthError", ErrorMessageResourceType = typeof(NameAndMessage))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(NameAndMessage))]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(NameAndMessage))]
+        [EmailAddress(ErrorMessage = null, ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(NameAndMessage))]
         public string Email { get; set; }
 
         [DataType(DataType.MultilineText)]
