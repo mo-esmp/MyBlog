@@ -5,8 +5,10 @@ using MyBlog.Domain;
 using MyBlog.Service.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace MyBlog.Service.Implementation
 {
@@ -61,6 +63,12 @@ namespace MyBlog.Service.Implementation
         public IEnumerable<TagEntity> GetTags(Expression<Func<TagEntity, bool>> predicate = null)
         {
             var tags = GetItems(predicate);
+            return tags;
+        }
+
+        public async Task<IEnumerable<TagEntity>> GetTagsAsync(Expression<Func<TagEntity, bool>> predicate = null)
+        {
+            var tags = await GetItems(predicate).ToListAsync();
             return tags;
         }
 

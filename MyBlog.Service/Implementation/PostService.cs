@@ -7,8 +7,10 @@ using MyBlog.Service.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace MyBlog.Service.Implementation
 {
@@ -107,6 +109,28 @@ namespace MyBlog.Service.Implementation
                 CommentCount = p.Comments.Count(),
                 Tags = p.Tags
             });
+
+            return posts;
+        }
+
+        #endregion IPostService Members
+
+        #region IPostService Members
+
+        public async Task<IEnumerable<PostSummaryModel>> GetPostsSummaryAsync(Expression<Func<PostEntity, bool>> predicate = null)
+        {
+            predicate = predicate ?? (p => true);
+            var posts = await _dataContext.Posts.Where(predicate).OrderByDescending(p => p.CreateDate).Select(
+                p => new PostSummaryModel
+                {
+                    Summary = p.Content.Substring(0, 400),
+                    CreateDate = p.CreateDate,
+                    Id = p.Id,
+                    Slug = p.Slug,
+                    Title = p.Title,
+                    CommentCount = p.Comments.Count(),
+                    Tags = p.Tags
+                }).ToListAsync();
 
             return posts;
         }

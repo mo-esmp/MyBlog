@@ -18,8 +18,7 @@
 
 @font-face {
     font-family: 'segoe ui light';
-    src: url('//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.eot');
-    src: local("Segoe UI Light"),local("Segoe WP Light"),url('//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.eot?#iefix') format('embedded-opentype'),url('//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.woff') format('woff'),url('//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.ttf') format('truetype'),url('//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.svg#web') format('svg');
+    src: local("Segoe UI Light");
     font-weight: normal;
     font-style: normal;
 }

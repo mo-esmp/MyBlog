@@ -206,6 +206,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyBlogWebContext.cs" />
     <Compile Include="Areas\Admin\Models\PostViewModel.cs" />
@@ -747,6 +748,7 @@
     <Content Include="Content\fonts\irsans.svg" />
     <Content Include="Content\fonts\WebYekan.svg" />
     <Content Include="Content\images\home-bg.jpg" />
+    <Content Include="Content\font-fix.css" />
     <Content Include="Content\prism.css" />
     <Content Include="Content\SyntaxHighlighter\shCore.css" />
     <Content Include="Content\SyntaxHighlighter\shThemedefault.css" />
@@ -894,7 +896,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery.validate.uifix.js" />
     <Content Include="Views\MailService\Contact.cshtml" />
     <Content Include="Views\MailService\_Layout.cshtml" />

@@ -3,25 +3,28 @@
     ViewBag.Title = Model.Title;
 }
 @section header {
-    @Styles.Render("~/content/syntaxhighlighter")
+    @*@Styles.Render("~/content/syntaxhighlighter")*@
     @Styles.Render("~/content/prism.css")
 }
 
-<h2>@Model.Title</h2>
+<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-@Html.Raw(Model.Content)
+    <h2>@Model.Title</h2>
 
-<p class="post-meta">
-    <a><i class="glyphicon glyphicon-calendar"></i></a>&nbsp;<span class="date">@Model.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits()</span> <span class="divider-vertical"></span>
-    <a> <i class="glyphicon glyphicon-tag"></i></a>&nbsp;
-    <span dir="ltr">@Model.Tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag.Name)).TrimStart(',')</span>
-</p>
+    @Html.Raw(Model.Content)
+
+    <p class="post-meta">
+        <a><i class="glyphicon glyphicon-calendar"></i></a>&nbsp;<span class="date">@Model.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits()</span> <span class="divider-vertical"></span>
+        <a> <i class="glyphicon glyphicon-tag"></i></a>&nbsp;
+        <span dir="ltr">@Model.Tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag.Name)).TrimStart(',')</span>
+    </p>
+</div>
 
 @section scripts
 {
-    @Scripts.Render("~/bundles/syntaxhighlighter")
+    @*@Scripts.Render("~/bundles/syntaxhighlighter")*@
     @Scripts.Render("~/scripts/prism.js")
-    <script>
-        SyntaxHighlighter.all();
-    </script>
+    @*<script>
+            SyntaxHighlighter.all();
+        </script>*@
 }

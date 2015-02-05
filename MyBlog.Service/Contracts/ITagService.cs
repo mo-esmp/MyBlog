@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace MyBlog.Service.Contracts
 {
@@ -54,6 +55,13 @@ namespace MyBlog.Service.Contracts
         /// <param name="predicate">The predicate.</param>
         /// <returns>IEnumerable&lt;TagEntity&gt;.</returns>
         IEnumerable<TagEntity> GetTags(Expression<Func<TagEntity, bool>> predicate = null);
+
+        /// <summary>
+        /// Gets the tags asynchronous.
+        /// </summary>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>Task&lt;IEnumerable&lt;TagEntity&gt;&gt;.</returns>
+        Task<IEnumerable<TagEntity>> GetTagsAsync(Expression<Func<TagEntity, bool>> predicate = null);
 
         /// <summary>
         /// Gets the tags.

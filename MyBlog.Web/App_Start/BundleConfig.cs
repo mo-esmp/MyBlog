@@ -45,8 +45,9 @@ namespace MyBlog.Web
                       "~/Scripts/syntaxhighlighter/shBrushXml.js"));
 
             bundles.Add(new StyleBundle("~/content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap-rtl.css",
+                      "~/Content/Site.css",
+                      "~/Content/font.css"));
 
             bundles.Add(new StyleBundle("~/content/admincss").Include(
                       "~/content/admin/bootstrap.css",

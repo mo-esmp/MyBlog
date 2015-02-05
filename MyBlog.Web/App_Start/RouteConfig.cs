@@ -25,6 +25,20 @@ namespace MyBlog.Web
             );
 
             routes.MapRoute(
+                name: "Contact",
+                url: "contact",
+                defaults: new { controller = "Home", action = "Contact" },
+                namespaces: new[] { "MyBlog.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "About",
+                url: "about",
+                defaults: new { controller = "Home", action = "About" },
+                namespaces: new[] { "MyBlog.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

@@ -1,5 +1,6 @@
 ﻿using MyBlog.Domain;
 using MyBlog.Service.Contracts;
+using MyBlog.Web.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,26 +13,41 @@ namespace MyBlog.Web.Controllers
         private readonly Lazy<IContactMessageService> _contactMessageService;
         private readonly Lazy<IMailService> _mailService;
         private readonly Lazy<IPostService> _postService;
+        private readonly Lazy<ITagService> _tagService;
+
+        public HomeController()
+        {
+        }
 
         public HomeController(Lazy<IContactMessageService> contactMessageService, Lazy<IMailService> mailService,
-            Lazy<IPostService> postService)
+            Lazy<IPostService> postService, Lazy<ITagService> tagService)
         {
             _contactMessageService = contactMessageService;
             _mailService = mailService;
             _postService = postService;
+            _tagService = tagService;
         }
 
         // GET: Home
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var posts = _postService.Value.GetPostsSummary(p => p.IsEnabled).OrderByDescending(p => p.CreateDate);
-            return View(posts);
+            var posts = await _postService.Value.GetPostsSummaryAsync(p => p.IsEnabled);
+            var tags = await _tagService.Value.GetTagsAsync();
+
+            var homeViewModel = new HomeViewModel
+            {
+                Posts = posts.OrderByDescending(p => p.CreateDate),
+                Tags = tags
+            };
+
+            return View(homeViewModel);
         }
 
         // GET: Home/About
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Length = Request.UserAgent.Length;
+            ViewBag.UserAgent = Request.UserAgent.IndexOf("Windows NT 6.3", StringComparison.InvariantCultureIgnoreCase);
 
             return View();
         }

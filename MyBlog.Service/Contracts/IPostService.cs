@@ -3,6 +3,7 @@ using MyBlog.Service.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace MyBlog.Service.Contracts
 {
@@ -54,6 +55,18 @@ namespace MyBlog.Service.Contracts
         /// <returns>IEnumerable&lt;PostEntity&gt;.</returns>
         IEnumerable<PostEntity> GetPosts(Expression<Func<PostEntity, bool>> predicate = null, params Expression<Func<PostEntity, object>>[] includes);
 
+        /// <summary>
+        /// Gets the posts summary.
+        /// </summary>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>IEnumerable&lt;PostSummaryModel&gt;.</returns>
         IEnumerable<PostSummaryModel> GetPostsSummary(Expression<Func<PostEntity, bool>> predicate = null);
+
+        /// <summary>
+        /// Gets the posts summary asynchronous.
+        /// </summary>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>Task&lt;IEnumerable&lt;PostSummaryModel&gt;&gt;.</returns>
+        Task<IEnumerable<PostSummaryModel>> GetPostsSummaryAsync(Expression<Func<PostEntity, bool>> predicate = null);
     }
 }

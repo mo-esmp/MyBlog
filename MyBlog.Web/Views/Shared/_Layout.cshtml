@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Content/font.css" rel="stylesheet" />
+    <title>@ViewBag.Title - بلاگ من</title>
+
+    @Styles.Render("~/content/css")
+    @if (!string.IsNullOrWhiteSpace(Session["OsSpecificCss"].ToString()))
+    { @Styles.Render(Session["OsSpecificCss"].ToString()) }
     @RenderSection("header", false)
 
     <!--[if lt IE 9]>
@@ -58,9 +59,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                @RenderBody()
-            </div>
+            @RenderBody()
         </div>
     </div>
 

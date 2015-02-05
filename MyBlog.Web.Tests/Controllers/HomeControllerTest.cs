@@ -11,10 +11,10 @@ namespace MyBlog.Web.Tests.Controllers
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController(null, null, null);
+            var controller = new HomeController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            var result = controller.Index().Result as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -24,10 +24,10 @@ namespace MyBlog.Web.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController(null, null, null);
+            var controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            var result = controller.About() as ViewResult;
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
@@ -37,10 +37,10 @@ namespace MyBlog.Web.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController(null, null, null);
+            var controller = new HomeController(null, null, null, null);
 
             // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            var result = controller.Contact() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
