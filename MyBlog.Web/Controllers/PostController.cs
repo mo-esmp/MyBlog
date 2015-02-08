@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace MyBlog.Web.Controllers
 {
+    [OutputCache(VaryByParam = "*", Duration = 60, Location = OutputCacheLocation.Client)]
     public class PostController : Controller
     {
         private readonly IPostService _postService;

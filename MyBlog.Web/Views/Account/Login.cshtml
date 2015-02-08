@@ -4,6 +4,10 @@
     ViewBag.Title = "Log in";
 }
 
+@section header {
+    @Html.GenerateMetaTag("", "", false, false)
+}
+
 <div class="col-lg-6 col-lg-offset-1 col-md-7 col-md-offset-0">
     <section id="loginForm">
         @Html.ValidationSummary()

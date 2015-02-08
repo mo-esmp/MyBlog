@@ -1,6 +1,12 @@
 ﻿@model MyBlog.Web.Models.HomeViewModel
 @using MyBlog.Common.Extensions;
 
+@section header{
+    @Html.GenerateMetaTag(
+        "محسن اسماعیل پور, Mohsen Esmailpour, بلاگ من, .net, c#, asp.net mvc, entity framework, javascript, jquery, web api",
+                "I'm newbie software developer with a particular interest in web technologies and creating web application with Microsoft technologies.",
+        true, true, "محسن اسماعیل پور (http://www.mohsen.es)")
+}
 @{
     ViewBag.Title = "صفحه اصلی";
 }

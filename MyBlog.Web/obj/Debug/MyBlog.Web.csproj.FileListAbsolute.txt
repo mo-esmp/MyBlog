@@ -80,6 +80,8 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Autofac.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Autofac.Integration.Mvc.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Autofac.Integration.Mvc.Owin.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Autofac.Integration.Owin.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Elmah.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Elmah.Mvc.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\EntityFramework.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\EntityFramework.SqlServer.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.AspNet.Identity.Core.dll
@@ -95,12 +97,14 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.Micros
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.OAuth.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.Twitter.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Mvc.Mailer.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Common.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Data.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Domain.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Service.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Newtonsoft.Json.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Owin.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\RazorGenerator.Mvc.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Net.Http.Formatting.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Web.Helpers.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Web.Http.dll
@@ -111,6 +115,7 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Web.Razor.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Web.WebPages.Deployment.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Web.WebPages.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\System.Web.WebPages.Razor.dll
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\WebActivatorEx.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\WebGrease.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Common.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Data.pdb
@@ -148,6 +153,3 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.Twitte
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.pdb
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Mvc.Mailer.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Elmah.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Elmah.Mvc.dll

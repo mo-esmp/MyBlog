@@ -1,4 +1,5 @@
-﻿using MyBlog.Domain;
+﻿using System.Web.UI;
+using MyBlog.Domain;
 using MyBlog.Service.Contracts;
 using MyBlog.Web.Models;
 using System;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MyBlog.Web.Controllers
 {
+    [OutputCache(VaryByParam = "*", Duration = 60, Location = OutputCacheLocation.Client)]
     public class HomeController : Controller
     {
         private readonly Lazy<IContactMessageService> _contactMessageService;

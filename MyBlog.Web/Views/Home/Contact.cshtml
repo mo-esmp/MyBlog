@@ -1,11 +1,16 @@
 ﻿@model MyBlog.Domain.ContactMessageEntity
 
-@{
-    ViewBag.Title = "تماس";
+@section header {
+    @Html.GenerateMetaTag(
+        "محسن اسماعیل پور, Mohsen Esmailpour, بلاگ من, .net, c#, asp.net mvc, entity framework, javascript, jquery, web api",
+                "I'm newbie software developer with a particular interest in web technologies and creating web application with Microsoft technologies.",
+        true, true, "محسن اسماعیل پور (http://www.mohsen.es)")
+    @Styles.Render("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+    @Styles.Render("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 }
 
-@section header {
-    @Styles.Render("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+@{
+    ViewBag.Title = "تماس";
 }
 
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
