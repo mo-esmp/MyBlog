@@ -3,8 +3,16 @@
     ViewBag.Title = Model.Title;
 }
 @section header {
+    @Html.GenerateMetaTag(
+        keyword: Model.Tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag.Name)).TrimStart(','),
+        description: Model.Title,
+        allowIndexPage: true,
+        allowFollowLinks: true,
+        author: "محسن اسماعیل پور",
+        cacheControlType: HtmlExtensions.CacheControlType.Private)
     @*@Styles.Render("~/content/syntaxhighlighter")*@
     @Styles.Render("~/content/prism.css")
+
 }
 
 <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -16,7 +24,12 @@
     <p class="post-meta">
         <a><i class="glyphicon glyphicon-calendar"></i></a>&nbsp;<span class="date">@Model.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits()</span> <span class="divider-vertical"></span>
         <a> <i class="glyphicon glyphicon-tag"></i></a>&nbsp;
-        <span dir="ltr">@Model.Tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag.Name)).TrimStart(',')</span>
+        <span>
+            @foreach (var tag in Model.Tags)
+            {
+                <a href="@Url.Action("PostsByTag", "Post", new { slug = tag.Slug })">@tag.Name</a><text>&nbsp;</text>
+            }
+        </span>
     </p>
     <hr />
 

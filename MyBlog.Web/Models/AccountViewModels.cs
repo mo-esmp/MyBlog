@@ -48,17 +48,19 @@ namespace MyBlog.Web.Models
 
     public class LoginViewModel
     {
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [DataType(DataType.Text)]
+        [Display(Name = "نام کاربری")]
+        [Required(ErrorMessage = "نام کاربری را وارد نمایید")]
+        [StringLength(50, ErrorMessage = "حداکثر طول {0} باید {1} کاراکتر باشد.")]
+        public string UserName { get; set; }
 
-        [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "رمز عبور")]
+        [Required(ErrorMessage = "رمز عبور را وارد نمایید")]
+        [StringLength(50, ErrorMessage = "حداکثر طول {0} باید {1} کاراکتر باشد.")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "مرا به خاطر بسپار")]
         public bool RememberMe { get; set; }
     }
 

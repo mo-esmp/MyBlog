@@ -47,7 +47,8 @@ namespace MyBlog.Web
             bundles.Add(new StyleBundle("~/content/css").Include(
                       "~/Content/bootstrap-rtl.css",
                       "~/Content/Site.css",
-                      "~/Content/font.css"));
+                      "~/Content/font.css",
+                      "~/Content/pace.css"));
 
             bundles.Add(new StyleBundle("~/content/admincss").Include(
                       "~/content/admin/bootstrap.css",

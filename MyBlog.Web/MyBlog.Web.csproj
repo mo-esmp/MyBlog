@@ -750,6 +750,7 @@
     <Content Include="Content\fonts\WebYekan.svg" />
     <Content Include="Content\images\home-bg.jpg" />
     <Content Include="Content\font-fix.css" />
+    <Content Include="Content\pace.css" />
     <Content Include="Content\prism.css" />
     <Content Include="Content\SyntaxHighlighter\shCore.css" />
     <Content Include="Content\SyntaxHighlighter\shThemedefault.css" />
@@ -850,6 +851,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\pace.min.js" />
     <Content Include="Scripts\prism.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />

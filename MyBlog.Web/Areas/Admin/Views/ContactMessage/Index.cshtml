@@ -33,15 +33,15 @@
                     </div>
                 </div>
                 @*<div class="col-sm-6 search-form">
-                    <form action="#" class="text-left">
-                        <div class="input-group">
-                            <input type="text" class="form-control input-sm" placeholder="جستجو">
-                            <div class="input-group-btn">
-                                <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                        <form action="#" class="text-left">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm" placeholder="جستجو">
+                                <div class="input-group-btn">
+                                    <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>*@
+                        </form>
+                    </div>*@
             </div>
             <div class="table-responsive">
                 <table class="table table-mailbox">
@@ -62,7 +62,7 @@
                                 <td class="small-col"><input type="checkbox" class="delete-box" data-id="@message.Id" value="@message.Id" /></td>
                                 <td class="name">@message.Name</td>
                                 <td class="name">@message.Email</td>
-                                <td class="subject"><a href="@Url.Action("Detail", new {id = message.Id})">@Html.TurncateString(message.Message, 50)</a></td>
+                                <td class="subject"><a href="@Url.Action("Detail", new {id = message.Id})">@message.Message.Truncate(50)</a></td>
                                 <td class="time">@message.CreateDate.TimeAgo()</td>
                             </tr>
                         }

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "administrator")]
+    [Authorize]
     public class BaseController : Controller
     {
         private readonly IContactMessageService _contactMessageService;

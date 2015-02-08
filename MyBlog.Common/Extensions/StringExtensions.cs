@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,7 +7,12 @@ namespace MyBlog.Common.Extensions
 {
     public static class StringExtensions
     {
-        public static bool HasRtlCharacter(this String text)
+        /// <summary>
+        /// Determines whether string has has RTL character.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns><c>true</c> if [has RTL character] [the specified text]; otherwise, <c>false</c>.</returns>
+        public static bool HasRtlCharacter(this string text)
         {
             if (string.IsNullOrWhiteSpace(text))
                 return false;
@@ -17,6 +21,11 @@ namespace MyBlog.Common.Extensions
             return chars.Any(c => c >= 0x600 && c <= 0x6ff);
         }
 
+        /// <summary>
+        /// Convert to the persian digits.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>System.String.</returns>
         public static string ToPersianDigits(this string text)
         {
             if (string.IsNullOrWhiteSpace(text))

@@ -25,7 +25,7 @@ namespace MyBlog.Web
 
             HttpContext.Current.Session["OsSpecificCss"] = HttpContext.Current.Request.UserAgent.IndexOf("Windows NT 6.3", StringComparison.InvariantCultureIgnoreCase) > -1
                 ? HttpContext.Current.Session["OsSpecificCss"] = ""
-                : HttpContext.Current.Session["OsSpecificCss"] = "~/content/os-fix.css";
+                : HttpContext.Current.Session["OsSpecificCss"] = "~/content/font-fix.css";
         }
     }
 }
