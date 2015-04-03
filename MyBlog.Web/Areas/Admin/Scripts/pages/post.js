@@ -35,6 +35,4 @@ function initializeTagsInput(tagsToAdd) {
     });
 
     $('.bootstrap-tagsinput').addClass('left-text form-control').css({ 'border-radius': '0', 'width': '100%;' });
-
-    ;
 }
