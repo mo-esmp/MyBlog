@@ -280,6 +280,11 @@
     <Compile Include="Models\PostDetailViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\Account\ChangePassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePassword.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Account\ConfirmEmail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1093,6 +1098,7 @@
     <Content Include="Content\fonts\irsans.otf" />
     <Content Include="Content\fonts\irsans.ttf" />
     <Content Include="Content\fonts\irsans.woff" />
+    <None Include="Properties\PublishProfiles\MyBlog.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.min.js" />
@@ -1255,7 +1261,10 @@
       <LastGenOutput>PostDetail.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\MailService\Account.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ChangePassword.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -310,19 +310,9 @@ WriteLiteral("        <hr />\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <!-- Pager -->\r\n    <ul");
+WriteLiteral("\r\n    <!-- Pager -->\r\n    ");
 
-WriteLiteral(" class=\"pager\"");
-
-WriteLiteral(">\r\n        <li");
-
-WriteLiteral(" class=\"next\"");
-
-WriteLiteral(">\r\n            <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">پست های قدیمی تر &rarr;</a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n\r\n");
+WriteLiteral("\r\n</div>\r\n\r\n");
 
 DefineSection("scripts", () => {
 
