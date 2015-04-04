@@ -2,43 +2,34 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\controllers\homecontroller.cs</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Scripts\pages\post.js</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\controllers\postcontroller.cs</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\HomeController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\shared\_layout.cshtml</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\Site.css</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\home\index.cshtml</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\bootstrap.css</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\home\about.cshtml</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\font.css</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\home\contact.cshtml</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\AccountController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Account\Login.cshtml</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\App_Start\IdentityConfig.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\account\forgotpassword.cshtml</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Startup.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\account\resetpassword.cshtml</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Account\ForgotPassword.cshtml</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\manage\changepassword.cshtml</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\manage\managelogins.cshtml</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\manage\setpassword.cshtml</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\Contracts\BaseService.cs</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Web.config</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

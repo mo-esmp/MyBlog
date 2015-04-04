@@ -48,7 +48,16 @@ WriteLiteral(">\r\n<head>\r\n    <meta");
 
 WriteLiteral(" charset=\"UTF-8\"");
 
-WriteLiteral(">\r\n    <title></title>\r\n</head>\r\n<body");
+WriteLiteral(">\r\n    <title>");
+
+            
+            #line 5 "..\..\Views\MailService\_Layout.cshtml"
+      Write(ViewBag.Title);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</title>\r\n</head>\r\n<body");
 
 WriteLiteral(" dir=\"rtl\"");
 

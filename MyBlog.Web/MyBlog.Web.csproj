@@ -1119,7 +1119,9 @@
     <Content Include="Scripts\SyntaxHighlighter\shBrushXml.js" />
     <Content Include="Scripts\SyntaxHighlighter\shCore.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1252,6 +1254,8 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>PostDetail.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\MailService\Account.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

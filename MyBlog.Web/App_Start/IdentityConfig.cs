@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MyBlog.Data;
 using MyBlog.Domain;
+using MyBlog.Service.Contracts;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -13,10 +14,20 @@ namespace MyBlog.Web
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        private readonly IMailService _mailService;
+
+        public EmailService()
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+        }
+
+        public EmailService(IMailService mailService)
+        {
+            _mailService = mailService;
+        }
+
+        public async Task SendAsync(IdentityMessage message)
+        {
+            await _mailService.AccountMail(message.Destination, message.Subject, message.Body).SendAsync();
         }
     }
 
