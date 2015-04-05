@@ -21,14 +21,10 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Data.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Data.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.SqlServer.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Domain.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\MyBlog.Domain.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\EntityFramework.SqlServer.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.csprojResolveAssemblyReference.cache
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.Migrations.IntialMigration.resources
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\obj\Debug\MyBlog.Data.csproj.GenerateResource.Cache

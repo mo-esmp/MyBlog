@@ -4,27 +4,16 @@ C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\EntityFramework.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Mvc.Mailer.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Common.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Data.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Mvc.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.dll
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Deployment.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Common.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Data.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.pdb
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\EntityFramework.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Mvc.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.csprojResolveAssemblyReference.cache
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb

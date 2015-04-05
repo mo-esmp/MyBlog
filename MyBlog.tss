@@ -2,34 +2,13 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Scripts\pages\post.js</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\HomeController.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\Site.css</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\bootstrap.css</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\font.css</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\AccountController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\App_Start\IdentityConfig.cs</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\App_Start\BundleConfig.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Startup.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Account\ForgotPassword.cshtml</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Web.config</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Shared\_Layout.cshtml</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

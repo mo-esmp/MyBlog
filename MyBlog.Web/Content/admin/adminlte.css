@@ -11,16 +11,16 @@
 
 @font-face {
     font-family: 'NasimBold';
-    src: url('../fonts/bbc-nassim-bold.eot');
-    src: url('../fonts/bbc-nassim-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/bbc-nassim-bold.woff') format('woff'), url('../fonts/bbc-nassim-bold.ttf') format('truetype'), url('../fonts/bbc-nassim-bold.svg#bbc-nassim-bold') format('svg');
+    src: url('../../content/fonts/bbc-nassim-bold.eot');
+    src: url('../../content/fonts/bbc-nassim-bold.eot?#iefix') format('embedded-opentype'), url('../../content/fonts/bbc-nassim-bold.woff') format('woff'), url('../../content/fonts/bbc-nassim-bold.ttf') format('truetype'), url('../../content/fonts/bbc-nassim-bold.svg#bbc-nassim-bold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Yekan';
-    src: url('../fonts/WebYekan.eot');
-    src: url('../fonts/WebYekan.eot?#iefix') format('embedded-opentype'), url('../fonts/WebYekan.woff') format('woff'), url('../fonts/WebYekan.ttf') format('truetype'), url('../fonts/WebYekan.svg#WebYekan') format('svg');
+    src: url('../../content/fonts/WebYekan.eot');
+    src: url('../../content/fonts/WebYekan.eot?#iefix') format('embedded-opentype'), url('../../content/fonts/WebYekan.woff') format('woff'), url('../../content/fonts/WebYekan.ttf') format('truetype'), url('../../content/fonts/WebYekan.svg#WebYekan') format('svg');
     font-weight: normal;
     font-style: normal;
 }

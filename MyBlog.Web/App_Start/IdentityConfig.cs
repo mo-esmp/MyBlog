@@ -40,6 +40,20 @@ namespace MyBlog.Web
         }
     }
 
+    // Configure the application role manager which is used in this application.
+    public class ApplicationRoleManager : RoleManager<Role>
+    {
+        public ApplicationRoleManager(IRoleStore<Role, string> store)
+            : base(store)
+        {
+        }
+
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
+        {
+            return new ApplicationRoleManager(new RoleStore<Role>(context.Get<DataContext>()));
+        }
+    }
+
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<User>
     {

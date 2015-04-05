@@ -109,7 +109,6 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\System.Web.WebPage
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Domain.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Data.pdb
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\EntityFramework.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\MyBlog.Common.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml

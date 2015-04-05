@@ -13,6 +13,7 @@ namespace MyBlog.Web.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationRoleManager _roleManager;
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -20,10 +21,17 @@ namespace MyBlog.Web.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationRoleManager roleManager, ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
+            RoleManager = roleManager;
             UserManager = userManager;
             SignInManager = signInManager;
+        }
+
+        public ApplicationRoleManager RoleManager
+        {
+            get { return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>(); }
+            private set { _roleManager = value; }
         }
 
         public ApplicationUserManager UserManager

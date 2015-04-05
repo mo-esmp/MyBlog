@@ -348,33 +348,23 @@ Write(Scripts.Render("~/bundles/jquery"));
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3571), Tuple.Create("\"", 3603)
-, Tuple.Create(Tuple.Create("", 3577), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/bootstrap-rtl.js")
-, 3577), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3627), Tuple.Create("\"", 3653)
-, Tuple.Create(Tuple.Create("", 3633), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/respond.js")
-, 3633), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3677), Tuple.Create("\"", 3703)
-, Tuple.Create(Tuple.Create("", 3683), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/startup.js")
-, 3683), false)
-);
-
-WriteLiteral("></script>\r\n");
+WriteLiteral("\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 86 "..\..\Views\Shared\_Layout.cshtml"
+            #line 83 "..\..\Views\Shared\_Layout.cshtml"
+Write(Scripts.Render("~/bundles/js"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 84 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

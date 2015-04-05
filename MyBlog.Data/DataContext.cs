@@ -2,7 +2,6 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using MyBlog.Data.Contracts;
 using MyBlog.Data.Mapping;
-using MyBlog.Data.Migrations;
 using MyBlog.Domain;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,15 +18,15 @@ namespace MyBlog.Data
     {
         #region ctor
 
-        static DataContext()
-        {
-            //Database.SetInitializer(new CreateDatabaseIfNotExists<DataContext>());
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
-        }
-
         public DataContext()
             : base("Name=DataConnection")
         { }
+
+        static DataContext()
+        {
+            Database.SetInitializer<DataContext>(null);
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
+        }
 
         #endregion ctor
 
@@ -150,6 +149,7 @@ namespace MyBlog.Data
             modelBuilder.Configurations.Add(new TagMap());
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             base.OnModelCreating(modelBuilder);
         }
     }

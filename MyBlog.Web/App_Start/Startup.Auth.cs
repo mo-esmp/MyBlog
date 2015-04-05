@@ -18,6 +18,7 @@ namespace MyBlog.Web
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(() => (DataContext)DependencyResolver.Current.GetService<IQueryableContext>());
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 

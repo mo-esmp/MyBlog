@@ -12,7 +12,7 @@
     <WebStackScaffolding_DbContextDialogWidth>600</WebStackScaffolding_DbContextDialogWidth>
     <WebStackScaffolding_DbContextTypeFullName>MyBlog.Web.Models.MyBlogWebContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <NameOfLastUsedPublishProfile>MyBlog</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
