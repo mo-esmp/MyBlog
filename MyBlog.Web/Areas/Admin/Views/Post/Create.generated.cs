@@ -360,7 +360,7 @@ WriteLiteral("    ");
 
             
             #line 74 "..\..\Areas\Admin\Views\Post\Create.cshtml"
-Write(Scripts.Render("~/bundles/tagsinput"));
+Write(Scripts.Render("~/Scripts/bootstrap-tagsinput.js"));
 
             
             #line default
@@ -371,12 +371,24 @@ WriteLiteral("    ");
 
             
             #line 75 "..\..\Areas\Admin\Views\Post\Create.cshtml"
-Write(Scripts.Render("~/Areas/Admin/Scripts/pages/post.js"));
+Write(Scripts.Render("~/Scripts/bootstrap.typeahead.bundle.js"));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 76 "..\..\Areas\Admin\Views\Post\Create.cshtml"
+Write(Scripts.Render("~/Areas/Admin/Scripts/pages/post.js"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    <script>\r\n        $(function() {\r\n            initializePage(false);\r\n     " +
+"   });\r\n        \r\n    </script>\r\n");
 
 });
 

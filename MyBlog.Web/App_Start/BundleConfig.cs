@@ -49,6 +49,9 @@ namespace MyBlog.Web
                       "~/Scripts/syntaxhighlighter/shBrushSql.js",
                       "~/Scripts/syntaxhighlighter/shBrushXml.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
+                "~/Areas/Admin/Scripts/ckeditor/ckeditor.js"));
+
             bundles.Add(new StyleBundle("~/content/css").Include(
                       "~/Content/bootstrap-rtl.css",
                       "~/Content/Site.css",

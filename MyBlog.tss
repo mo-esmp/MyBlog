@@ -2,13 +2,31 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\AccountController.cs</string>
+      <string>d:\learning\projects\github\myblog\myblog.web\controllers\accountcontroller.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\App_Start\BundleConfig.cs</string>
+      <string>d:\learning\projects\github\myblog\myblog.web\app_start\bundleconfig.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Shared\_Layout.cshtml</string>
+      <string>d:\learning\projects\github\myblog\myblog.web\views\shared\_layout.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Scripts\pages\post.js</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\learning\projects\github\myblog\myblog.web\areas\admin\views\post\create.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\learning\projects\github\myblog\myblog.web\areas\admin\views\post\edit.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\learning\projects\github\myblog\myblog.web\areas\admin\controllers\postcontroller.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\learning\projects\github\myblog\myblog.web\content\admin\adminlte.css</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\learning\projects\github\myblog\myblog.web\scripts\jquery.validate.uifix.js</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

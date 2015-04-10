@@ -10,10 +10,11 @@ function validateEditor(id, triggerValidation) {
     //CKEDITOR.instances.Description.updateElement();
     var content = CKEDITOR.instances[id].getData().replace(/(<([^>]+)>)/ig, '');
     content = content.replace(/&nbsp;/gi, '');
-    var editorArea = $('#cke_' + id);
+
     //var errorSpan = $('#descriptionError');
 
     if ($.trim(content).length === 0) {
+        var editorArea = $('#cke_' + id);
         $(editorArea).parent('div.input-control').removeClass('success').addClass('error-state');
         //$(errorSpan).addClass('field-validation-error').removeClass('field-validation-valid')
         //.css('display', 'inline-block').html('<span for="Description" class="">Description has required.</span>');

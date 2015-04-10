@@ -373,7 +373,7 @@ WriteLiteral("    ");
 
             
             #line 74 "..\..\Areas\Admin\Views\Post\Edit.cshtml"
-Write(Scripts.Render("~/bundles/tagsinput"));
+Write(Scripts.Render("~/Scripts/bootstrap-tagsinput.js"));
 
             
             #line default
@@ -384,21 +384,32 @@ WriteLiteral("    ");
 
             
             #line 75 "..\..\Areas\Admin\Views\Post\Edit.cshtml"
+Write(Scripts.Render("~/Scripts/bootstrap.typeahead.bundle.js"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 76 "..\..\Areas\Admin\Views\Post\Edit.cshtml"
 Write(Scripts.Render("~/Areas/Admin/Scripts/pages/post.js"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script>\r\n        $(function () {\r\n            var tags = ");
+WriteLiteral("\r\n    <script>\r\n        $(function() {\r\n            var tags = ");
 
             
-            #line 78 "..\..\Areas\Admin\Views\Post\Edit.cshtml"
+            #line 79 "..\..\Areas\Admin\Views\Post\Edit.cshtml"
                   Write(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Post.Tags.Select(t => new { value = t.Id, text = t.Name }))));
 
             
             #line default
             #line hidden
-WriteLiteral(";\r\n            initializeTagsInput(tags);\r\n        });\r\n    </script>\r\n");
+WriteLiteral(";\r\n            initializePage(true, tags);\r\n        })\r\n    </script>\r\n");
 
 });
 

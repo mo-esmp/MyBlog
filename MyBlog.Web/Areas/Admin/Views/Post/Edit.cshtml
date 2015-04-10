@@ -71,12 +71,13 @@
 
 @section scripts {
     @Scripts.Render("~/Areas/Admin/Scripts/ckeditor/ckeditor.js")
-    @Scripts.Render("~/bundles/tagsinput")
+    @Scripts.Render("~/Scripts/bootstrap-tagsinput.js")
+    @Scripts.Render("~/Scripts/bootstrap.typeahead.bundle.js")
     @Scripts.Render("~/Areas/Admin/Scripts/pages/post.js")
     <script>
-        $(function () {
+        $(function() {
             var tags = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Post.Tags.Select(t => new { value = t.Id, text = t.Name })));
-            initializeTagsInput(tags);
-        });
+            initializePage(true, tags);
+        })
     </script>
 }
