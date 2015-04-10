@@ -1,4 +1,8 @@
-﻿function initializePage(isEditMode, tags) {
+﻿'use strict';
+var postKey = 'myBlogPost';
+var expireDayCount = 3;
+
+function initializePage(isEditMode, tags) {
     CKEDITOR.replace('Post_Content', {
         contentsLangDirection: 'rtl',
         filebrowserImageUploadUrl: '/base/uploadimage'
@@ -17,7 +21,7 @@
 
     $('form').submit(function () {
         if ($(this).valid()) {
-            localStorage.removeItem('savedPost');
+            clearSavedPost();
         }
     });
 }
@@ -52,72 +56,78 @@ function rebindTags(elt, tags) {
 }
 
 function retrivePost(elt) {
-    var savedPost = window.localStorage.getItem('savedPost');
-    if (savedPost === null) {
+    var localPost = getLocalPost();
+    if (localPost === null) {
         return;
     }
 
-    savedPost = JSON.parse(savedPost);
-    var createdDate = new Date(savedPost.createDate);
-    var currentDate = new Date();
-
-    var oneDay = 24 * 60 * 60 * 1000;
-    var diffDays = Math.round(Math.abs((createdDate.getTime() - currentDate.getTime()) / (oneDay)));
-
-    if (diffDays < 3) {
-        if (confirm('Prevoius post has been cached, do you want load it again ?')) {
-            $('#Post_Title').val(savedPost.title);
-            CKEDITOR.instances['Post_Content'].setData(savedPost.content);
-            rebindTags(elt, savedPost.tags);
-        }
-
+    localPost = JSON.parse(localPost);
+    var diffDays = calculateDiffDays(localPost);
+    if (diffDays > expireDayCount) {
+        clearSavedPost();
         return;
     }
-
-    localStorage.setItem('savedPost', '');
+    if (confirm('Prevoius post has been cached, do you want load it again ?')) {
+        $('#Post_Title').val(localPost.title);
+        CKEDITOR.instances['Post_Content'].setData(localPost.content);
+        rebindTags(elt, localPost.tags);
+    }
 }
 
 function retrivePostEditMode(elt) {
-    var savedPost = window.localStorage.getItem('savedPost');
-    if (savedPost === null) {
+    var localPost = getLocalPost();
+    if (localPost === null) {
         return;
     }
 
-    savedPost = JSON.parse(savedPost);
+    localPost = JSON.parse(localPost);
     var postId = $('#Post_Id').val();
-    if (savedPost.id !== postId) {
+    if (localPost.id !== postId) {
         return;
     }
-
-    var createdDate = new Date(savedPost.createDate);
-    var currentDate = new Date();
-
-    var oneDay = 24 * 60 * 60 * 1000;
-    var diffDays = Math.round(Math.abs((createdDate.getTime() - currentDate.getTime()) / (oneDay)));
 
     var currentPost = getCurrentPost();
-    if (diffDays < 3 && !comparePost(currentPost, savedPost)) {
-        if (confirm('Post has been edited, do you want load it again ?')) {
-            $('#Post_Title').val(savedPost.title);
-            CKEDITOR.instances['Post_Content'].setData(savedPost.content);
-            rebindTags(elt, savedPost.tags);
-        }
-
+    var diffDays = calculateDiffDays(localPost);
+    if (diffDays > expireDayCount || comparePost(currentPost, localPost)) {
+        clearSavedPost();
         return;
     }
 
-    localStorage.setItem('savedPost', '');
+    if (confirm('Post has been edited, do you want load it again ?')) {
+        $('#Post_Title').val(localPost.title);
+        CKEDITOR.instances['Post_Content'].setData(localPost.content);
+        rebindTags(elt, localPost.tags);
+    }
 }
 
 function getCurrentPost() {
     var id = $('#Post_Id').val();
     var title = $('#Post_Title').val();
-    var content = CKEDITOR.instances['Post_Content'].getData().replace(/(<([^>]+)>)/ig, '');
+    var content = CKEDITOR.instances['Post_Content'].getData();
     var tags = $('#Tags').tagsinput('items');
     var createDate = new Date().toISOString();
     var post = { 'id': id, 'title': title, 'content': content, 'tags': tags, createDate: createDate };
 
     return post;
+}
+
+function getLocalPost() {
+    var localPost = localStorage.getItem(postKey);
+    var sessionPost = sessionStorage.getItem(postKey);
+    var savedPost = sessionPost || localPost;
+    if (savedPost === null) {
+        return null;
+    }
+
+    return savedPost;
+}
+
+function calculateDiffDays(localPost) {
+    var createdDate = new Date(localPost.createDate);
+    var currentDate = new Date();
+    var oneDay = 24 * 60 * 60 * 1000;
+    var diffDays = Math.round(Math.abs((createdDate.getTime() - currentDate.getTime()) / (oneDay)));
+    return diffDays;
 }
 
 function comparePost(currentPost, savedPost) {
@@ -147,5 +157,11 @@ function savePostTemprorary() {
     }
 
     post = JSON.stringify(post);
-    localStorage.setItem('savedPost', post);
+    localStorage.setItem(postKey, post);
+    sessionStorage.setItem(postKey, post);
+}
+
+function clearSavedPost() {
+    localStorage.removeItem(postKey);
+    sessionStorage.setItem(postKey, post);
 }

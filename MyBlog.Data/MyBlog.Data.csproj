@@ -60,7 +60,6 @@
     <Compile Include="Contracts\IQueryableContext.cs" />
     <Compile Include="Conventions\IdConvention.cs" />
     <Compile Include="DataContext.cs" />
-    <Compile Include="Mapping\CommentMap.cs" />
     <Compile Include="Mapping\PostMap.cs" />
     <Compile Include="Mapping\TagMap.cs" />
     <Compile Include="Migrations\201412231735070_IntialMigration.cs" />

@@ -58,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="CommentEntity.cs" />
     <Compile Include="ContactMessageEntity.cs" />
     <Compile Include="NameAndMessage.Designer.cs">
       <AutoGen>True</AutoGen>

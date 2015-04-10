@@ -37,9 +37,6 @@ namespace MyBlog.Domain
         public DateTime? UpdateDte { get; set; }
 
         [ScaffoldColumn(false)]
-        public virtual ICollection<CommentEntity> Comments { get; set; }
-
-        [ScaffoldColumn(false)]
         [Display(Name = "Tag", ResourceType = typeof(NameAndMessage))]
         public virtual ICollection<TagEntity> Tags { get; set; }
     }

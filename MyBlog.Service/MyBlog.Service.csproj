@@ -69,7 +69,6 @@
     <Compile Include="Contracts\IMailService.cs" />
     <Compile Include="Contracts\ITagService.cs" />
     <Compile Include="Contracts\IPostService.cs" />
-    <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Implementation\ContactMessageService.cs" />
     <Compile Include="Implementation\MailService.cs" />
     <Compile Include="Implementation\PostService.cs" />

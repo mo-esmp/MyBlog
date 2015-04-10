@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using MyBlog.Data.Contracts;
 using MyBlog.Data.Mapping;
+using MyBlog.Data.Migrations;
 using MyBlog.Domain;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,15 +25,13 @@ namespace MyBlog.Data
 
         static DataContext()
         {
-            Database.SetInitializer<DataContext>(null);
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
+            //Database.SetInitializer<DataContext>(null);
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
         }
 
         #endregion ctor
 
         #region DbSets
-
-        public DbSet<CommentEntity> Comments { get; set; }
 
         public DbSet<ContactMessageEntity> ContactMessages { get; set; }
 
@@ -143,11 +142,8 @@ namespace MyBlog.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Add(new IdConvention());
-
-            modelBuilder.Configurations.Add(new CommentMap());
             modelBuilder.Configurations.Add(new PostMap());
             modelBuilder.Configurations.Add(new TagMap());
-
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             base.OnModelCreating(modelBuilder);

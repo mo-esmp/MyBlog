@@ -16,7 +16,6 @@ namespace MyBlog.Data.Mapping
             Property(cm => cm.Slug).IsUnicode(true).HasMaxLength(int.MaxValue).IsRequired();
 
             HasMany(p => p.Tags).WithMany(p => p.Posts);
-            HasMany(p => p.Comments).WithRequired(c => c.Post).HasForeignKey(m => m.PostId);
         }
     }
 }
