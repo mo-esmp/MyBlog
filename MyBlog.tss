@@ -28,5 +28,23 @@
     <ArrayOfString>
       <string>d:\learning\projects\github\myblog\myblog.web\scripts\jquery.validate.uifix.js</string>
     </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\BaseEntity.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\PostEntity.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\User.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\TagEntity.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\DataContext.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\Mapping\PostMap.cs</string>
+    </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
