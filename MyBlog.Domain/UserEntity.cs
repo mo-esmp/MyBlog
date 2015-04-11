@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Domain
 {
-    public class User : IdentityUser
+    public class UserEntity : IdentityUser
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserEntity> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Data
 {
-    public class DataContext : IdentityDbContext<User>, IQueryableContext
+    public class DataContext : IdentityDbContext<UserEntity>, IQueryableContext
     {
         #region ctor
 

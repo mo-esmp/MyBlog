@@ -2,12 +2,12 @@
 
 namespace MyBlog.Domain
 {
-    public class Role : IdentityRole
+    public class RoleEntity : IdentityRole
     {
-        public Role()
+        public RoleEntity()
         { }
 
-        public Role(string name)
+        public RoleEntity(string name)
             : base(name)
         { }
 

@@ -66,9 +66,9 @@
     </Compile>
     <Compile Include="PostEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs" />
+    <Compile Include="RoleEntity.cs" />
     <Compile Include="TagEntity.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="UserEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="NameAndMessage.resx">

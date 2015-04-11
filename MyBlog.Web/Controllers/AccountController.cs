@@ -418,7 +418,7 @@ namespace MyBlog.Web.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new UserEntity { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -482,7 +482,7 @@ namespace MyBlog.Web.Controllers
             return RedirectToAction("Index", "Home", new { area = "Admin" });
         }
 
-        private async Task SignInAsync(User user, bool isPersistent)
+        private async Task SignInAsync(UserEntity user, bool isPersistent)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie, DefaultAuthenticationTypes.TwoFactorCookie);
             AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = isPersistent }, await user.GenerateUserIdentityAsync(UserManager));
