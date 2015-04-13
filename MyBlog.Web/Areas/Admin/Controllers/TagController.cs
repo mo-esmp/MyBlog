@@ -64,7 +64,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _tagService.AddTag(tag);
+                _tagService.EditTag(tag);
                 if (_tagService.Commit())
                     return RedirectToAction("Index");
 
