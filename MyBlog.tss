@@ -2,49 +2,13 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\controllers\accountcontroller.cs</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\admin\adminlte.css</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\app_start\bundleconfig.cs</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Post\PostDetail.cshtml</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\shared\_layout.cshtml</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Scripts\pages\post.js</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\areas\admin\views\post\create.cshtml</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\areas\admin\views\post\edit.cshtml</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\areas\admin\controllers\postcontroller.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\content\admin\adminlte.css</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\scripts\jquery.validate.uifix.js</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\BaseEntity.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\PostEntity.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\User.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\TagEntity.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\DataContext.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Data\Mapping\PostMap.cs</string>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\Site.css</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

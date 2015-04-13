@@ -69,20 +69,18 @@ Write(Html.GenerateMetaTag(
             
             #line default
             #line hidden
-WriteLiteral("\r\n    ");
-
 WriteLiteral("\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 14 "..\..\Views\Post\PostDetail.cshtml"
+            #line 13 "..\..\Views\Post\PostDetail.cshtml"
 Write(Styles.Render("~/content/prism.css"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -90,27 +88,31 @@ WriteLiteral("\r\n<div");
 
 WriteLiteral(" class=\"col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1\"");
 
-WriteLiteral(">\r\n\r\n    <h2>");
+WriteLiteral(">\r\n    <h2>");
 
             
-            #line 20 "..\..\Views\Post\PostDetail.cshtml"
+            #line 17 "..\..\Views\Post\PostDetail.cshtml"
    Write(Model.Title);
 
             
             #line default
             #line hidden
-WriteLiteral("</h2>\r\n\r\n");
+WriteLiteral("</h2>\r\n    <div");
 
-WriteLiteral("    ");
+WriteLiteral(" class=\"post-content\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
 
             
-            #line 22 "..\..\Views\Post\PostDetail.cshtml"
-Write(Html.Raw(Model.Content));
+            #line 19 "..\..\Views\Post\PostDetail.cshtml"
+   Write(Html.Raw(Model.Content));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n    <p");
+WriteLiteral("\r\n    </div>\r\n\r\n    <p");
 
 WriteLiteral(" class=\"post-meta\"");
 
@@ -125,7 +127,7 @@ WriteLiteral(" class=\"date\"");
 WriteLiteral(">");
 
             
-            #line 25 "..\..\Views\Post\PostDetail.cshtml"
+            #line 23 "..\..\Views\Post\PostDetail.cshtml"
                                                                                Write(Model.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits());
 
             
@@ -142,13 +144,13 @@ WriteLiteral(" class=\"glyphicon glyphicon-tag\"");
 WriteLiteral("></i></a>&nbsp;\r\n        <span>\r\n");
 
             
-            #line 28 "..\..\Views\Post\PostDetail.cshtml"
+            #line 26 "..\..\Views\Post\PostDetail.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 28 "..\..\Views\Post\PostDetail.cshtml"
+            #line 26 "..\..\Views\Post\PostDetail.cshtml"
              foreach (var tag in Model.Tags)
             {
 
@@ -157,20 +159,20 @@ WriteLiteral("></i></a>&nbsp;\r\n        <span>\r\n");
             #line hidden
 WriteLiteral("                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1056), Tuple.Create("\"", 1121)
+WriteAttribute("href", Tuple.Create(" href=\"", 1043), Tuple.Create("\"", 1108)
             
-            #line 30 "..\..\Views\Post\PostDetail.cshtml"
-, Tuple.Create(Tuple.Create("", 1063), Tuple.Create<System.Object, System.Int32>(Url.Action("PostsByTag", "Post", new { slug = tag.Slug })
+            #line 28 "..\..\Views\Post\PostDetail.cshtml"
+, Tuple.Create(Tuple.Create("", 1050), Tuple.Create<System.Object, System.Int32>(Url.Action("PostsByTag", "Post", new { slug = tag.Slug })
             
             #line default
             #line hidden
-, 1063), false)
+, 1050), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 30 "..\..\Views\Post\PostDetail.cshtml"
+            #line 28 "..\..\Views\Post\PostDetail.cshtml"
                                                                                 Write(tag.Name);
 
             
@@ -183,7 +185,7 @@ WriteLiteral("&nbsp;");
 WriteLiteral("\r\n");
 
             
-            #line 31 "..\..\Views\Post\PostDetail.cshtml"
+            #line 29 "..\..\Views\Post\PostDetail.cshtml"
             }
 
             
@@ -197,22 +199,18 @@ WriteLiteral("></div>\r\n</div>\r\n\r\n");
 
 DefineSection("scripts", () => {
 
-WriteLiteral("\r\n    ");
-
-WriteLiteral("\r\n    ");
-
 WriteLiteral("\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 43 "..\..\Views\Post\PostDetail.cshtml"
+            #line 39 "..\..\Views\Post\PostDetail.cshtml"
 Write(Scripts.Render("~/scripts/prism.js"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n    <script");
+WriteLiteral("\r\n    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
@@ -223,7 +221,7 @@ WriteLiteral(@">
             var disqus_identifier = '");
 
             
-            #line 49 "..\..\Views\Post\PostDetail.cshtml"
+            #line 44 "..\..\Views\Post\PostDetail.cshtml"
                                 Write(Model.Id);
 
             
@@ -232,7 +230,7 @@ WriteLiteral(@">
 WriteLiteral("\';\r\n            var disqus_title = \'");
 
             
-            #line 50 "..\..\Views\Post\PostDetail.cshtml"
+            #line 45 "..\..\Views\Post\PostDetail.cshtml"
                            Write(Model.Title);
 
             

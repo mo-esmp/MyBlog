@@ -7,37 +7,21 @@ namespace MyBlog.Common.Helpers
     {
         public static string GenerateSlug(string value)
         {
-            if (value.Length > 50)
-            {
-                var i = 49;
-                while (value[i] != ' ')
-                {
-                    i++;
-                }
+            var slug = RemoveAccent(value).ToLower();
+            slug = Regex.Replace(slug, @"،", " ").Trim();
+            slug = Regex.Replace(slug, @"[^a-z0-9-\u0600-\u06FF]", "-");
+            slug = Regex.Replace(slug, @"\s+", "-").Trim();
+            slug = Regex.Replace(slug, @"-+", "-");
 
-                value = value.Substring(0, i);
-            }
+            slug = slug.Substring(0, slug.Length <= 50 ? slug.Length : 50).Trim();
 
-            //First to lower case
-            value = value.ToLowerInvariant();
+            return slug;
+        }
 
-            //Remove all accents
-            var bytes = Encoding.GetEncoding("UTf-8").GetBytes(value);
-            value = Encoding.UTF8.GetString(bytes);
-
-            //Replace spaces
-            value = Regex.Replace(value, @"\s", "-", RegexOptions.Compiled);
-
-            //Remove invalid chars
-            value = Regex.Replace(value, @"[^a-z0-9\u0600-\u06FFuFB8A\u067E\u0686\u06AF\s-_]", "", RegexOptions.Compiled);
-
-            //Trim dashes from end
-            value = value.Trim('-', '_');
-
-            //Replace double occurrences of - or _
-            value = Regex.Replace(value, @"([-_]){2,}", "$1", RegexOptions.Compiled);
-
-            return value;
+        private static string RemoveAccent(string text)
+        {
+            var bytes = Encoding.GetEncoding("UTF-8").GetBytes(text);
+            return Encoding.UTF8.GetString(bytes);
         }
     }
 }

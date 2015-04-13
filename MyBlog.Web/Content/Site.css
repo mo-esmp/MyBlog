@@ -278,6 +278,10 @@ hr.x-small {
             margin: 0;
         }
 
+/*.post-content p {
+    text-align: justify;
+}*/
+
 .post-preview > .post-meta {
     color: #808080;
     font-size: 18px;

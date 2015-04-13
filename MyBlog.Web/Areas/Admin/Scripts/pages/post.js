@@ -163,5 +163,5 @@ function savePostTemprorary() {
 
 function clearSavedPost() {
     localStorage.removeItem(postKey);
-    sessionStorage.setItem(postKey, post);
+    sessionStorage.removeItem(postKey);
 }

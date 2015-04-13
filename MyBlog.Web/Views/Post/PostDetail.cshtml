@@ -10,16 +10,14 @@
         allowFollowLinks: true,
         author: "محسن اسماعیل پور",
         cacheControlType: HtmlExtensions.CacheControlType.Private)
-    @*@Styles.Render("~/content/syntaxhighlighter")*@
     @Styles.Render("~/content/prism.css")
-
 }
 
 <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-
     <h2>@Model.Title</h2>
-
-    @Html.Raw(Model.Content)
+    <div class="post-content">
+        @Html.Raw(Model.Content)
+    </div>
 
     <p class="post-meta">
         <a><i class="glyphicon glyphicon-calendar"></i></a>&nbsp;<span class="date">@Model.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits()</span> <span class="divider-vertical"></span>
@@ -38,10 +36,7 @@
 
 @section scripts
 {
-    @*@Scripts.Render("~/bundles/syntaxhighlighter")*@
-    @*<script> SyntaxHighlighter.all(); </script>*@
     @Scripts.Render("~/scripts/prism.js")
-
     <script type="text/javascript">
         $(function () {
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
