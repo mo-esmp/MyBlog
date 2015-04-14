@@ -15,7 +15,7 @@ namespace MyBlog.Data.Mapping
             Property(cm => cm.UpdateDte).IsOptional().HasColumnOrder(5);
             Property(cm => cm.Slug).IsUnicode(true).HasMaxLength(int.MaxValue).IsRequired();
 
-            HasMany(p => p.Tags).WithMany(p => p.Posts);
+            HasMany(p => p.Tags).WithMany(p => p.Posts).Map(m => m.MapLeftKey("PostId").MapRightKey("TagId").ToTable("PostTag"));
         }
     }
 }

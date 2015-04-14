@@ -153,3 +153,4 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.Twitte
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\obj\Debug\MyBlog.Web.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\bin\MyBlog.Web.dll.config
