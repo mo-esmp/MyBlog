@@ -2,13 +2,25 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\admin\adminlte.css</string>
+      <string>d:\learning\projects\github\myblog\myblog.web\content\admin\adminlte.css</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Post\PostDetail.cshtml</string>
+      <string>d:\learning\projects\github\myblog\myblog.web\views\post\postdetail.cshtml</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\Site.css</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Scripts\pages\post.js</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Common\Helpers\UrlHelper.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Views\Tag\Edit.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Controllers\TagController.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

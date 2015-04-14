@@ -20,7 +20,7 @@ namespace MyBlog.Data
         #region ctor
 
         public DataContext()
-            : base("Name=DataConnection")
+            : base("DataConnection")
         { }
 
         static DataContext()
@@ -142,6 +142,7 @@ namespace MyBlog.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Add(new IdConvention());
+            modelBuilder.Configurations.Add(new ContactMessageMap());
             modelBuilder.Configurations.Add(new PostMap());
             modelBuilder.Configurations.Add(new TagMap());
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
