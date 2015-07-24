@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace MyBlog.Service.Implementation
 {
@@ -90,10 +91,10 @@ namespace MyBlog.Service.Implementation
             return messages;
         }
 
-        private async void EditMessageAsync(ContactMessageEntity message)
+        private async Task EditMessageAsync(ContactMessageEntity message)
         {
             EditItem(message);
-            CommitAsync();
+            await CommitAsync();
         }
     }
 }

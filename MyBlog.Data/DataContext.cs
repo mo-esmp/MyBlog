@@ -1,8 +1,7 @@
-﻿using Elev.Data.Conventions;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using MyBlog.Data.Contracts;
+using MyBlog.Data.Conventions;
 using MyBlog.Data.Mapping;
-using MyBlog.Data.Migrations;
 using MyBlog.Domain;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,8 +24,8 @@ namespace MyBlog.Data
 
         static DataContext()
         {
-            //Database.SetInitializer<DataContext>(null);
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
+            Database.SetInitializer<DataContext>(null);
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
         }
 
         #endregion ctor

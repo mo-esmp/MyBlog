@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Elev.Data.Conventions
+namespace MyBlog.Data.Conventions
 {
     internal class IdConvention : Convention
     {

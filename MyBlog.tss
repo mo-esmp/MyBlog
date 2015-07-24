@@ -2,25 +2,34 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\content\admin\adminlte.css</string>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Web.config</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\learning\projects\github\myblog\myblog.web\views\post\postdetail.cshtml</string>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Controllers\BaseController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Content\Site.css</string>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\PostEntity.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Scripts\pages\post.js</string>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Controllers\ContactMessageController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Common\Helpers\UrlHelper.cs</string>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\Contracts\IContactMessageService.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Views\Tag\Edit.cshtml</string>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\Implementation\ContactMessageService.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Controllers\TagController.cs</string>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Common\Extensions\EnumerableExtensions.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\Implementation\MailService.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Account\Login.generated.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Home\Index.cshtml</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

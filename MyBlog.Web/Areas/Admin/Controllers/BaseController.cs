@@ -1,12 +1,13 @@
 ﻿using MyBlog.Service.Contracts;
 using System;
+using System.Configuration;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class BaseController : Controller
     {
         private readonly IContactMessageService _contactMessageService;
@@ -36,10 +37,10 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             // here logic to upload image
             // and get file path of the image
 
-            const string uploadFolder = "images/upload";
+            var uploadFolder = ConfigurationManager.AppSettings["ImageUploadPath"];
 
             var fileName = Path.GetFileName(upload.FileName);
-            var path = Path.Combine(Server.MapPath(string.Format("~/{0}", uploadFolder)), fileName);
+            var path = Path.Combine(Server.MapPath(uploadFolder), fileName);
             upload.SaveAs(path);
 
             var url = string.Format("{0}{1}/{2}/{3}", Request.Url.GetLeftPart(UriPartial.Authority),

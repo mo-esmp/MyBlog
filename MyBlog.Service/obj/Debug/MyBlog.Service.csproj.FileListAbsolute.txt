@@ -2,6 +2,7 @@ C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\bin\
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
 C:\Users\Mohsen\Documents\Visual Studio 2013\Projects\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.csprojResolveAssemblyReference.cache
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
@@ -14,6 +15,36 @@ D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Common.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Data.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.pdb
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.xml
-D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.csprojResolveAssemblyReference.cache
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
 D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
+D:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.csprojResolveAssemblyReference.cache
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.dll.config
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Mvc.Mailer.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Common.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Data.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Helpers.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Mvc.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Razor.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Common.pdb
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Data.pdb
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\MyBlog.Domain.pdb
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\Newtonsoft.Json.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Helpers.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Mvc.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.Razor.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.dll
+E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
