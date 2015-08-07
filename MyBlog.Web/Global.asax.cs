@@ -23,7 +23,9 @@ namespace MyBlog.Web
             if (HttpContext.Current.Session == null || HttpContext.Current.Session["OsSpecificCss"] != null)
                 return;
 
-            HttpContext.Current.Session["OsSpecificCss"] = HttpContext.Current.Request.UserAgent.IndexOf("Windows NT 6.3", StringComparison.InvariantCultureIgnoreCase) > -1
+            HttpContext.Current.Session["OsSpecificCss"] =
+                HttpContext.Current.Request.UserAgent.IndexOf("Windows NT 6.3", StringComparison.InvariantCultureIgnoreCase) > -1 ||
+                HttpContext.Current.Request.UserAgent.IndexOf("Windows NT 10.0; Win64", StringComparison.InvariantCultureIgnoreCase) > -1
                 ? HttpContext.Current.Session["OsSpecificCss"] = ""
                 : HttpContext.Current.Session["OsSpecificCss"] = "~/content/font-fix.css";
         }

@@ -72,6 +72,12 @@ namespace MyBlog.Service.Implementation
             return tags;
         }
 
+        public async Task<IEnumerable<TagEntity>> GetActiveTagsAsync(Expression<Func<TagEntity, bool>> predicate = null)
+        {
+            var tags = await _context.Tags.Where(t => t.Posts.Any(p => p.IsEnabled)).ToListAsync();
+            return tags;
+        }
+
         public IEnumerable<TagEntity> GetTags(IEnumerable<int> idList)
         {
             var tags = from tag in _context.Tags

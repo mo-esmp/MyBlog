@@ -2,34 +2,28 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Web.config</string>
+      <string>e:\learning\projects\github\myblog\myblog.web\controllers\homecontroller.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Controllers\BaseController.cs</string>
+      <string>e:\learning\projects\github\myblog\myblog.service\contracts\itagservice.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Domain\PostEntity.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Areas\Admin\Controllers\ContactMessageController.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\Contracts\IContactMessageService.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\Implementation\ContactMessageService.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Common\Extensions\EnumerableExtensions.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Service\Implementation\MailService.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Account\Login.generated.cs</string>
+      <string>e:\learning\projects\github\myblog\myblog.service\implementation\tagservice.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Home\Index.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.web\views\shared\_layout.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.web\views\post\postdetail.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.web\global.asax.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\AccountController.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

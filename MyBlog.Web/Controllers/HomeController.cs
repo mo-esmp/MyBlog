@@ -1,11 +1,11 @@
-﻿using System.Web.UI;
-using MyBlog.Domain;
+﻿using MyBlog.Domain;
 using MyBlog.Service.Contracts;
 using MyBlog.Web.Models;
 using System;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace MyBlog.Web.Controllers
 {
@@ -36,7 +36,7 @@ namespace MyBlog.Web.Controllers
             var homeViewModel = new HomeViewModel
             {
                 Posts = await _postService.Value.GetPostsAsync(p => p.IsEnabled, p => p.CreateDate, SortOrder.Descending, p => p.Tags),
-                Tags = await _tagService.Value.GetTagsAsync()
+                Tags = await _tagService.Value.GetActiveTagsAsync()
             };
 
             return View(homeViewModel);
