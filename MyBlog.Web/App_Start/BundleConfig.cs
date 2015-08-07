@@ -25,6 +25,7 @@ namespace MyBlog.Web
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                       "~/Scripts/bootstrap-rtl.js",
                       "~/Scripts/respond.js",
+                      "~/Scripts/image-lazyload.js",
                       "~/Scripts/startup.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/typehead").Include(

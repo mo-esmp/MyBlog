@@ -1108,6 +1108,7 @@
     <Content Include="Scripts\bootstrap.typeahead.bundle.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.min.js" />
     <Content Include="Scripts\bootstrap.typeahead.js" />
+    <Content Include="Scripts\image-lazyload.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />

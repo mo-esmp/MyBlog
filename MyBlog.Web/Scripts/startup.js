@@ -48,6 +48,10 @@ $(function () {
         $('footer').css({ 'bottom': '0', 'position': 'absolute', 'width': '100%' });
     }
 
+    $('img.lazy').lazyload({
+        effect: 'fadeIn'
+    });
+
     typeDirection();
     autoSize();
 });
