@@ -48,6 +48,14 @@ $(function () {
         $('footer').css({ 'bottom': '0', 'position': 'absolute', 'width': '100%' });
     }
 
+    $("a[href^='http']").each(function () {
+        $(this).css({
+            background: "url(http://www.google.com/s2/favicons?domain=" + this.hostname +
+            ") right center no-repeat",
+            "padding-right": "20px"
+        });
+    });
+
     $('img.lazy').lazyload({
         effect: 'fadeIn'
     });
