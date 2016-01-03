@@ -45,3 +45,6 @@ D:\Projects\Github\MyBlog\MyBlog.Common\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Projects\Github\MyBlog\MyBlog.Common\obj\Debug\MyBlog.Common.csprojResolveAssemblyReference.cache
 D:\Projects\Github\MyBlog\MyBlog.Common\obj\Debug\MyBlog.Common.dll
 D:\Projects\Github\MyBlog\MyBlog.Common\obj\Debug\MyBlog.Common.pdb
+D:\Projects\Github\MyBlog\MyBlog.Common\bin\Debug\System.Web.Http.dll
+D:\Projects\Github\MyBlog\MyBlog.Common\bin\Debug\System.Net.Http.Formatting.dll
+D:\Projects\Github\MyBlog\MyBlog.Common\bin\Debug\Newtonsoft.Json.dll

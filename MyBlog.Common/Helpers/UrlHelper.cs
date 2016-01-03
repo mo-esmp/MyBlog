@@ -13,9 +13,10 @@ namespace MyBlog.Common.Helpers
             slug = Regex.Replace(slug, @"\s+", "-").Trim();
             slug = Regex.Replace(slug, @"-+", "-");
 
-            slug = slug.Substring(0, slug.Length <= 50 ? slug.Length : 50).Trim();
+            slug = slug.Substring(0, slug.Length <= 100 ? slug.Length : 100).Trim();
             if (slug.EndsWith("-"))
                 slug = slug.Remove(slug.Length - 1, 1);
+
             return slug;
         }
 

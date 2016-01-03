@@ -55,7 +55,8 @@
                         </td>
                         <td>
                             @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
-                            <a href="#" data-id="@item.Id" class="delete-item">حذف</a>
+                            <a href="#" data-id="@item.Id" class="delete-item">حذف</a> |
+                            @Html.ActionLink("مشاهده", "PostDetail", "Post", new { area = "", id = item.Id, slug = item.Slug }, new { target = "_blank" }) 
                         </td>
                     </tr>
                 }

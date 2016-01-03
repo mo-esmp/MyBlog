@@ -1103,6 +1103,7 @@
     <Content Include="Content\fonts\irsans.otf" />
     <Content Include="Content\fonts\irsans.ttf" />
     <Content Include="Content\fonts\irsans.woff" />
+    <Content Include="Content\Web.config" />
     <None Include="Properties\PublishProfiles\MyBlog.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.typeahead.bundle.js" />
