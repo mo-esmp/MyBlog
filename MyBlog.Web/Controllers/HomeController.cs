@@ -66,7 +66,7 @@ namespace MyBlog.Web.Controllers
                 return View(contactMessage);
 
             _contactMessageService.Value.AddMessage(contactMessage);
-            if (_contactMessageService.Value.Commit() == false)
+            if (await _contactMessageService.Value.CommitAsync() == false)
             {
                 ModelState.AddModelError("Create", "هنگام ثبت پیام خطایی رخ داده است. لطفا بعدا سعی نمایید.");
                 return View(contactMessage);

@@ -303,9 +303,9 @@ namespace MyBlog.Service.Contracts
         /// <returns>
         /// The number of objects written to the underlying database.
         /// </returns>
-        public Task<int> CommitAsync()
+        public async Task<bool> CommitAsync()
         {
-            return _queryableContext.CommitAsync();
+            return await _queryableContext.CommitAsync() > 0;
         }
 
         /// <summary>
