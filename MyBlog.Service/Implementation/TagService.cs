@@ -5,7 +5,6 @@ using MyBlog.Domain;
 using MyBlog.Service.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -29,23 +28,29 @@ namespace MyBlog.Service.Implementation
                 return;
 
             AddItem(tag);
+            CacheHelper.ClearItem(ApplicationKey.Tags);
         }
 
         public void EditTag(TagEntity editedTag)
         {
             editedTag.Slug = UrlHelper.GenerateSlug(editedTag.Name);
             EditItem(editedTag);
+
+            CacheHelper.ClearItem(ApplicationKey.Tags);
         }
 
         public void DeleteTag(Expression<Func<TagEntity, bool>> predicate)
         {
             DeleteItem(predicate);
+            CacheHelper.ClearItem(ApplicationKey.Tags);
         }
 
         public void DeleteTag(int tagId)
         {
             var tag = FindItem(tagId);
             DeleteItem(tag);
+
+            CacheHelper.ClearItem(ApplicationKey.Tags);
         }
 
         public TagEntity GetTag(int tagId)
@@ -62,19 +67,25 @@ namespace MyBlog.Service.Implementation
 
         public IEnumerable<TagEntity> GetTags(Expression<Func<TagEntity, bool>> predicate = null)
         {
-            var tags = GetItems(predicate);
+            var tags = CacheHelper.GetItem(ApplicationKey.Tags) as IEnumerable<TagEntity>;
+            if (tags != null)
+                return tags;
+
+            tags = GetItems(predicate);
+            CacheHelper.AddItem(ApplicationKey.Tags, tags, new TimeSpan(1, 0, 0, 0));
+
             return tags;
         }
 
         public async Task<IEnumerable<TagEntity>> GetTagsAsync(Expression<Func<TagEntity, bool>> predicate = null)
         {
-            var tags = await GetItems(predicate).ToListAsync();
-            return tags;
-        }
+            var tags = CacheHelper.GetItem(ApplicationKey.Tags) as IEnumerable<TagEntity>;
+            if (tags != null)
+                return tags;
 
-        public async Task<IEnumerable<TagEntity>> GetActiveTagsAsync(Expression<Func<TagEntity, bool>> predicate = null)
-        {
-            var tags = await _context.Tags.Where(t => t.Posts.Any(p => p.IsEnabled)).ToListAsync();
+            tags = await GetItemsAsync(predicate);
+            CacheHelper.AddItem(ApplicationKey.Tags, tags, new TimeSpan(1, 0, 0, 0));
+
             return tags;
         }
 

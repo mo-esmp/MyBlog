@@ -72,7 +72,7 @@ namespace MyBlog.Service.Implementation
                 return message;
 
             message.IsNew = false;
-            EditMessageAsync(message);
+            EditMessageAsync(message).ConfigureAwait(false);
             return message;
         }
 
@@ -80,7 +80,7 @@ namespace MyBlog.Service.Implementation
         {
             var message = GetItem(predicate);
             if (message != null && message.IsNew)
-                EditMessageAsync(message);
+                EditMessageAsync(message).ConfigureAwait(false);
 
             return message;
         }

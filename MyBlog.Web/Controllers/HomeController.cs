@@ -3,6 +3,7 @@ using MyBlog.Service.Contracts;
 using MyBlog.Web.Models;
 using System;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.UI;
@@ -36,22 +37,21 @@ namespace MyBlog.Web.Controllers
             var homeViewModel = new HomeViewModel
             {
                 Posts = await _postService.Value.GetPostsAsync(p => p.IsEnabled, p => p.CreateDate, SortOrder.Descending, p => p.Tags),
-                Tags = await _tagService.Value.GetActiveTagsAsync()
+                Tags = await _tagService.Value.GetTagsAsync(t => t.Posts.Any(p => p.IsEnabled))
             };
 
             return View(homeViewModel);
         }
 
         // GET: Home/About
+        [OutputCache(Location = OutputCacheLocation.Client, Duration = 120, VaryByParam = "none")]
         public ActionResult About()
         {
-            ViewBag.Length = Request.UserAgent.Length;
-            ViewBag.UserAgent = Request.UserAgent.IndexOf("Windows NT 6.3", StringComparison.InvariantCultureIgnoreCase);
-
             return View();
         }
 
         // GET: Home/Contact
+        [OutputCache(Location = OutputCacheLocation.Client, Duration = 120, VaryByParam = "none")]
         public ActionResult Contact()
         {
             return View();

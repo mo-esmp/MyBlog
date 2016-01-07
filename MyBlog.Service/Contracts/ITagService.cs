@@ -64,13 +64,6 @@ namespace MyBlog.Service.Contracts
         Task<IEnumerable<TagEntity>> GetTagsAsync(Expression<Func<TagEntity, bool>> predicate = null);
 
         /// <summary>
-        /// Gets the tags which at least have one active post asynchronously.
-        /// </summary>
-        /// <param name="predicate">The predicate.</param>
-        /// <returns>Task&lt;IEnumerable&lt;TagEntity&gt;&gt;.</returns>
-        Task<IEnumerable<TagEntity>> GetActiveTagsAsync(Expression<Func<TagEntity, bool>> predicate = null);
-
-        /// <summary>
         /// Gets the tags.
         /// </summary>
         /// <param name="idList">The list of id.</param>

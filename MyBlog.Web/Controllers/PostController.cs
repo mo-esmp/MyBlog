@@ -1,4 +1,7 @@
-﻿using MyBlog.Service.Contracts;
+﻿using MyBlog.Common.Helpers;
+using MyBlog.Domain;
+using MyBlog.Service;
+using MyBlog.Service.Contracts;
 using MyBlog.Web.Models;
 using System;
 using System.Data.SqlClient;
@@ -25,10 +28,15 @@ namespace MyBlog.Web.Controllers
         // GET: Post/PostDetail
         public ActionResult PostDetail(int id, string slug)
         {
-            var post = _postService.GetPost(p => p.IsEnabled && p.Id == id && p.Slug == slug);
+            var post = CacheHelper.GetItem(ApplicationKey.Post + id) as PostEntity;
+            if (post != null)
+                return View(post);
+
+            post = _postService.GetPost(p => p.IsEnabled && p.Id == id && p.Slug == slug);
             if (post == null)
                 return HttpNotFound();
 
+            CacheHelper.AddItem(ApplicationKey.Post + id, post, new TimeSpan(0, 12, 0, 0));
             return View(post);
         }
 
@@ -37,8 +45,6 @@ namespace MyBlog.Web.Controllers
         {
             if (string.IsNullOrEmpty(slug))
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
-            var posts = _postService.GetPosts(p => p.IsEnabled && p.Tags.Any(t => t.Slug == slug));
 
             var homeViewModel = new HomeViewModel
             {

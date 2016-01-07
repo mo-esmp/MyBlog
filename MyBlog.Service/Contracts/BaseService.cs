@@ -102,7 +102,7 @@ namespace MyBlog.Service.Contracts
         /// <returns>IQueryable{`0}.</returns>
         public IQueryable<TEntity> GetItems(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)
         {
-            var query = predicate == null ? EntitySet() : EntitySet().Where(predicate);
+            var query = predicate == null ? EntitySet().AsNoTracking() : EntitySet().AsNoTracking().Where(predicate);
             if (includeProperties != null)
                 query = ApplyIncludesOnQuery(query, includeProperties);
 
@@ -120,7 +120,7 @@ namespace MyBlog.Service.Contracts
         /// <returns>Task&lt;List&lt;TEntity&gt;&gt;.</returns>
         public IQueryable<TEntity> GetItems<TKey>(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TKey>> keySelector, SortOrder order, params Expression<Func<TEntity, object>>[] includeProperties)
         {
-            var query = predicate == null ? EntitySet() : EntitySet().Where(predicate);
+            var query = predicate == null ? EntitySet().AsNoTracking() : EntitySet().AsNoTracking().Where(predicate);
             if (includeProperties != null)
                 query = ApplyIncludesOnQuery(query, includeProperties);
 
@@ -137,7 +137,7 @@ namespace MyBlog.Service.Contracts
         /// <returns>Task&lt;List&lt;TEntity&gt;&gt;.</returns>
         public Task<List<TEntity>> GetItemsAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)
         {
-            var query = predicate == null ? EntitySet() : EntitySet().Where(predicate);
+            var query = predicate == null ? EntitySet().AsNoTracking() : EntitySet().AsNoTracking().Where(predicate);
             if (includeProperties != null)
                 query = ApplyIncludesOnQuery(query, includeProperties);
 
@@ -155,7 +155,7 @@ namespace MyBlog.Service.Contracts
         /// <returns>Task&lt;List&lt;TEntity&gt;&gt;.</returns>
         public Task<List<TEntity>> GetItemsAsync<TKey>(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TKey>> keySelector, SortOrder order, params Expression<Func<TEntity, object>>[] includeProperties)
         {
-            var query = predicate == null ? EntitySet() : EntitySet().Where(predicate);
+            var query = predicate == null ? EntitySet().AsNoTracking() : EntitySet().AsNoTracking().Where(predicate);
             if (includeProperties != null)
                 query = ApplyIncludesOnQuery(query, includeProperties);
 

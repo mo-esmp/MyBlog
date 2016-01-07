@@ -41,6 +41,8 @@ namespace MyBlog.Service.Implementation
             post.Tags = tags.ToList();
 
             AddItem(post);
+
+            CacheHelper.ClearItem(ApplicationKey.Posts);
         }
 
         public void EditPost(PostEntity editedPost, string tagsId)
@@ -64,6 +66,8 @@ namespace MyBlog.Service.Implementation
             postInDb.UpdateDte = DateTime.Now;
 
             EditItem(postInDb);
+            CacheHelper.ClearItem(ApplicationKey.Post + postInDb.Id);
+            CacheHelper.ClearItem(ApplicationKey.Posts);
         }
 
         public void DeletePost(Expression<Func<PostEntity, bool>> predicate)
@@ -74,6 +78,8 @@ namespace MyBlog.Service.Implementation
 
             post.Tags.Clear();
             DeleteItem(post);
+            CacheHelper.ClearItem(ApplicationKey.Post + post.Id);
+            CacheHelper.ClearItem(ApplicationKey.Posts);
         }
 
         public PostEntity GetPost(int postId)
@@ -90,21 +96,39 @@ namespace MyBlog.Service.Implementation
 
         public IEnumerable<PostEntity> GetPosts(Expression<Func<PostEntity, bool>> predicate = null, params Expression<Func<PostEntity, object>>[] includes)
         {
-            var posts = GetItems(predicate, includes);
+            var posts = CacheHelper.GetItem(ApplicationKey.Posts) as IEnumerable<PostEntity>;
+            if (posts != null)
+                return posts;
+
+            posts = GetItems(predicate, includes);
+            CacheHelper.AddItem(ApplicationKey.Posts, posts, new TimeSpan(1, 0, 0, 0));
+
             return posts;
         }
 
         public IEnumerable<PostEntity> GetPosts<TKey>(Expression<Func<PostEntity, bool>> predicate,
             Expression<Func<PostEntity, TKey>> selector, SortOrder sortOrder, params Expression<Func<PostEntity, object>>[] includes)
         {
-            var posts = GetItems(predicate, selector, sortOrder, includes);
+            var posts = CacheHelper.GetItem(ApplicationKey.Posts) as IEnumerable<PostEntity>;
+            if (posts != null)
+                return posts;
+
+            posts = GetItems(predicate, selector, sortOrder, includes);
+            CacheHelper.AddItem(ApplicationKey.Posts, posts, new TimeSpan(1, 0, 0, 0));
+
             return posts;
         }
 
         public async Task<IEnumerable<PostEntity>> GetPostsAsync<TKey>(Expression<Func<PostEntity, bool>> predicate,
           Expression<Func<PostEntity, TKey>> selector, SortOrder sortOrder, params Expression<Func<PostEntity, object>>[] includes)
         {
-            var posts = await GetItemsAsync(predicate, selector, sortOrder, includes);
+            var posts = CacheHelper.GetItem(ApplicationKey.Posts) as IEnumerable<PostEntity>;
+            if (posts != null)
+                return posts;
+
+            posts = await GetItemsAsync(predicate, selector, sortOrder, includes);
+            CacheHelper.AddItem(ApplicationKey.Posts, posts, new TimeSpan(1, 0, 0, 0));
+
             return posts;
         }
 

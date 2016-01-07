@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationKey.cs" />
     <Compile Include="Contracts\BaseService.cs" />
     <Compile Include="Contracts\IBaseService.cs" />
     <Compile Include="Contracts\IContactMessageService.cs" />
