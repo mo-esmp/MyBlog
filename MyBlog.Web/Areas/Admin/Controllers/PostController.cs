@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
 {
-    public class PostController : Controller
+    public class PostController : BaseController
     {
         private readonly Lazy<IPostService> _postService;
         private readonly Lazy<ITagService> _tagService;

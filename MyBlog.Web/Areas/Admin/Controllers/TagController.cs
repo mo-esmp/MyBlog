@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
 {
-    public class TagController : Controller
+    public class TagController : BaseController
     {
         private readonly ITagService _tagService;
 

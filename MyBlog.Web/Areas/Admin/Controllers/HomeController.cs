@@ -2,7 +2,7 @@
 
 namespace MyBlog.Web.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Admin/Home
         public ActionResult Index()
