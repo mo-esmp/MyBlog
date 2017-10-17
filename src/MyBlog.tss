@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.web\controllers\homecontroller.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.service\contracts\itagservice.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.service\implementation\tagservice.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Home\Index.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.web\views\shared\_layout.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.web\views\post\postdetail.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\learning\projects\github\myblog\myblog.web\global.asax.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\AccountController.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>
