@@ -102,8 +102,8 @@
                             <i class="fa fa-angle-right pull-left"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="@Url.Action("Create", "Tag")"><i class="fa fa-angle-double-left"></i> افزودن تگ</a></li>
-                            <li><a href="@Url.Action("Index", "Tag")"><i class="fa fa-angle-double-left"></i> لیست تگها</a></li>
+                            <li><a asp-controller="Tags" asp-action="Create"><i class="fa fa-angle-double-left"></i> افزودن تگ</a></li>
+                            <li><a asp-controller="Tags" asp-action="Index"><i class="fa fa-angle-double-left"></i> لیست تگها</a></li>
                         </ul>
                     </li>
                     <li> <a href="@Url.Action("Index", "ContactMessage")"><i class="fa fa-comment-o"></i> پیامها</a> </li>

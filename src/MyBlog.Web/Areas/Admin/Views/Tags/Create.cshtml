@@ -1,0 +1,41 @@
+﻿@model TagViewModel
+
+@{
+    ViewBag.Title = "ایجاد تگ جدید";
+}
+
+@section ContentHeader {
+    <h2>ایجاد تگ</h2>
+}
+
+<div class="col-md-10">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="box box-primary">
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal box-body">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label col-md-2"></label>
+                    <div class="col-md-4">
+                        <input asp-for="Name" cla class="form-control type-direction" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" value="ایجاد" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Index">بازگشت به لیست</a>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,6 +1,9 @@
-﻿namespace MyBlog.Core
+﻿using System.Threading.Tasks;
+
+namespace MyBlog.Core
 {
-    public interface IUnitofWork
+    public interface IUnitOfWork
     {
+        ValueTask<int> CommitAsync();
     }
 }

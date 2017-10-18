@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyBlog.Core;
 using MyBlog.Core.Queries;
+using MyBlog.Infrastructure;
 using MyBlog.Infrastructure.Data;
 
 namespace MyBlog.Web
@@ -29,6 +31,8 @@ namespace MyBlog.Web
             services
                 .AddEntityFrameworkSqlServer()
                 .AddDbContext<DataContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DataConnection"]));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

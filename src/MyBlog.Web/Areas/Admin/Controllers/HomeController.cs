@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyBlog.Web.Areas.Admin.Models;
-using System.Diagnostics;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
 {
@@ -23,11 +21,6 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             ViewData["Message"] = "Your contact page.";
 
             return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

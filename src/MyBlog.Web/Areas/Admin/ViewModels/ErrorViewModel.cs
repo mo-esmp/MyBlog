@@ -1,4 +1,4 @@
-namespace MyBlog.Web.Areas.Admin.Models
+namespace MyBlog.Web.Areas.Admin.ViewModels
 {
     public class ErrorViewModel
     {
