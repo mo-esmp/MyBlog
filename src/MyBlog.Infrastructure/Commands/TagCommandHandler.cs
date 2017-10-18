@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Commands
 {
-    internal class TagCommandHandler
+    public class TagCommandHandler
         : IAsyncRequestHandler<TagAddCommand>
     {
         private readonly DataContext _context;
