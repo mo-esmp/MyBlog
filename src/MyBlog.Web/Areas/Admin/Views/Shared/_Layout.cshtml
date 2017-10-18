@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyBlog.Web</title>
+    <title>@ViewData["Title"] - MyBlog</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/css/adminlte.css" rel="stylesheet" />
+        <link href="~/lib/fontawesome/css/font-awesome.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -15,40 +16,127 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @RenderSection("header", false)
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MyBlog.Web</a>
-            </div>
-            <div class="navbar-collapse collapse">
+<body class="skin-black" dir="rtl">
+    <header class="header">
+        <a href="/" class="logo" target="_blank">
+            <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            MyBlog
+        </a>
+
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="dropdown messages-menu">
+                        @*@{Html.RenderAction("NewMessage", "Base");}*@
+                    </li>
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span><i class="fa fa-user"></i> ادمین </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-footer">
+                                <div class="pull-right">
+                                    <a asp-area="" asp-controller="Account" asp-action="ChangePassword" class="btn btn-default btn-flat">
+                                        <i class="fa fa-lock"></i>
+                                        تغییر رمز عبور
+                                    </a>
+                                </div>
+                                <div class="pull-left">
+                                    <a asp-area="" asp-controller="Account" asp-action="LogOff" class="btn btn-default btn-flat">
+                                        <i class="fa fa-sign-out"></i>
+                                        خروج
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - MyBlog.Web</p>
-        </footer>
+        </nav>
+    </header>
+
+    <div class="wrapper row-offcanvas row-offcanvas-right">
+        <aside class="right-side sidebar-offcanvas">
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-right info">
+                        <p>خوش آمدید</p>
+                    </div>
+                </div>
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li>
+                        <a asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-home"></i> <span>صفحه اصلی</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>مقاله</span>
+                            <i class="fa fa-angle-right pull-left"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create", "Post")"><i class="fa fa-angle-double-left"></i> افزودن مقاله</a></li>
+                            <li><a href="@Url.Action("Index", "Post")"><i class="fa fa-angle-double-left"></i> لیست مقاله ها</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-tag"></i>
+                            <span>تگ</span>
+                            <i class="fa fa-angle-right pull-left"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create", "Tag")"><i class="fa fa-angle-double-left"></i> افزودن تگ</a></li>
+                            <li><a href="@Url.Action("Index", "Tag")"><i class="fa fa-angle-double-left"></i> لیست تگها</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="@Url.Action("Index", "ContactMessage")"><i class="fa fa-comment-o"></i> پیامها</a> </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <aside class="left-side">
+            <section class="content-header">
+                @RenderSection("ContentHeader", false)
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                </div>
+            </section>
+        </aside>
     </div>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery.slimscroll/jquery.slimscroll.js"></script>
+        <script src="~/lib/jquery-icheck/icheck.js"></script>
+        <script src="~/js/helper.js"></script>
+        <script src="~/js/startup.js"></script>
+        @*<script src="~/js/site.js" asp-append-version="true"></script>*@
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"

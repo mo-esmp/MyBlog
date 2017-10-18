@@ -14,6 +14,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Get()
         {
             var entities = await _mediator.Send(new TagGetsQuery());
