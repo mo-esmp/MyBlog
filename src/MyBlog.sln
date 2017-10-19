@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlog.Web.Old", "MyBlog.Web.Old\MyBlog.Web.Old.csproj", "{3C8E98FF-B4E5-49D5-B785-654743BC4CCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlog.Web.Tests", "MyBlog.Web.Tests\MyBlog.Web.Tests.csproj", "{84CAB7BA-869F-4761-BF1F-DD7591604EC9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlog.Domain", "MyBlog.Domain\MyBlog.Domain.csproj", "{99CA2391-9118-44FF-AB75-1B2FE4DE2A4C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlog.Data", "MyBlog.Data\MyBlog.Data.csproj", "{E84097EF-15CF-42D7-8624-5BC73A57FDE0}"
@@ -21,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.Core", "MyBlog.Core\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.Infrastructure", "MyBlog.Infrastructure\MyBlog.Infrastructure.csproj", "{E417DB23-03A8-4265-8E5E-365C958859B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlog.Web", "MyBlog.Web\MyBlog.Web.csproj", "{E9B122C3-23E9-499C-A57F-851846E8DE53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.Web", "MyBlog.Web\MyBlog.Web.csproj", "{E9B122C3-23E9-499C-A57F-851846E8DE53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		{3C8E98FF-B4E5-49D5-B785-654743BC4CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C8E98FF-B4E5-49D5-B785-654743BC4CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C8E98FF-B4E5-49D5-B785-654743BC4CCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84CAB7BA-869F-4761-BF1F-DD7591604EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84CAB7BA-869F-4761-BF1F-DD7591604EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84CAB7BA-869F-4761-BF1F-DD7591604EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84CAB7BA-869F-4761-BF1F-DD7591604EC9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99CA2391-9118-44FF-AB75-1B2FE4DE2A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99CA2391-9118-44FF-AB75-1B2FE4DE2A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99CA2391-9118-44FF-AB75-1B2FE4DE2A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU

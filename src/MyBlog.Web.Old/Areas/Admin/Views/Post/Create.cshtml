@@ -1,0 +1,83 @@
+﻿@model MyBlog.Web.Areas.Admin.Models.PostViewModel
+
+@{
+    ViewBag.Title = "ایجاد مقاله جدید";
+}
+
+@section header {
+    @Styles.Render("~/Content/admin/bootstrap-tagsinput.css")
+}
+
+@section ContentHeader {
+    <h2>ایجاد مقاله</h2>
+}
+
+<div class="col-md-10">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="box box-primary">
+        @using (Html.BeginForm("Create", "Post", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal box-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Post.Title, new { htmlAttributes = new { @class = "form-control type-direction" } })
+                        @Html.ValidationMessageFor(model => model.Post.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Post.Content, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Post.Content, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.Tags, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Tags, new { htmlAttributes = new { @class = "form-control left-text" } })
+                        @Html.ValidationMessageFor(model => model.Tags, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.IsEnabled, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            <label>
+                                @Html.EditorFor(model => model.Post.IsEnabled)
+                            </label>
+                            @Html.ValidationMessageFor(model => model.Post.IsEnabled, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" value="ایجاد" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+
+    <div>
+        @Html.ActionLink("بازگشت به لیست", "Index")
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/Areas/Admin/Scripts/ckeditor/ckeditor.js")
+    @Scripts.Render("~/Scripts/bootstrap-tagsinput.js")
+    @Scripts.Render("~/Scripts/bootstrap.typeahead.bundle.js")
+    @Scripts.Render("~/Areas/Admin/Scripts/pages/post.js")
+    <script>
+        $(function() {
+            initializePage(false);
+        });
+        
+    </script>
+}
