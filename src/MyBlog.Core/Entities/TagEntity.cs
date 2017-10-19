@@ -1,4 +1,6 @@
-﻿namespace MyBlog.Core.Entities
+﻿using System.Collections.Generic;
+
+namespace MyBlog.Core.Entities
 {
     public class TagEntity : BaseEntity
     {
@@ -6,6 +8,6 @@
 
         public string Slug { get; set; }
 
-        //public virtual ICollection<PostEntity> Posts { get; set; }
+        public ICollection<PostTagEntity> PostTags { get; set; }
     }
 }

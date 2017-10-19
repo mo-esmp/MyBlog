@@ -7,13 +7,10 @@ namespace MyBlog.Infrastructure.Data.Maps
     {
         public TagEfMap(ModelBuilder builder)
         {
-            builder.Entity<TagEntity>(c =>
+            builder.Entity<TagEntity>(e =>
             {
-                c.Property(a => a.Name).HasColumnType("nvarchar(50)").IsRequired();
-                c.Property(a => a.Name).HasColumnType("nvarchar(60)").IsRequired();
-
-                //c.HasOne(a => a.Province)
-                //    .WithMany(a => a.Cities).HasForeignKey(a => a.ProvinceId);
+                e.Property(t => t.Name).HasColumnType("nvarchar(50)").IsRequired();
+                e.Property(t => t.Name).HasColumnType("nvarchar(70)").IsRequired();
             });
         }
     }

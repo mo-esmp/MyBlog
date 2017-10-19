@@ -13,6 +13,10 @@ namespace MyBlog.Infrastructure.Data
         {
         }
 
+        public DbSet<PostEntity> Posts { get; set; }
+
+        public DbSet<PostTagEntity> PostTags { get; set; }
+
         public DbSet<TagEntity> Tags { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,7 +34,7 @@ namespace MyBlog.Infrastructure.Data
             base.OnModelCreating(builder);
         }
 
-        private void RegisterMaps(ModelBuilder builder)
+        private static void RegisterMaps(ModelBuilder builder)
         {
             var maps = typeof(DataContext).Assembly
                 .GetTypes()
