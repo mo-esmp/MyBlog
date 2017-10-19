@@ -9,6 +9,7 @@ namespace MyBlog.Infrastructure.Commands
 {
     public class TagCommandHandler :
         IAsyncRequestHandler<TagAddCommand>,
+        IAsyncRequestHandler<TagEditCommand>,
         IAsyncRequestHandler<TagRemoveCommand>
     {
         private readonly DataContext _context;
@@ -27,6 +28,16 @@ namespace MyBlog.Infrastructure.Commands
                 return;
 
             _context.Add(tag);
+        }
+
+        public async Task Handle(TagEditCommand message)
+        {
+            var tag = await _context.Tags.FindAsync(message.Tag.Id);
+            if (tag == null)
+                return;
+
+            tag.Name = message.Tag.Name;
+            tag.Slug = UrlHelper.GenerateSlug(tag.Name);
         }
 
         public async Task Handle(TagRemoveCommand message)

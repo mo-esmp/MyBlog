@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
+using MyBlog.Core.Entities;
 
 namespace MyBlog.Core.Commands
 {
-    class TagEditCommand
+    public class TagEditCommand : IRequest
     {
+        public TagEntity Tag { get; set; }
     }
 }

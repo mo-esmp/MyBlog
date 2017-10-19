@@ -53,6 +53,36 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Admin/طاگ/Edit/5
+        public async Task<ActionResult> Edit(int? id)
+        {
+            if (id == null)
+                return BadRequest();
+
+            var entity = await _mediator.Send(new TagGetQuery { TagId = id.Value });
+            if (entity == null)
+                return NotFound();
+
+            var viewModel = _mapper.Map<TagViewModel>(entity);
+
+            return View(viewModel);
+        }
+
+        // POST: Admin/Post/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind("Id", "Name")]TagViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
+            var entity = _mapper.Map<TagEntity>(viewModel);
+            await _mediator.Send(new TagEditCommand { Tag = entity });
+            await _unitOfWork.CommitAsync();
+
+            return RedirectToAction("Index");
+        }
+
         // POST: Admin/Tags/Delete/5
         [HttpDelete]
         public async Task<IActionResult> Delete(int? id)

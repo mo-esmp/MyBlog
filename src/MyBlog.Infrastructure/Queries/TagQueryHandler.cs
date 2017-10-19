@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Queries
 {
-    public class TagQueryHandler : IAsyncRequestHandler<TagGetsQuery, IEnumerable<TagEntity>>
+    public class TagQueryHandler :
+        IAsyncRequestHandler<TagGetsQuery, IEnumerable<TagEntity>>,
+        IAsyncRequestHandler<TagGetQuery, TagEntity>
     {
         private readonly DataContext _context;
 
@@ -20,6 +22,11 @@ namespace MyBlog.Infrastructure.Queries
         public async Task<IEnumerable<TagEntity>> Handle(TagGetsQuery message)
         {
             return await _context.Tags.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<TagEntity> Handle(TagGetQuery message)
+        {
+            return await _context.Tags.AsNoTracking().SingleOrDefaultAsync(t => t.Id == message.TagId);
         }
     }
 }
