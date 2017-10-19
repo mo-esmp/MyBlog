@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
 namespace MyBlog.Core.Commands
 {
-    class TagRemoveCommand
+    public class TagRemoveCommand : IRequest
     {
+        public int TagId { get; set; }
     }
 }

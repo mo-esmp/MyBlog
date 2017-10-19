@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using MyBlog.Core;
 using MyBlog.Core.Commands;
 using MyBlog.Core.Entities;
+using MyBlog.Core.Queries;
 using MyBlog.Web.Areas.Admin.ViewModels;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
@@ -22,11 +24,13 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // GET: Admin/Tag
-        public ActionResult Index()
+        // GET: Admin/Tags
+        public async Task<ActionResult> Index()
         {
-            //var tags = _tagService.GetTags();
-            return View();
+            var entities = await _mediator.Send(new TagGetsQuery());
+            var viewModels = _mapper.Map<IEnumerable<TagViewModel>>(entities);
+
+            return View(viewModels);
         }
 
         // GET: Admin/Post/Create
@@ -35,7 +39,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/Tag/Create
+        // POST: Admin/Tags/Create
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind("Name")] TagViewModel viewModel)
         {
@@ -44,10 +48,22 @@ namespace MyBlog.Web.Areas.Admin.Controllers
 
             var entity = _mapper.Map<TagEntity>(viewModel);
             await _mediator.Send(new TagAddCommand { Tag = entity });
-
             await _unitOfWork.CommitAsync();
 
             return RedirectToAction("Index");
+        }
+
+        // POST: Admin/Tags/Delete/5
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return BadRequest();
+
+            await _mediator.Send(new TagRemoveCommand { TagId = id.Value });
+            await _unitOfWork.CommitAsync();
+
+            return Json(new { });
         }
     }
 }

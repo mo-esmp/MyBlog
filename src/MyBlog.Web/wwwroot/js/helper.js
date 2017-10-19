@@ -1,23 +1,21 @@
 ﻿helper = {
-    deleteFromTable: function (url, selector) {
-        $('.table').on('click', selector, function (e) {
+    deleteFromTable: function () {
+        $('.table').on('click', '.delete-item', function (e) {
             confirm("آیا مطمئن هستید میخواهید این آیتم را حذف نمایید ؟");
             e.preventDefault();
             var anchor = $(this);
-            var id = $(anchor).attr('data-id');
+            var url = $(anchor).attr('href');
             $.ajax({
                 contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify({ id: id }),
                 dataType: 'json',
+                data: '',
                 processData: false,
-                type: 'POST',
+                type: 'DELETE',
                 url: url,
-                success: function (result) {
-                    if (result === true) {
-                        $(anchor).parent('td').parent('tr').fadeOut('slow', function () {
-                            $(this).remove();
-                        });
-                    }
+                success: function () {
+                    $(anchor).parent('td').parent('tr').fadeOut('slow', function () {
+                        $(this).remove();
+                    });
                 },
                 error: function (xmlHttpRequest, textStatus, errorThrown) {
                     alert(textStatus + ' ' + xmlHttpRequest.status + " " + errorThrown);

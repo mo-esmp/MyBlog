@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Commands
 {
-    public class TagCommandHandler
-        : IAsyncRequestHandler<TagAddCommand>
+    public class TagCommandHandler :
+        IAsyncRequestHandler<TagAddCommand>,
+        IAsyncRequestHandler<TagRemoveCommand>
     {
         private readonly DataContext _context;
 
@@ -26,6 +27,15 @@ namespace MyBlog.Infrastructure.Commands
                 return;
 
             _context.Add(tag);
+        }
+
+        public async Task Handle(TagRemoveCommand message)
+        {
+            var tag = await _context.Tags.FindAsync(message.TagId);
+            if (tag == null)
+                return;
+
+            _context.Tags.Remove(tag);
         }
     }
 }
