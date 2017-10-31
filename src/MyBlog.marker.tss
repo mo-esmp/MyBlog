@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfTabHighlightState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TabHighlightState>
+    <extensions>
+      <string>MyBlog.Infrastructure\Commands\PostCommandHandler.cs</string>
+    </extensions>
+    <highlightIndex>1</highlightIndex>
+  </TabHighlightState>
+  <TabHighlightState>
+    <extensions>
+      <string>MyBlog.Web\Areas\Admin\Controllers\PostsController.cs</string>
+    </extensions>
+    <highlightIndex>1</highlightIndex>
+  </TabHighlightState>
+  <TabHighlightState>
+    <extensions>
+      <string>MyBlog.Web\Areas\Admin\Views\Posts\Create.cshtml</string>
+    </extensions>
+    <highlightIndex>1</highlightIndex>
+  </TabHighlightState>
+</ArrayOfTabHighlightState>

@@ -1,10 +1,12 @@
 ﻿using MediatR;
-using System;
+using MyBlog.Core.Entities;
 
 namespace MyBlog.Core.Commands
 {
     public class PostAddCommand : IRequest
     {
-        public Type Post { get; set; }
+        public PostEntity Post { get; set; }
+
+        public int[] TagIds { get; set; }
     }
 }

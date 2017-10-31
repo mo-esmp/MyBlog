@@ -79,7 +79,7 @@ namespace MyBlog.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to متن صفحه.
+        ///   Looks up a localized string similar to متن.
         /// </summary>
         public static string Content {
             get {

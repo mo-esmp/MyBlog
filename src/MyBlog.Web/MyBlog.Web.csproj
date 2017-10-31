@@ -5,10 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\dialog.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\dialog_ie.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\dialog_ie7.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\dialog_ie8.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\dialog_iequirks.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\dialog_opera.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\editor.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\editor_gecko.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\editor_ie.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\editor_ie7.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\editor_ie8.css" />
+    <Content Include="wwwroot\lib\ckeditor\skins\bootstrapck\.temp\css\editor_iequirks.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,88 @@
+﻿@model PostViewModel
+@{
+    ViewBag.Title = "ایجاد مقاله جدید";
+}
+
+@section header {
+    <link href="~/css/tagsinput-typeahead.custom.css" rel="stylesheet" />
+}
+
+@section ContentHeader {
+    <h2>ایجاد مقاله</h2>
+}
+
+<div class="col-md-10">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="box box-primary">
+        <form asp-action="Create" id="postForm" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal box-body">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Title" cla class="form-control type-direction" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Slug" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Slug" cla class="form-control" />
+                        <span asp-validation-for="Slug" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Content" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <textarea asp-for="Content" cla class="form-control"></textarea>
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tags" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Tags" cla class="form-control" />
+                        <span asp-validation-for="Tags" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IsEnabled" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            <label>
+                                @Html.EditorFor(model => model.IsEnabled)
+                            </label>
+                            @Html.ValidationMessageFor(model => model.IsEnabled, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <input type="submit" value="ایجاد" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Index">بازگشت به لیست</a>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script src="~/js/jquery.validate.postform.js"></script>
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <environment include="Development">
+        <script src="~/lib/tagsinput/dist/bootstrap-tagsinput.js"></script>
+        <script src="~/lib/typeahead.js/dist/typeahead.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+        <script src="~/lib/typeahead.js/dist/typeahead.bundle.min.js"></script>
+    </environment>
+    <script src="~/js/post.js"></script>
+}

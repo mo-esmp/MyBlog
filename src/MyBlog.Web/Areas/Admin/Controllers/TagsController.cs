@@ -7,6 +7,7 @@ using MyBlog.Core.Entities;
 using MyBlog.Core.Queries;
 using MyBlog.Web.Areas.Admin.ViewModels;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyBlog.Web.Areas.Admin.Controllers
@@ -33,7 +34,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             return View(viewModels);
         }
 
-        // GET: Admin/Post/Create
+        // GET: Admin/Tag/Create
         public ActionResult Create()
         {
             return View();
@@ -53,7 +54,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Admin/طاگ/Edit/5
+        // GET: Admin/Tags/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -69,8 +70,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         }
 
         // POST: Admin/Post/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind("Id", "Name")]TagViewModel viewModel)
         {
             if (!ModelState.IsValid)
@@ -94,6 +94,15 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             await _unitOfWork.CommitAsync();
 
             return Json(new { });
+        }
+
+        // GET: Admin/api/tags/
+        [HttpGet("admin/api/tags")]
+        public async Task<IActionResult> Get()
+        {
+            var tags = await _mediator.Send(new TagGetsQuery());
+
+            return Ok(tags.Select(t => new { value = t.Id, text = t.Name }));
         }
     }
 }
