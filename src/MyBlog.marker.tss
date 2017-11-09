@@ -2,19 +2,19 @@
 <ArrayOfTabHighlightState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TabHighlightState>
     <extensions>
-      <string>MyBlog.Infrastructure\Commands\PostCommandHandler.cs</string>
+      <string>myblog.web\areas\admin\views\posts\create.cshtml</string>
     </extensions>
     <highlightIndex>1</highlightIndex>
   </TabHighlightState>
   <TabHighlightState>
     <extensions>
-      <string>MyBlog.Web\Areas\Admin\Controllers\PostsController.cs</string>
+      <string>myblog.web\areas\admin\controllers\postscontroller.cs</string>
     </extensions>
     <highlightIndex>1</highlightIndex>
   </TabHighlightState>
   <TabHighlightState>
     <extensions>
-      <string>MyBlog.Web\Areas\Admin\Views\Posts\Create.cshtml</string>
+      <string>myblog.infrastructure\commands\postcommandhandler.cs</string>
     </extensions>
     <highlightIndex>1</highlightIndex>
   </TabHighlightState>

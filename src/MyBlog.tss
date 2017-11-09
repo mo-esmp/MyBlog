@@ -2,28 +2,31 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>e:\learning\projects\github\myblog\myblog.web\controllers\homecontroller.cs</string>
+      <string>d:\projects\github\myblog\src\myblog.web\areas\admin\controllers\postscontroller.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>e:\learning\projects\github\myblog\myblog.service\contracts\itagservice.cs</string>
+      <string>d:\projects\github\myblog\src\myblog.infrastructure\commands\postcommandhandler.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>e:\learning\projects\github\myblog\myblog.service\implementation\tagservice.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Areas\Admin\Views\Posts\Create.cshtml</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Views\Home\Index.cshtml</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\wwwroot\js\post.js</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>e:\learning\projects\github\myblog\myblog.web\views\shared\_layout.cshtml</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Helpers\UrlHelper.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>e:\learning\projects\github\myblog\myblog.web\views\post\postdetail.cshtml</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Areas\Admin\ViewModels\PostViewModel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>e:\learning\projects\github\myblog\myblog.web\global.asax.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Core\Entities\PostEntity.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>E:\Learning\Projects\GitHub\MyBlog\MyBlog.Web\Controllers\AccountController.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Data\EfMaps\PostEfMap.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Service\Contracts\BaseService.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

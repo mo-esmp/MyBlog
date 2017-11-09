@@ -27,6 +27,7 @@ namespace MyBlog.Infrastructure.Commands
             post.Slug = post.Slug ?? UrlHelper.GenerateSlug(post.Title);
             post.ContentSummary = post.Content.TruncateHtml(500, "...");
             post.PostTags = new Collection<PostTagEntity>();
+
             foreach (var tagId in message.TagIds)
                 post.PostTags.Add(new PostTagEntity { TagId = tagId });
 

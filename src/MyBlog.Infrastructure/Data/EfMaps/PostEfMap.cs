@@ -12,10 +12,10 @@ namespace MyBlog.Infrastructure.Data.EfMaps
             {
                 e.Property(p => p.IsActive).IsRequired();
                 e.Property(p => p.Title).HasColumnType("nvarchar(256)").IsRequired();
-                e.Property(p => p.Slug).HasColumnType("nvarchar(70)").IsRequired();
-                e.Property(p => p.CreateDate).IsRequired();
-                e.Property(p => p.UpdateDte).IsRequired(false);
-                e.Property(p => p.ContentSummary).HasColumnType("nvarchar(512)").IsRequired();
+                e.Property(p => p.Slug).HasColumnType("nvarchar(100)").IsRequired();
+                e.Property(p => p.CreateDate).HasColumnType("datetime").IsRequired();
+                e.Property(p => p.UpdateDte).HasColumnType("datetime").IsRequired(false);
+                e.Property(p => p.ContentSummary).HasColumnType("nvarchar(max)").IsRequired();
                 e.Property(p => p.Content).HasColumnType("nvarchar(max)").IsRequired();
             });
         }

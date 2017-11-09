@@ -19,11 +19,35 @@ function initializePage(isEditMode, tags) {
 
     setInterval(savePostTemporary, 30000);
 
+    $('#Title').blur(function() {
+        var title = $(this).val();
+        var slug = slugify(title);
+        $('#Slug').val(slug);
+    });
+
     $('form').submit(function () {
         if ($(this).valid()) {
             clearSavedPost();
         }
     });
+}
+
+function slugify(text) {
+    var slug = text.toString().toLowerCase().trim()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/&/g, '-and-')         // Replace & with 'and'
+        .replace(/[^\a-z0-9-\u0600-\u06FF\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-');        // Replace multiple - with single -
+
+    if (slug.length > 100) {
+        slug = slug.substring(0, 100);
+    }
+
+    if(slug.substr(slug.length - 1) === '-') {
+        slug = slug.substring(0, slug.length - 1);
+    }
+
+    return slug;
 }
 
 function initializeTagsInput() {

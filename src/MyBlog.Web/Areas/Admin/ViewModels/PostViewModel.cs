@@ -6,7 +6,7 @@ namespace MyBlog.Web.Areas.Admin.ViewModels
     public class PostViewModel
     {
         [Display(Name = "Enabled", ResourceType = typeof(NameAndMessage))]
-        public bool IsEnabled { get; set; }
+        public bool IsActive { get; set; }
 
         [MaxLength(70, ErrorMessageResourceName = "MaxLengthError", ErrorMessageResourceType = typeof(NameAndMessage))]
         public string Slug { get; set; }
