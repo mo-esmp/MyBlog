@@ -83,7 +83,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        // POST: Admin/Tags/Delete/5
+        // DELETE: Admin/Tags/Delete/5
         [HttpDelete]
         public async Task<IActionResult> Delete(int? id)
         {

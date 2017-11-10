@@ -59,5 +59,48 @@ namespace MyBlog.Web.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        // GET: Admin/Tags/Edit/5
+        public async Task<ActionResult> Edit(int? id)
+        {
+            if (id == null)
+                return BadRequest();
+
+            var entity = await _mediator.Send(new PostGetQuery { PostId = id.Value });
+            if (entity == null)
+                return NotFound();
+
+            var viewModel = _mapper.Map<PostViewModel>(entity);
+            ViewBag.Tags = entity.PostTags.Select(t => new KeyValuePair<int, string>(t.Tag.Id, t.Tag.Name));
+
+            return View(viewModel);
+        }
+
+        // POST: Admin/Post/Edit/5
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind("Id", "Name")]PostViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
+            var entity = _mapper.Map<TagEntity>(viewModel);
+            await _mediator.Send(new TagEditCommand { Tag = entity });
+            await _unitOfWork.CommitAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        // DELETE: Admin/Tags/Delete/5
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return BadRequest();
+
+            await _mediator.Send(new PostRemoveCommand { PostId = id.Value });
+            await _unitOfWork.CommitAsync();
+
+            return Json(new { });
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using MyBlog.Core.Commands;
 using MyBlog.Core.Entities;
 using MyBlog.Infrastructure.Data;
@@ -6,11 +7,14 @@ using MyBlog.Infrastructure.Extensions;
 using MyBlog.Infrastructure.Helpers;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Commands
 {
-    public class PostCommandHandler : IAsyncRequestHandler<PostAddCommand>
+    public class PostCommandHandler :
+        IAsyncRequestHandler<PostAddCommand>,
+        IAsyncRequestHandler<PostRemoveCommand>
     {
         private readonly DataContext _context;
 
@@ -32,6 +36,23 @@ namespace MyBlog.Infrastructure.Commands
                 post.PostTags.Add(new PostTagEntity { TagId = tagId });
 
             await _context.AddAsync(post);
+        }
+
+        public async Task Handle(PostRemoveCommand message)
+        {
+            var post = await _context.Posts
+                .Include(p => p.PostTags)
+                .SingleOrDefaultAsync(p => p.Id == message.PostId);
+
+            if (post == null)
+                return;
+
+            _context.Posts.Remove(post);
+
+            if (post.PostTags == null || !post.PostTags.Any())
+                return;
+
+            _context.PostTags.RemoveRange(post.PostTags);
         }
     }
 }
