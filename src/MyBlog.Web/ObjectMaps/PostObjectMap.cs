@@ -8,8 +8,8 @@ namespace MyBlog.Web.ObjectMaps
     {
         public PostObjectMap()
         {
-            CreateMap<PostEntity, PostViewModel>();
             CreateMap<PostViewModel, PostEntity>();
+            CreateMap<PostEntity, PostSummaryViewModel>();
         }
     }
 }

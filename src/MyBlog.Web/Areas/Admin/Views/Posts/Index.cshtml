@@ -1,0 +1,60 @@
+﻿@using MyBlog.Infrastructure.Extensions
+@model IEnumerable<PostSummaryViewModel>
+
+@{
+    ViewBag.Title = "لیست مقاله ها";
+}
+
+@section ContentHeader {
+    <h2>لیست مقاله ها</h2>
+}
+
+<div class="col-md-10">
+    <div class="box">
+        <div class="box-header">
+            <p class="box-title">
+                @Html.ActionLink("ایجاد مقاله جدید", "Create")
+            </p>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreateDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @item.CreateDate.ToJalaliDateTimeString()
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">ویرایش</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="delete-item">حذف</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

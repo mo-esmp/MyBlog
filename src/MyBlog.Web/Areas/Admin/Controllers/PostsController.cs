@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using MyBlog.Core;
 using MyBlog.Core.Commands;
 using MyBlog.Core.Entities;
+using MyBlog.Core.Queries;
 using MyBlog.Web.Areas.Admin.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,6 +24,15 @@ namespace MyBlog.Web.Areas.Admin.Controllers
             _mediator = mediator;
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+        }
+
+        // GET: Admin/Tags
+        public async Task<ActionResult> Index()
+        {
+            var entities = await _mediator.Send(new PostGetsQuery());
+            var viewModels = _mapper.Map<IEnumerable<PostSummaryViewModel>>(entities);
+
+            return View(viewModels);
         }
 
         // GET: Admin/Post/Create
