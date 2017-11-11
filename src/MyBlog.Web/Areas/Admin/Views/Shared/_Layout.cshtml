@@ -92,7 +92,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a asp-controller="Posts" asp-action="Create"><i class="fa fa-angle-double-left"></i> افزودن مقاله</a></li>
-                            <li><a href="@Url.Action("Index", "Post")"><i class="fa fa-angle-double-left"></i> لیست مقاله ها</a></li>
+                            <li><a asp-controller="Posts" asp-action="Index"><i class="fa fa-angle-double-left"></i> لیست مقاله ها</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -106,7 +106,7 @@
                             <li><a asp-controller="Tags" asp-action="Index"><i class="fa fa-angle-double-left"></i> لیست تگها</a></li>
                         </ul>
                     </li>
-                    <li> <a href="@Url.Action("Index", "ContactMessage")"><i class="fa fa-comment-o"></i> پیامها</a> </li>
+                    <li> <a asp-controller="Messages" asp-action="Index"><i class="fa fa-comment-o"></i> پیامها</a> </li>
                 </ul>
             </section>
             <!-- /.sidebar -->

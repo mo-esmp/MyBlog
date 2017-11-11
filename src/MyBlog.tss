@@ -2,31 +2,25 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>d:\projects\github\myblog\src\myblog.web\areas\admin\controllers\postscontroller.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Core\Entities\ContactMessageEntity.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\projects\github\myblog\src\myblog.infrastructure\commands\postcommandhandler.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web.Old\Areas\Admin\Controllers\ContactMessageController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Areas\Admin\Views\Posts\Create.cshtml</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Areas\Admin\Controllers\MessagesController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\wwwroot\js\post.js</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Service\Implementation\ContactMessageService.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Helpers\UrlHelper.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Queries\MessageQueryHandler.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Areas\Admin\ViewModels\PostViewModel.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Queries\PostQueryHandler.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Core\Entities\PostEntity.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Data\EfMaps\PostEfMap.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Service\Contracts\BaseService.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Data\DataContext.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
