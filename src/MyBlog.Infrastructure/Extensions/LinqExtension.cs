@@ -23,5 +23,15 @@ namespace MyBlog.Infrastructure.Extensions
                 ? source.OrderByDescending(keySelector)
                 : source.OrderBy(keySelector);
         }
+
+        public static ICollection<T> Except<T, TKey>(this ICollection<T> items, ICollection<T> other, Func<T, TKey> key)
+        {
+            return items
+                .GroupJoin(other, key, key, (item, tempItems) => new { item, tempItems })
+                .SelectMany(t => t.tempItems.DefaultIfEmpty(), (t, temp) => new { t, temp })
+                .Where(t => ReferenceEquals(null, t.temp) || t.temp.Equals(default(T)))
+                .Select(t => t.t.item)
+                .ToList();
+        }
     }
 }

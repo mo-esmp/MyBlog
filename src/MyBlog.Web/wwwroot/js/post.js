@@ -189,7 +189,3 @@ function clearSavedPost() {
     localStorage.removeItem(postKey);
     sessionStorage.removeItem(postKey);
 }
-
-$(function() {
-    initializePage(false);
-});

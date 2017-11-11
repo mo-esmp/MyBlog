@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Queries
 {
-    public class PostQueryHandler
-        : IAsyncRequestHandler<PostGetsQuery, IEnumerable<PostEntity>>
+    public class PostQueryHandler :
+        IAsyncRequestHandler<PostGetsQuery, IEnumerable<PostEntity>>,
+        IAsyncRequestHandler<PostGetQuery, PostEntity>
     {
         private readonly DataContext _context;
 
@@ -21,6 +22,11 @@ namespace MyBlog.Infrastructure.Queries
         public async Task<IEnumerable<PostEntity>> Handle(PostGetsQuery message)
         {
             return await _context.Posts.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<PostEntity> Handle(PostGetQuery message)
+        {
+            return await _context.Posts.AsNoTracking().SingleOrDefaultAsync(t => t.Id == message.PostId);
         }
     }
 }

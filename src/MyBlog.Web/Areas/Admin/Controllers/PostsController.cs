@@ -6,7 +6,6 @@ using MyBlog.Core.Commands;
 using MyBlog.Core.Entities;
 using MyBlog.Core.Queries;
 using MyBlog.Web.Areas.Admin.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -49,12 +48,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
                 return View(viewModel);
 
             var entity = _mapper.Map<PostEntity>(viewModel);
-            var tagIds = string.IsNullOrEmpty(viewModel.Tags)
-                ? new int[] { }
-                : viewModel.Tags.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
-            var command = new PostAddCommand { Post = entity, TagIds = tagIds.ToArray() };
-
-            await _mediator.Send(command);
+            await _mediator.Send(new PostAddCommand { Post = entity });
             await _unitOfWork.CommitAsync();
 
             return RedirectToAction("Index");
@@ -71,20 +65,26 @@ namespace MyBlog.Web.Areas.Admin.Controllers
                 return NotFound();
 
             var viewModel = _mapper.Map<PostViewModel>(entity);
-            ViewBag.Tags = entity.PostTags.Select(t => new KeyValuePair<int, string>(t.Tag.Id, t.Tag.Name));
+            var tags = await _mediator.Send(new TagGetsByPostIdQuery { PostId = viewModel.Id });
+            ViewBag.Tags = tags.Select(t => new KeyValuePair<int, string>(t.Id, t.Name));
 
             return View(viewModel);
         }
 
         // POST: Admin/Post/Edit/5
         [HttpPost, ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind("Id", "Name")]PostViewModel viewModel)
+        public async Task<ActionResult> Edit(PostViewModel viewModel)
         {
             if (!ModelState.IsValid)
-                return View(viewModel);
+            {
+                var tags = await _mediator.Send(new TagGetsByPostIdQuery { PostId = viewModel.Id });
+                ViewBag.Tags = tags.Select(t => new KeyValuePair<int, string>(t.Id, t.Name));
 
-            var entity = _mapper.Map<TagEntity>(viewModel);
-            await _mediator.Send(new TagEditCommand { Tag = entity });
+                return View(viewModel);
+            }
+
+            var entity = _mapper.Map<PostEntity>(viewModel);
+            await _mediator.Send(new PostEditCommand { Post = entity });
             await _unitOfWork.CommitAsync();
 
             return RedirectToAction("Index");

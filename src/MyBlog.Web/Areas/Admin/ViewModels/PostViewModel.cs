@@ -5,6 +5,8 @@ namespace MyBlog.Web.Areas.Admin.ViewModels
 {
     public class PostViewModel
     {
+        public int Id { get; set; }
+
         [Display(Name = "Enabled", ResourceType = typeof(NameAndMessage))]
         public bool IsActive { get; set; }
 

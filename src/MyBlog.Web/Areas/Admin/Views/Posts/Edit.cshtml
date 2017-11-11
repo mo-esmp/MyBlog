@@ -1,6 +1,7 @@
 ﻿@model PostViewModel
 @{
-    ViewBag.Title = "ایجاد مقاله جدید";
+    ViewBag.Title = "ویرایش مقاله";
+    var tags = (IEnumerable<KeyValuePair<int, string>>)ViewBag.Tags;
 }
 
 @section header {
@@ -8,14 +9,15 @@
 }
 
 @section ContentHeader {
-    <h2>ایجاد مقاله</h2>
+    <h2>ویرایش مقاله</h2>
 }
 
 <div class="col-md-10">
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="box box-primary">
-        <form asp-action="Create" id="postForm" enctype="multipart/form-data">
+        <form asp-action="Edit" id="postForm" enctype="multipart/form-data">
+            <input asp-for="Id" type="hidden" />
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal box-body">
@@ -62,7 +64,7 @@
             </div>
 
             <div class="box-footer">
-                <input type="submit" value="ایجاد" class="btn btn-primary" />
+                <input type="submit" value="ویرایش" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -87,7 +89,8 @@
     <script src="~/js/post.js"></script>
     <script>
         $(function() {
-            initializePage(false);
-        });
+            var tags = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(tags.Select(t => new { value = t.Key, text = t.Value })));
+            initializePage(true, tags);
+        })
     </script>
 }
