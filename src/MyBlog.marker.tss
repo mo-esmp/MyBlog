@@ -2,8 +2,20 @@
 <ArrayOfTabHighlightState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TabHighlightState>
     <extensions>
-      <string>myblog.web\areas\admin\controllers\messagescontroller.cs</string>
+      <string>myblog.web\views\shared\_layout.cshtml</string>
     </extensions>
     <highlightIndex>1</highlightIndex>
+  </TabHighlightState>
+  <TabHighlightState>
+    <extensions>
+      <string>myblog.web\controllers\homecontroller.cs</string>
+    </extensions>
+    <highlightIndex>1</highlightIndex>
+  </TabHighlightState>
+  <TabHighlightState>
+    <extensions>
+      <string>myblog.web.old\controllers\homecontroller.cs</string>
+    </extensions>
+    <highlightIndex>2</highlightIndex>
   </TabHighlightState>
 </ArrayOfTabHighlightState>

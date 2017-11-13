@@ -2,25 +2,22 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Core\Entities\ContactMessageEntity.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web.Old\Controllers\HomeController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web.Old\Areas\Admin\Controllers\ContactMessageController.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Controllers\HomeController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Areas\Admin\Controllers\MessagesController.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\Views\Shared\_Layout.cshtml</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Service\Implementation\ContactMessageService.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web.Old\Views\Shared\_Layout.cshtml</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Queries\MessageQueryHandler.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web.Old\App_Start\BundleConfig.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Queries\PostQueryHandler.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Projects\Github\MyBlog\src\MyBlog.Infrastructure\Data\DataContext.cs</string>
+      <string>D:\Projects\Github\MyBlog\src\MyBlog.Web\wwwroot\lib\bootstrap-rtl\examples\rtl\index.html</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

@@ -1,18 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using MyBlog.Core.Queries;
 using MyBlog.Web.Models;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace MyBlog.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IMediator _mediator;
+
+        public HomeController(IMediator mediator)
         {
-            return View();
+            _mediator = mediator;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var posts = await _mediator.Send(new PostGetsQuery());
+            var tags = await _mediator.Send(new TagGetsQuery());
+            var homeViewModel = new HomeViewModel { Posts = posts, Tags = tags };
+
+            return View(homeViewModel);
         }
 
         public IActionResult About()

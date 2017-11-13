@@ -1,0 +1,44 @@
+{
+  "name": "PACE",
+  "main": "pace.js",
+  "version": "0.7.8",
+  "homepage": "http://github.hubspot.com/pace/docs/welcome",
+  "authors": [
+    "Zack Bloom <zackbloom@gmail.com>",
+    "Adam Schwartz <adam.flynn.schwartz@gmail.com>"
+  ],
+  "description": "Automatic page load progress bar",
+  "keywords": [
+    "loading",
+    "load",
+    "pageload",
+    "progress",
+    "activity",
+    "ajax",
+    "spinner",
+    "progress",
+    "bar",
+    "automatic",
+    "client-side"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".*",
+    "Gruntfile.coffee",
+    "bower_components",
+    "docs",
+    "node_modules",
+    "package.json",
+    "templates",
+    "tests"
+  ],
+  "_release": "0.7.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.7.8",
+    "commit": "b736335d0073770baf9db00e2edcf0cdfc16bc90"
+  },
+  "_source": "https://github.com/HubSpot/pace.git",
+  "_target": "0.7.8",
+  "_originalSource": "pace"
+}
