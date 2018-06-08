@@ -19,12 +19,12 @@ namespace MyBlog.Web.Controllers
 
         public async Task<IActionResult> Index(int page = 1)
         {
-            var (posts, postCount) = await _mediator.Send(new PostPagedGetsQuery(page));
-            var tags = await _mediator.Send(new TagGetsQuery());
+            var (posts, postCount) = await _mediator.Send(new PostGetsPagedQuery(page));
             var homeViewModel = new HomeViewModel
             {
-                PagedPosts = new PagedPostViewModel { TotalPosts = postCount, Posts = posts },
-                Tags = tags
+                CurrentPage = page,
+                Posts = posts,
+                TotalPosts = postCount
             };
 
             return View(homeViewModel);

@@ -1,0 +1,38 @@
+﻿@using MyBlog.Infrastructure.Extensions
+@model MyBlog.Core.Entities.PostEntity
+
+@{
+    ViewData["Title"] = Model.Title;
+    var tags = Model.PostTags.Select(pt => pt.Tag);
+}
+
+@section header {
+    <meta name="keyword" content="@tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag.Name)).TrimStart(',')" />
+    <meta name="description" content="@Model.Title" />
+    <link href="~/lib/prism/themes/prism.css" rel="stylesheet" />
+}
+
+<div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <h2>@Model.Title</h2>
+    <div class="post-content">
+        @Html.Raw(Model.Content)
+    </div>
+
+    <p class="post-meta">
+        <a><i class="glyphicon glyphicon-calendar"></i></a>&nbsp;<span class="date">@Model.CreateDate.ToJalaliDateTimeFullString().ToPersianDigits()</span> <span class="divider-vertical"></span>
+        <a> <i class="glyphicon glyphicon-tag"></i></a>&nbsp;
+        <span>
+            @foreach (var tag in tags)
+            {
+                <a asp-action="PostsByTag" asp-controller="Posts" asp-route-slug=" tag.Slug">@tag.Name</a><text>&nbsp;</text>
+            }
+        </span>
+    </p>
+    <hr />
+
+    <div id="disqus_thread"></div>
+</div>
+
+@section scripts {
+    <script src="~/lib/prism/prism.js"></script>
+}

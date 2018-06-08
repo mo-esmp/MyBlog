@@ -10,20 +10,10 @@
     ViewData["Title"] = "صفحه اصلی";
 }
 
-<div class="col-lg-3 col-md-2 ">
-    <div id="tagList">
-        <h3>تگها</h3>
-        <ul>
-            @foreach (var tag in Model.Tags)
-            {
-                <li><a asp-action="PostsByTag" asp-controller="Posts" asp-route-slug=" tag.Slug">@tag.Name</a></li>
-            }
-        </ul>
-    </div>
-</div>
+<vc:tags></vc:tags>
 
 <div class="col-lg-8 col-lg-offset-0 col-md-9 col-md-offset-0">
-    @foreach (var post in Model?.PagedPosts?.Posts)
+    @foreach (var post in Model?.Posts)
     {
         <div class="post-preview">
             <a asp-controller="Posts" asp-action="PostDetail" asp-route-id="@post.Id" asp-route-slug="@post.Slug">

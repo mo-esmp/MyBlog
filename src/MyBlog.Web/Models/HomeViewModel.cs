@@ -5,8 +5,10 @@ namespace MyBlog.Web.Models
 {
     public class HomeViewModel
     {
-        public PagedPostViewModel PagedPosts { get; set; }
+        public int CurrentPage { get; set; }
 
-        public IEnumerable<TagEntity> Tags { get; set; }
+        public int TotalPosts { get; set; }
+
+        public IEnumerable<PostEntity> Posts { get; set; }
     }
 }

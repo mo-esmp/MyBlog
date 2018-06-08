@@ -9,13 +9,16 @@ namespace MyBlog.Core.Queries
     {
     }
 
-    public class PostPagedGetsQuery : IRequest<Tuple<IEnumerable<PostEntity>, int>>
+    public class PostGetsPagedQuery : IRequest<Tuple<IEnumerable<PostEntity>, int>>
     {
-        public PostPagedGetsQuery(int page)
+        public PostGetsPagedQuery(int page, string tagSlug = null)
         {
             Page = page;
+            TagSlug = tagSlug;
         }
 
         public int Page { get; }
+
+        public string TagSlug { get; }
     }
 }

@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 namespace MyBlog.Infrastructure.Queries
 {
     public class PostQueryHandler :
-        IAsyncRequestHandler<PostPagedGetsQuery, Tuple<IEnumerable<PostEntity>, int>>,
+        IAsyncRequestHandler<PostGetsPagedQuery, Tuple<IEnumerable<PostEntity>, int>>,
         IAsyncRequestHandler<PostGetsQuery, IEnumerable<PostEntity>>,
+        IAsyncRequestHandler<PostGetActiveQuery, PostEntity>,
         IAsyncRequestHandler<PostGetQuery, PostEntity>
     {
         private readonly DataContext _context;
@@ -22,15 +23,18 @@ namespace MyBlog.Infrastructure.Queries
             _context = context;
         }
 
-        public async Task<Tuple<IEnumerable<PostEntity>, int>> Handle(PostPagedGetsQuery message)
+        public async Task<Tuple<IEnumerable<PostEntity>, int>> Handle(PostGetsPagedQuery message)
         {
             var skip = message.Page > 0 ? (message.Page - 1) * 5 : 0;
 
-            var postCount = _context.Posts.CountAsync(p => p.IsActive);
-            var posts = _context.Posts
+            var query = message.TagSlug != null
+                ? _context.Posts.Where(p => p.IsActive && p.PostTags.Any(pt => pt.Tag.Slug == message.TagSlug))
+                : _context.Posts.Where(p => p.IsActive);
+
+            var postCount = query.CountAsync();
+            var posts = query
                 .Include(p => p.PostTags).ThenInclude(pt => pt.Tag)
                 .AsNoTracking()
-                .Where(p => p.IsActive)
                 .OrderByDescending(p => p.CreateDate)
                 .Skip(skip)
                 .Take(5)
@@ -46,9 +50,21 @@ namespace MyBlog.Infrastructure.Queries
             return await _context.Posts.AsNoTracking().ToListAsync();
         }
 
-        public async Task<PostEntity> Handle(PostGetQuery message)
+        public Task<PostEntity> Handle(PostGetQuery message)
         {
-            return await _context.Posts.AsNoTracking().SingleOrDefaultAsync(t => t.Id == message.PostId);
+            return _context.Posts
+                .Include(p => p.PostTags).ThenInclude(pt => pt.Tag)
+                .AsNoTracking()
+                .SingleOrDefaultAsync(t => t.Id == message.PostId);
+        }
+
+        public Task<PostEntity> Handle(PostGetActiveQuery message)
+        {
+            return _context.Posts
+                .Include(p => p.PostTags)
+                .ThenInclude(pt => pt.Tag)
+                .AsNoTracking()
+                .SingleOrDefaultAsync(p => p.IsActive && p.Id == message.PostId);
         }
     }
 }

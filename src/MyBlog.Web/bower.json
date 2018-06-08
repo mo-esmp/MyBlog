@@ -13,6 +13,7 @@
     "jquery-icheck": "1.0.2",
     "jquery.lazyload": "1.9.6",
     "pace": "0.7.8",
+    "prism": "1.14.0",
     "respond": "1.4.2",
     "tagsinput": "0.8.0",
     "typeahead.js": "0.11.1"
