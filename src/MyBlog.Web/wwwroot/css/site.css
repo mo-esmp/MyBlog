@@ -653,14 +653,15 @@ img::-moz-selection {
             -o-transition: all 0.5s ease-in-out;
             transition: all 0.5s ease-in-out;
             text-align: center;
+            padding-right: 0 !important
         }
 
         .social .menu-item .icon {
-            width: 38px;
+            font-size: 25px;
             height: 50px;
             padding: 13px 5px 0 6px;
-            font-size: 25px;
             text-align: center;
+            width: 38px;
         }
 
     .social span.active {

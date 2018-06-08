@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.Core.Queries;
 using MyBlog.Web.Models;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -16,28 +17,51 @@ namespace MyBlog.Web.Controllers
             _mediator = mediator;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var posts = await _mediator.Send(new PostGetsQuery());
+            var (posts, postCount) = await _mediator.Send(new PostPagedGetsQuery(page));
             var tags = await _mediator.Send(new TagGetsQuery());
-            var homeViewModel = new HomeViewModel { Posts = posts, Tags = tags };
+            var homeViewModel = new HomeViewModel
+            {
+                PagedPosts = new PagedPostViewModel { TotalPosts = postCount, Posts = posts },
+                Tags = tags
+            };
 
             return View(homeViewModel);
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Contact(ContactMessageViewModel viewModel)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return View(viewModel);
+
+        //    var message = Mapper.Map<ContactMessageEntity>(viewModel);
+        //    await _mediator.Send(new MessageAddCommand(message));
+
+        //    if (!await _unitOfWork.CommitAsync())
+        //    {
+        //        ModelState.AddModelError("Create", "هنگام ثبت پیام خطایی رخ داده است. لطفا بعدا سعی نمایید.");
+        //        return View(viewModel);
+        //    }
+
+        //    await _mailService.Value.ContactMail(contactMessage.Name, contactMessage.Email, contactMessage.Message).SendAsync();
+        //    TempData["Successful"] = true;
+        //    ModelState.Clear();
+
+        //    return View();
+        //}
 
         public IActionResult Error()
         {

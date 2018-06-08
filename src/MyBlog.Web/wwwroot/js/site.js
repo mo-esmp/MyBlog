@@ -48,21 +48,24 @@ $(function () {
         $('footer').css({ 'bottom': '0', 'position': 'absolute', 'width': '100%' });
     }
 
+    anchorIcon();
+
+    imageLazyLoad();
+
+    typeDirection();
+
+    //autoSize();
+});
+
+function anchorIcon() {
     $("a[href^='http']").each(function () {
         $(this).css({
             background: "url(http://www.google.com/s2/favicons?domain=" + this.hostname +
-            ") right center no-repeat",
+                ") right center no-repeat",
             "padding-right": "20px"
         });
     });
-
-    $('img.lazy').lazyload({
-        effect: 'fadeIn'
-    });
-
-    typeDirection();
-    autoSize();
-});
+}
 
 function typeDirection() {
     var inputs = $('.type-direction');
@@ -80,9 +83,15 @@ function typeDirection() {
     }
 }
 
-function autoSize() {
-    var autoGrow = $('.auto-size');
-    if (autoGrow.length > 0) {
-        $(autoGrow).autosize();
-    }
+function imageLazyLoad() {
+    $('img.lazy').lazyload({
+        effect: 'fadeIn'
+    });
 }
+
+//function autoSize() {
+//    var autoGrow = $('.auto-size');
+//    if (autoGrow.length > 0) {
+//        $(autoGrow).autosize();
+//    }
+//}

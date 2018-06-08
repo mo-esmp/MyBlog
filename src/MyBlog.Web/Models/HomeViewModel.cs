@@ -5,7 +5,7 @@ namespace MyBlog.Web.Models
 {
     public class HomeViewModel
     {
-        public IEnumerable<PostEntity> Posts { get; set; }
+        public PagedPostViewModel PagedPosts { get; set; }
 
         public IEnumerable<TagEntity> Tags { get; set; }
     }

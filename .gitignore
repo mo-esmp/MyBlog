@@ -7,6 +7,7 @@
 *.userosscache
 *.sln.docstates
 *.GhostDoc.xml
+*.tss
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -27,6 +28,7 @@ bld/
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
+src/MyBlog.Web/wwwroot/lib
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

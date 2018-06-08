@@ -1,7 +1,43 @@
-﻿@{
-    ViewData["Title"] = "About";
+﻿@section header{
+    <meta name="keyword" content="محسن اسماعیل پور, Mohsen Esmailpour, بلاگ من, .net, c#, asp.net mvc, asp.net core, entity framework, entity framework core, javascript, jquery, web api" />
+    <meta name="description" content="I'm newbie software developer with a particular interest in web technologies and creating web application with Microsoft technologies." />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+@{
+    ViewData["Title"] = "درباره";
+}
+
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="text-align: center">
+    <p>هر چی فکر کردم چیزی به ذهنم نرسید که بنویسیم. شاید در آینده بیشتر فکر کردم !</p>
+    <div class="social">
+        <div class="menu-item">
+            <span class="icon fa fa-twitter"></span>
+            <a target="_blank" class="text" href="https://twitter.com/moesmp" >
+                <i class="fa fa-twitter"></i>
+            </a>
+        </div>
+        <div class="menu-item">
+            <span class="icon fa fa-linkedin"></span>
+            <a target="_blank" class="text" href="http://ir.linkedin.com/pub/mohsen-esmailpour/51/38b/827" >
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </div>
+        <div class="menu-item">
+            <span class="icon fa fa-stack-overflow"></span>
+            <a target="_blank" class="text" href="http://stackoverflow.com/users/1385614/mo-esmp" >
+                <i class="fa fa-stack-overflow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script>
+        $(function () {
+            $('.menu-item').hover(function () {
+                $('.icon', this).toggleClass('active');
+                $('.icon', this).css({ 'display': 'block' }); //adds context
+            });
+        });
+    </script>
+}

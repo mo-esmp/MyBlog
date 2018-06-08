@@ -2,12 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using MyBlog.Core.Commands;
 using MyBlog.Infrastructure.Data;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Commands
 {
     public class MessageCommandHandler :
+        IAsyncRequestHandler<MessageAddCommand>,
         IAsyncRequestHandler<MessagesRemoveCommand>
     {
         private readonly DataContext _context;
@@ -25,6 +27,15 @@ namespace MyBlog.Infrastructure.Commands
 
             if (messages.Any())
                 _context.Messages.RemoveRange(messages);
+        }
+
+        public Task Handle(MessageAddCommand message)
+        {
+            message.ContactMessage.IsNew = true;
+            message.ContactMessage.CreateDate = DateTime.Now;
+            _context.Messages.Add(message.ContactMessage);
+
+            return Task.CompletedTask;
         }
     }
 }

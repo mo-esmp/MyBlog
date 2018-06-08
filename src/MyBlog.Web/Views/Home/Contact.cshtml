@@ -1,17 +1,70 @@
-﻿@{
-    ViewData["Title"] = "Contact";
+﻿@model ContactMessageViewModel
+
+@section header{
+    <meta name="keyword" content="محسن اسماعیل پور, Mohsen Esmailpour, بلاگ من, .net, c#, asp.net mvc, asp.net core, entity framework, entity framework core, javascript, jquery, web api" />
+    <meta name="description" content="I'm newbie software developer with a particular interest in web technologies and creating web application with Microsoft technologies." />
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@{
+    ViewData["Title"] = "تماس";
+}
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <p><i class="fa fa-send-o"></i> برای ارتباط با من از پست الکترونیک زیر استفاده نمایید.</p>
+    <p><i class="fa fa-envelope-o"></i> mo [dot] esmp [at] gmail [dot] com</p>
+
+    @*@if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                @Html.ValidationSummary()
+            </div>
+        }
+
+        @if (TempData["Successful"] != null)
+        {
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <strong>با تشکر پیام شما با موفقیت ثبت شد.</strong>
+            </div>
+        }*@
+
+    @*<form asp-action="Contact" method="post" role="form">
+            @Html.AntiForgeryToken()
+            <div class="row control-group">
+                <div class="form-group col-xs-8 floating-label-form-group controls">
+                    <label asp-for="Name"></label>
+                    @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control type-directio", placeholder = "نام" } })
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row control-group">
+                <div class="form-group col-xs-8 floating-label-form-group controls">
+                    @Html.LabelFor(m => m.Email)
+                    @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control left-text", placeholder = "ایمیل" } })
+                    @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    @Html.LabelFor(m => m.Message)
+                    @Html.EditorFor(m => m.Message, new { htmlAttributes = new { @class = "form-control type-direction", placeholder = "پیام" } })
+                    @Html.ValidationMessageFor(m => m.Message, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <button type="submit" class="btn btn-default pull-left">ارسال</button>
+                </div>
+            </div>
+        </form>*@
+</div>
+
+@section scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @*<script src="~/lib/jquery-autosize/dist/autosize.js"></script>
+        <script>
+            autosize(document.querySelector('textarea'));
+        </script>*@
+}
