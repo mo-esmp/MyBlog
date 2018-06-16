@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.Web.Models.AccountViewModels;
 using System.Threading.Tasks;
@@ -42,32 +41,40 @@ namespace MyBlog.Web.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Register()
+        public async Task<IActionResult> Logout()
         {
-            return View();
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            if (!ModelState.IsValid)
-                return View(model);
+        //[HttpGet]
+        //[AllowAnonymous]
+        //public IActionResult Register()
+        //{
+        //    return View();
+        //}
 
-            var user = new IdentityUser { UserName = model.Email, Email = model.Email };
-            var result = await _userManager.CreateAsync(user, model.Password);
-            if (result.Succeeded)
-            {
-                await _signInManager.SignInAsync(user, isPersistent: false);
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Register(RegisterViewModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return View(model);
 
-                return RedirectToAction(nameof(HomeController.Index), "Home");
-            }
+        //    var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+        //    var result = await _userManager.CreateAsync(user, model.Password);
+        //    if (result.Succeeded)
+        //    {
+        //        await _signInManager.SignInAsync(user, isPersistent: false);
 
-            AddErrors(result);
+        //        return RedirectToAction(nameof(HomeController.Index), "Home");
+        //    }
 
-            return View(model);
-        }
+        //    AddErrors(result);
+
+        //    return View(model);
+        //}
 
         private void AddErrors(IdentityResult result)
         {
