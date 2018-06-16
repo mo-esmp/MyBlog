@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,10 @@ namespace MyBlog.Web
                 .AddEntityFrameworkSqlServer()
                 .AddDbContext<DataContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DataConnection"]));
 
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<DataContext>()
+                .AddDefaultTokenProviders();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
@@ -44,6 +49,8 @@ namespace MyBlog.Web
                 app.UseExceptionHandler("/Home/Error");
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

@@ -15,18 +15,18 @@
 
     @*@if (!ViewData.ModelState.IsValid)
         {
-            <div class="alert alert-danger">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                @Html.ValidationSummary()
-            </div>
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            @Html.ValidationSummary()
+        </div>
         }
 
         @if (TempData["Successful"] != null)
         {
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <strong>با تشکر پیام شما با موفقیت ثبت شد.</strong>
-            </div>
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <strong>با تشکر پیام شما با موفقیت ثبت شد.</strong>
+        </div>
         }*@
 
     @*<form asp-action="Contact" method="post" role="form">
@@ -61,10 +61,10 @@
         </form>*@
 </div>
 
-@section scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    @*<script src="~/lib/jquery-autosize/dist/autosize.js"></script>
-        <script>
-            autosize(document.querySelector('textarea'));
-        </script>*@
-}
+@*@section scripts {
+            {await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/jquery-autosize/dist/autosize.js"></script>
+    <script>
+        autosize(document.querySelector('textarea'));
+    </script>
+    }*@
