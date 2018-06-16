@@ -20,5 +20,7 @@ namespace MyBlog.Core.Entities
         public DateTime? UpdateDte { get; set; }
 
         public ICollection<PostTagEntity> PostTags { get; set; }
+
+        public ICollection<CommentEntity> Comments { get; set; }
     }
 }

@@ -13,6 +13,8 @@ namespace MyBlog.Infrastructure.Data
         {
         }
 
+        public DbSet<CommentEntity> Comments { get; set; }
+
         public DbSet<ContactMessageEntity> Messages { get; set; }
 
         public DbSet<PostEntity> Posts { get; set; }
