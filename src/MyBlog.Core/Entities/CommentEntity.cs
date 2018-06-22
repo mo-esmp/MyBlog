@@ -4,6 +4,10 @@
     {
         public bool IsAdmin { get; set; }
 
+        public bool IsApproved { get; set; }
+
+        public bool IsNew { get; set; }
+
         public string Message { get; set; }
 
         public string Name { get; set; }
