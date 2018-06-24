@@ -95,7 +95,7 @@ namespace MyBlog.Web.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
-                return BadRequest();
+                return BadRequest(ModelState);
 
             await _mediator.Send(new PostRemoveCommand { PostId = id.Value });
             await _unitOfWork.CommitAsync();

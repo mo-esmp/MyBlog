@@ -5,16 +5,24 @@ using MyBlog.Web.Models;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using AutoMapper;
+using MyBlog.Core;
+using MyBlog.Core.Commands;
+using MyBlog.Core.Entities;
 
 namespace MyBlog.Web.Controllers
 {
     public class PostsController : Controller
     {
+        private readonly IMapper _mapper;
         private readonly IMediator _mediator;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public PostsController(IMediator mediator)
+        public PostsController(IMediator mediator, IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mediator = mediator;
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: Post/PostDetail
@@ -27,6 +35,7 @@ namespace MyBlog.Web.Controllers
 
             return View(post);
         }
+        
 
         // GET: Post/PostsByTag
         [Route("tag/{slug}")]
@@ -44,6 +53,23 @@ namespace MyBlog.Web.Controllers
             };
 
             return View("~/Views/Home/Index.cshtml", homeViewModel);
+        }
+        
+        // DELETE: Admin/Tags/Delete/5
+        [HttpPost]
+        public async Task<IActionResult> PostComment(CommentViewModel viewModel)
+        {
+            if (!User.Identity.IsAuthenticated && !ModelState.IsValid)
+                return BadRequest();
+
+            var comment = _mapper.Map<CommentEntity>(viewModel);
+            if (User.Identity.IsAuthenticated)
+                comment.IsAdmin = true;
+            
+            await _mediator.Send(new CommentAddCommand(comment));
+            await _unitOfWork.CommitAsync();
+
+            return Json(new { });
         }
     }
 }

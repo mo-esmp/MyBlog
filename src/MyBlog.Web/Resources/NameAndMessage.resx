@@ -189,4 +189,7 @@
   <data name="TagName" xml:space="preserve">
     <value>نام تگ</value>
   </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>وب سایت</value>
+  </data>
 </root>
