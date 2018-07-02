@@ -55,12 +55,12 @@ namespace MyBlog.Web.Controllers
             return View("~/Views/Home/Index.cshtml", homeViewModel);
         }
         
-        // DELETE: Admin/Tags/Delete/5
-        [HttpPost]
-        public async Task<IActionResult> PostComment(CommentViewModel viewModel)
+        // POST: Post/Comment
+        [HttpPost("post/{postId}/comment")]
+        public async Task<IActionResult> PostComment(int postId, [FromBody]CommentViewModel viewModel)
         {
             if (!User.Identity.IsAuthenticated && !ModelState.IsValid)
-                return BadRequest();
+                return BadRequest(ModelState);
 
             var comment = _mapper.Map<CommentEntity>(viewModel);
             if (User.Identity.IsAuthenticated)

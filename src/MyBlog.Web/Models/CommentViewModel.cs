@@ -7,19 +7,18 @@ namespace MyBlog.Web.Models
 {
     public class CommentViewModel
     {
+        public int PostId { get; set; }
+        
         [Display(Name = "Name", ResourceType = typeof(NameAndMessage))]
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(NameAndMessage))]
         [MaxLength(256, ErrorMessageResourceName = "MaxLengthError", ErrorMessageResourceType = typeof(NameAndMessage))]
         public string Name { get; set; }
 
         [Display(Name = "Email", ResourceType = typeof(NameAndMessage))]
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(NameAndMessage))]
         [MaxLength(256, ErrorMessageResourceName = "MaxLengthError", ErrorMessageResourceType = typeof(NameAndMessage))]
         [EmailAddress(ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(NameAndMessage))]
         public string Email { get; set; }
 
         [Display(Name = "WebSite", ResourceType = typeof(NameAndMessage))]
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(NameAndMessage))]
         [MaxLength(256, ErrorMessageResourceName = "MaxLengthError", ErrorMessageResourceType = typeof(NameAndMessage))]
         [Url(ErrorMessageResourceName = "MaxLengthError", ErrorMessageResourceType = typeof(NameAndMessage))]
         public string WebSite { get; set; }
