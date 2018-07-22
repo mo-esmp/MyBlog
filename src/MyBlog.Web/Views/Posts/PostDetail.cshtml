@@ -24,7 +24,7 @@
         <span>
             @foreach (var tag in tags)
             {
-                <a asp-action="PostsByTag" asp-controller="Posts" asp-route-slug=" tag.Slug">@tag.Name</a><text>&nbsp;</text>
+                <a asp-action="PostsByTag" asp-controller="Posts" asp-route-slug="@tag.Slug">@tag.Name</a><text>&nbsp;</text>
             }
         </span>
     </p>

@@ -23,10 +23,14 @@ namespace MyBlog.Web.Controllers
         }
 
         // GET: Post/PostDetail
-        [Route("post/{id}/{slug}")]
-        public async Task<ActionResult> PostDetail(int id, string slug)
+        [Route("post/{year}/{month}/{day}/{slug}")]
+        public async Task<ActionResult> PostDetail(int year, int month, int day, string slug)
         {
-            var post = await _mediator.Send(new PostGetActiveQuery(id, slug));
+            var result = DateTime.TryParse($"{month}/{day}/{year} 00:00:00", out var date);
+            if (!result)
+                return NotFound();
+
+            var post = await _mediator.Send(new PostGetActiveQuery(date, slug));
             if (post == null)
                 return NotFound();
 

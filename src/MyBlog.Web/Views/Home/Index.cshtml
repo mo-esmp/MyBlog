@@ -16,7 +16,7 @@
     @foreach (var post in Model?.Posts)
     {
         <div class="post-preview">
-            <a asp-controller="Posts" asp-action="PostDetail" asp-route-id="@post.Id" asp-route-slug="@post.Slug">
+            <a asp-controller="Posts" asp-action="PostDetail" asp-route-year="@post.CreateDate.Year" asp-route-month="@post.CreateDate.Month" asp-route-day="@post.CreateDate.Day" asp-route-slug="@post.Slug">
                 <h2 class="post-title">
                     @post.Title
                 </h2>

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using MyBlog.Core.Entities;
+using System;
 
 namespace MyBlog.Core.Queries
 {
@@ -10,13 +11,13 @@ namespace MyBlog.Core.Queries
 
     public class PostGetActiveQuery : IRequest<PostEntity>
     {
-        public PostGetActiveQuery(int postId, string postSlug)
+        public PostGetActiveQuery(DateTime postDate, string postSlug)
         {
-            PostId = postId;
+            PostDate = postDate;
             PostSlug = postSlug;
         }
 
-        public int PostId { get; }
+        public DateTime PostDate { get; }
 
         public string PostSlug { get; }
     }

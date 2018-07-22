@@ -60,11 +60,16 @@ namespace MyBlog.Infrastructure.Queries
 
         public Task<PostEntity> Handle(PostGetActiveQuery message)
         {
+            var endDate = message.PostDate.AddDays(1).AddTicks(-1);
             return _context.Posts
                 .Include(p => p.PostTags)
                 .ThenInclude(pt => pt.Tag)
                 .AsNoTracking()
-                .SingleOrDefaultAsync(p => p.IsActive && p.Id == message.PostId);
+                .SingleOrDefaultAsync(p =>
+                    p.IsActive &&
+                    p.Slug == message.PostSlug &&
+                    p.CreateDate >= message.PostDate && p.CreateDate <= endDate
+                    );
         }
     }
 }

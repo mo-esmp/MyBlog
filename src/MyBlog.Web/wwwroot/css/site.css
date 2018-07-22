@@ -285,7 +285,7 @@ hr.x-small {
 .post-preview > .post-meta {
     color: #808080;
     font-size: 18px;
-    font-style: italic;
+    /*font-style: italic;*/
     margin-top: 0;
 }
 
