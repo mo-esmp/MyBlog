@@ -17,6 +17,8 @@ namespace MyBlog.Web.Controllers
             _mediator = mediator;
         }
 
+        [Route("page/{page?}")]
+        [Route("/")]
         public async Task<IActionResult> Index(int page = 1)
         {
             var (posts, postCount) = await _mediator.Send(new PostGetsPagedQuery(page));
@@ -27,7 +29,7 @@ namespace MyBlog.Web.Controllers
                 TotalPosts = postCount
             };
 
-            return View(homeViewModel);
+            return View("~/Views/Home/Index.cshtml", homeViewModel);
         }
 
         public IActionResult About()

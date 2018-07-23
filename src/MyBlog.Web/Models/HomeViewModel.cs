@@ -7,6 +7,8 @@ namespace MyBlog.Web.Models
     {
         public int CurrentPage { get; set; }
 
+        public int TotalPage => TotalPosts % 5 != 0 ? TotalPosts / 5 + 1 : TotalPosts / 5;
+
         public int TotalPosts { get; set; }
 
         public IEnumerable<PostEntity> Posts { get; set; }

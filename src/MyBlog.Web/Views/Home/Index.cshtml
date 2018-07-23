@@ -41,9 +41,23 @@
     }
 
     <!-- Pager -->
-    @*<ul class="pager">
-            <li class="next">
-                <a href="#">پست های قدیمی تر &rarr;</a>
-            </li>
-        </ul>*@
+    @if (Model?.TotalPosts > 5)
+    {
+        <ul class="pager">
+            @if (Model.CurrentPage != 1)
+            {
+                var next = Model.CurrentPage - 1;
+                <li class="next">
+                    <a asp-action="Index" asp-route-page="@next">پست های جدیدتر &larr;</a>
+                </li>
+            }
+            @if (Model.CurrentPage != Model.TotalPage)
+            {
+                var prev = Model.CurrentPage + 1;
+                <li class="previous">
+                    <a asp-action="Index" asp-route-page="@prev">پست های قدیمی تر &rarr;</a>
+                </li>
+            }
+        </ul>
+    }
 </div>
