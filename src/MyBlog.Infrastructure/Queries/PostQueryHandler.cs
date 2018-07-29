@@ -13,7 +13,8 @@ namespace MyBlog.Infrastructure.Queries
     public class PostQueryHandler :
         IAsyncRequestHandler<PostGetsPagedQuery, Tuple<IEnumerable<PostEntity>, int>>,
         IAsyncRequestHandler<PostGetsQuery, IEnumerable<PostEntity>>,
-        IAsyncRequestHandler<PostGetActiveQuery, PostEntity>,
+        IAsyncRequestHandler<PostGetActiveBySlugAndDateQuery, PostEntity>,
+        IAsyncRequestHandler<PostGetDateQuery, DateTime?>,
         IAsyncRequestHandler<PostGetQuery, PostEntity>
     {
         private readonly DataContext _context;
@@ -58,9 +59,10 @@ namespace MyBlog.Infrastructure.Queries
                 .SingleOrDefaultAsync(t => t.Id == message.PostId);
         }
 
-        public Task<PostEntity> Handle(PostGetActiveQuery message)
+        public Task<PostEntity> Handle(PostGetActiveBySlugAndDateQuery message)
         {
             var endDate = message.PostDate.AddDays(1).AddTicks(-1);
+
             return _context.Posts
                 .Include(p => p.PostTags)
                 .ThenInclude(pt => pt.Tag)
@@ -70,6 +72,16 @@ namespace MyBlog.Infrastructure.Queries
                     p.Slug == message.PostSlug &&
                     p.CreateDate >= message.PostDate && p.CreateDate <= endDate
                     );
+        }
+
+        public async Task<DateTime?> Handle(PostGetDateQuery message)
+        {
+            var date = await _context.Posts
+                .Where(p => p.IsActive && p.Slug == message.PostSlug)
+                .Select(p => p.CreateDate)
+                .SingleOrDefaultAsync();
+
+            return date == default(DateTime) ? (DateTime?)null : date;
         }
     }
 }

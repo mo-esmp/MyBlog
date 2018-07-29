@@ -9,15 +9,25 @@ namespace MyBlog.Core.Queries
         public int PostId { get; set; }
     }
 
-    public class PostGetActiveQuery : IRequest<PostEntity>
+    public class PostGetActiveBySlugAndDateQuery : IRequest<PostEntity>
     {
-        public PostGetActiveQuery(DateTime postDate, string postSlug)
+        public PostGetActiveBySlugAndDateQuery(DateTime postDate, string postSlug)
         {
             PostDate = postDate;
             PostSlug = postSlug;
         }
 
         public DateTime PostDate { get; }
+
+        public string PostSlug { get; }
+    }
+
+    public class PostGetDateQuery : IRequest<DateTime?>
+    {
+        public PostGetDateQuery(string postSlug)
+        {
+            PostSlug = postSlug;
+        }
 
         public string PostSlug { get; }
     }

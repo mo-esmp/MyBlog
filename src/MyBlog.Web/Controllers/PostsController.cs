@@ -30,11 +30,23 @@ namespace MyBlog.Web.Controllers
             if (!result)
                 return NotFound();
 
-            var post = await _mediator.Send(new PostGetActiveQuery(date, slug));
+            var post = await _mediator.Send(new PostGetActiveBySlugAndDateQuery(date, slug));
             if (post == null)
                 return NotFound();
 
             return View(post);
+        }
+
+        // GET: Post/PostDetail
+        [Route("post/{id}/{slug}")]
+        public async Task<ActionResult> PostDetail(int id, string slug)
+        {
+            var date = await _mediator.Send(new PostGetDateQuery(slug));
+            if (date == null)
+                return NotFound();
+
+            return RedirectPermanent(
+                Url.Action("PostDetail", new { date.Value.Year, date.Value.Month, date.Value.Day, slug }));
         }
 
         // GET: Post/PostsByTag
