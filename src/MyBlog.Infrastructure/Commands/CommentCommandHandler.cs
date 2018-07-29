@@ -1,13 +1,14 @@
 ﻿using MediatR;
 using MyBlog.Core.Commands;
 using MyBlog.Infrastructure.Data;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Commands
 {
     public class CommentCommandHandler :
-        IAsyncRequestHandler<CommentAddCommand>,
-        IAsyncRequestHandler<CommentApproveCommand>
+        IRequestHandler<CommentAddCommand>,
+        IRequestHandler<CommentApproveCommand>
 
     {
         private readonly DataContext _context;
@@ -17,7 +18,7 @@ namespace MyBlog.Infrastructure.Commands
             _context = context;
         }
 
-        public Task Handle(CommentAddCommand message)
+        public Task<Unit> Handle(CommentAddCommand message, CancellationToken cancellationToken)
         {
             var comment = message.Comment;
 
@@ -26,18 +27,20 @@ namespace MyBlog.Infrastructure.Commands
 
             _context.Comments.Add(comment);
 
-            return Task.CompletedTask;
+            return Unit.Task;
         }
 
-        public async Task Handle(CommentApproveCommand message)
+        public async Task<Unit> Handle(CommentApproveCommand message, CancellationToken cancellationToken)
         {
             var comment = await _context.Comments.FindAsync(message.CommentId);
 
             if (comment == null)
-                return;
+                return Unit.Value;
 
             comment.IsApproved = true;
             comment.IsNew = false;
+
+            return Unit.Value;
         }
     }
 }

@@ -6,14 +6,15 @@ using MyBlog.Infrastructure.Extensions;
 using MyBlog.Infrastructure.Helpers;
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Commands
 {
     public class PostCommandHandler :
-        IAsyncRequestHandler<PostAddCommand>,
-        IAsyncRequestHandler<PostEditCommand>,
-        IAsyncRequestHandler<PostRemoveCommand>
+        IRequestHandler<PostAddCommand>,
+        IRequestHandler<PostEditCommand>,
+        IRequestHandler<PostRemoveCommand>
     {
         private readonly DataContext _context;
 
@@ -22,7 +23,7 @@ namespace MyBlog.Infrastructure.Commands
             _context = context;
         }
 
-        public async Task Handle(PostAddCommand message)
+        public Task<Unit> Handle(PostAddCommand message, CancellationToken cancellationToken)
         {
             var post = message.Post;
 
@@ -34,18 +35,20 @@ namespace MyBlog.Infrastructure.Commands
             //foreach (var tagId in message.TagIds)
             //    post.PostTags.Add(new PostTagEntity { TagId = tagId });
 
-            await _context.AddAsync(post);
+            _context.Add(post);
+
+            return Unit.Task;
         }
 
-        public async Task Handle(PostEditCommand message)
+        public async Task<Unit> Handle(PostEditCommand message, CancellationToken cancellationToken)
         {
             var editedPost = message.Post;
             var postDb = await _context.Posts
                 .Include(p => p.PostTags)
-                .SingleOrDefaultAsync(t => t.Id == editedPost.Id);
+                .SingleOrDefaultAsync(t => t.Id == editedPost.Id, cancellationToken);
 
             if (postDb == null)
-                return;
+                return Unit.Value;
 
             postDb.Content = editedPost.Content;
             postDb.ContentSummary = editedPost.Content.TruncateHtml(500, "...");
@@ -58,23 +61,27 @@ namespace MyBlog.Infrastructure.Commands
 
             _context.PostTags.RemoveRange(postDb.PostTags.Except(editedPost.PostTags, t => t.TagId));
             _context.PostTags.AddRange(editedPost.PostTags.Except(postDb.PostTags, t => t.TagId));
+
+            return Unit.Value;
         }
 
-        public async Task Handle(PostRemoveCommand message)
+        public async Task<Unit> Handle(PostRemoveCommand message, CancellationToken cancellationToken)
         {
             var post = await _context.Posts
                 .Include(p => p.PostTags)
-                .SingleOrDefaultAsync(p => p.Id == message.PostId);
+                .SingleOrDefaultAsync(p => p.Id == message.PostId, cancellationToken);
 
             if (post == null)
-                return;
+                return Unit.Value;
 
             _context.Posts.Remove(post);
 
             if (post.PostTags == null || !post.PostTags.Any())
-                return;
+                return Unit.Value;
 
             _context.PostTags.RemoveRange(post.PostTags);
+
+            return Unit.Value;
         }
     }
 }

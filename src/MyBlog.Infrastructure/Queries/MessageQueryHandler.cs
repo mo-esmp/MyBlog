@@ -5,13 +5,14 @@ using MyBlog.Core.Queries;
 using MyBlog.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Queries
 {
     public class MessageQueryHandler :
-        IAsyncRequestHandler<MessageGetsQuery, IEnumerable<ContactMessageEntity>>,
-        IAsyncRequestHandler<MessageGetQuery, ContactMessageEntity>
+        IRequestHandler<MessageGetsQuery, IEnumerable<ContactMessageEntity>>,
+        IRequestHandler<MessageGetQuery, ContactMessageEntity>
     {
         private readonly DataContext _context;
 
@@ -20,19 +21,19 @@ namespace MyBlog.Infrastructure.Queries
             _context = context;
         }
 
-        public async Task<IEnumerable<ContactMessageEntity>> Handle(MessageGetsQuery message)
+        public async Task<IEnumerable<ContactMessageEntity>> Handle(MessageGetsQuery message, CancellationToken cancellationToken)
         {
             return await _context.Messages
                 .AsNoTracking()
                 .OrderByDescending(m => m.CreateDate)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task<ContactMessageEntity> Handle(MessageGetQuery message)
+        public async Task<ContactMessageEntity> Handle(MessageGetQuery message, CancellationToken cancellationToken)
         {
             return await _context.Messages
                 .AsNoTracking()
-                .SingleOrDefaultAsync(t => t.Id == message.MessageId);
+                .SingleOrDefaultAsync(t => t.Id == message.MessageId, cancellationToken);
         }
     }
 }

@@ -5,14 +5,15 @@ using MyBlog.Core.Queries;
 using MyBlog.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Queries
 {
     public class TagQueryHandler :
-        IAsyncRequestHandler<TagGetsQuery, IEnumerable<TagEntity>>,
-        IAsyncRequestHandler<TagGetsByPostIdQuery, IEnumerable<TagEntity>>,
-        IAsyncRequestHandler<TagGetQuery, TagEntity>
+        IRequestHandler<TagGetsQuery, IEnumerable<TagEntity>>,
+        IRequestHandler<TagGetsByPostIdQuery, IEnumerable<TagEntity>>,
+        IRequestHandler<TagGetQuery, TagEntity>
     {
         private readonly DataContext _context;
 
@@ -21,23 +22,25 @@ namespace MyBlog.Infrastructure.Queries
             _context = context;
         }
 
-        public async Task<IEnumerable<TagEntity>> Handle(TagGetsQuery message)
+        public async Task<IEnumerable<TagEntity>> Handle(TagGetsQuery message, CancellationToken cancellationToken)
         {
-            return await _context.Tags.AsNoTracking().ToListAsync();
+            return await _context.Tags.AsNoTracking().ToListAsync(cancellationToken);
         }
 
-        public async Task<IEnumerable<TagEntity>> Handle(TagGetsByPostIdQuery message)
+        public async Task<IEnumerable<TagEntity>> Handle(TagGetsByPostIdQuery message, CancellationToken cancellationToken)
         {
             return await _context.PostTags
                 .AsNoTracking()
                 .Where(pt => pt.PostId == message.PostId)
                 .Select(pt => pt.Tag)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task<TagEntity> Handle(TagGetQuery message)
+        public async Task<TagEntity> Handle(TagGetQuery message, CancellationToken cancellationToken)
         {
-            return await _context.Tags.AsNoTracking().SingleOrDefaultAsync(t => t.Id == message.TagId);
+            return await _context.Tags
+                .AsNoTracking()
+                .SingleOrDefaultAsync(t => t.Id == message.TagId, cancellationToken);
         }
     }
 }

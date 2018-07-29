@@ -4,13 +4,14 @@ using MyBlog.Core.Commands;
 using MyBlog.Infrastructure.Data;
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MyBlog.Infrastructure.Commands
 {
     public class MessageCommandHandler :
-        IAsyncRequestHandler<MessageAddCommand>,
-        IAsyncRequestHandler<MessagesRemoveCommand>
+        IRequestHandler<MessageAddCommand>,
+        IRequestHandler<MessagesRemoveCommand>
     {
         private readonly DataContext _context;
 
@@ -19,23 +20,25 @@ namespace MyBlog.Infrastructure.Commands
             _context = context;
         }
 
-        public async Task Handle(MessagesRemoveCommand message)
+        public async Task<Unit> Handle(MessagesRemoveCommand message, CancellationToken cancellationToken)
         {
             var messages = await _context.Messages
                 .Where(m => message.MessageIds.Contains(m.Id))
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
 
             if (messages.Any())
                 _context.Messages.RemoveRange(messages);
+
+            return Unit.Value;
         }
 
-        public Task Handle(MessageAddCommand message)
+        public Task<Unit> Handle(MessageAddCommand message, CancellationToken cancellationToken)
         {
             message.ContactMessage.IsNew = true;
             message.ContactMessage.CreateDate = DateTime.Now;
             _context.Messages.Add(message.ContactMessage);
 
-            return Task.CompletedTask;
+            return Unit.Task;
         }
     }
 }
