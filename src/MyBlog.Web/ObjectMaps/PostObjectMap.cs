@@ -12,17 +12,7 @@ namespace MyBlog.Web.ObjectMaps
         public PostObjectMap()
         {
             CreateMap<PostViewModel, PostEntity>()
-                .ForMember(dest => dest.PostTags, opt => opt.ResolveUsing(src =>
-                {
-                    if (string.IsNullOrEmpty(src.Tags))
-                        return null;
-
-                    var postTags = src.Tags
-                        .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(id => new PostTagEntity { TagId = int.Parse(id), PostId = src.Id });
-
-                    return postTags;
-                }));
+                .ForMember(dest => dest.PostTags, opt => opt.MapFrom(new PostTagResolver()));
 
             CreateMap<PostEntity, PostViewModel>()
                 .ForMember(dest => dest.Tags, opt => opt.MapFrom(src =>
@@ -30,12 +20,31 @@ namespace MyBlog.Web.ObjectMaps
 
             CreateMap<PostEntity, PostEditViewModel>()
                 .ForMember(dest => dest.Post, opt => opt.MapFrom(src => src))
-                .ForMember(dest => dest.Tags, opt => opt.ResolveUsing(src =>
+                /*.ForMember(dest => dest.Tags, opt => opt.ResolveUsing(src =>
                 {
                     return src.PostTags.Select(t => new KeyValuePair<int, string>(t.Tag.Id, t.Tag.Name));
-                }));
+                }));*/
+                .ForMember(dest => dest.Tags, opt =>
+                    opt.MapFrom(src => src.PostTags.Select(t => new KeyValuePair<int, string>(t.Tag.Id, t.Tag.Name))));
 
             CreateMap<PostEntity, PostSummaryViewModel>();
+        }
+
+        private class PostTagResolver : IValueResolver<PostViewModel, PostEntity, ICollection<PostTagEntity>>
+        {
+            public ICollection<PostTagEntity> Resolve(PostViewModel src, PostEntity dest,
+                ICollection<PostTagEntity> destMember,
+                ResolutionContext context)
+            {
+                if (string.IsNullOrEmpty(src.Tags))
+                    return null;
+
+                var postTags = src.Tags
+                    .Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(id => new PostTagEntity {TagId = int.Parse(id), PostId = src.Id});
+
+                return postTags.ToList();
+            }
         }
     }
 }
