@@ -86,34 +86,6 @@ namespace MyBlog.Web.Controllers
             return RedirectToAction(nameof(ChangePassword));
         }
 
-        //[HttpGet]
-        //[AllowAnonymous]
-        //public IActionResult Register()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Register(RegisterViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return View(model);
-
-        //    var user = new IdentityUser { UserName = model.Email, Email = model.Email };
-        //    var result = await _userManager.CreateAsync(user, model.Password);
-        //    if (result.Succeeded)
-        //    {
-        //        await _signInManager.SignInAsync(user, isPersistent: false);
-
-        //        return RedirectToAction(nameof(HomeController.Index), "Home");
-        //    }
-
-        //    AddErrors(result);
-
-        //    return View(model);
-        //}
-
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)

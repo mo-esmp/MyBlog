@@ -10,16 +10,11 @@ namespace MyBlog.Web.Controllers
 {
     public class PostsController : Controller
     {
-        //private readonly IMapper _mapper;
         private readonly IMediator _mediator;
-
-        //private readonly IUnitOfWork _unitOfWork;
 
         public PostsController(IMediator mediator)
         {
             _mediator = mediator;
-            //_mapper = mapper;
-            //_unitOfWork = unitOfWork;
         }
 
         // GET: Post/PostDetail
@@ -46,7 +41,7 @@ namespace MyBlog.Web.Controllers
                 return NotFound();
 
             return RedirectPermanent(
-                Url.Action("PostDetail", new { date.Value.Year, date.Value.Month, date.Value.Day, slug }));
+                Url.Action("PostDetail", new {date.Value.Year, date.Value.Month, date.Value.Day, slug}));
         }
 
         // GET: Post/PostsByTag
@@ -54,7 +49,7 @@ namespace MyBlog.Web.Controllers
         public async Task<ActionResult> PostsByTag(string slug, int page = 1)
         {
             if (string.IsNullOrEmpty(slug))
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
+                return new StatusCodeResult((int) HttpStatusCode.BadRequest);
 
             var (posts, postCount) = await _mediator.Send(new PostGetsPagedQuery(page, slug));
             var homeViewModel = new HomeViewModel
@@ -66,22 +61,5 @@ namespace MyBlog.Web.Controllers
 
             return View("~/Views/Home/Index.cshtml", homeViewModel);
         }
-
-        // POST: Post/Comment
-        //[HttpPost("post/{postId}/comment")]
-        //public async Task<IActionResult> PostComment(int postId, [FromBody]CommentViewModel viewModel)
-        //{
-        //    if (!User.Identity.IsAuthenticated && !ModelState.IsValid)
-        //        return BadRequest(ModelState);
-
-        //    var comment = _mapper.Map<CommentEntity>(viewModel);
-        //    if (User.Identity.IsAuthenticated)
-        //        comment.IsAdmin = true;
-
-        //    await _mediator.Send(new CommentAddCommand(comment));
-        //    await _unitOfWork.CommitAsync();
-
-        //    return Json(new { });
-        //}
     }
 }
