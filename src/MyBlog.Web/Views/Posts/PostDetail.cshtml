@@ -7,9 +7,8 @@
 }
 
 @section header {
-    <meta name="keyword" content="@tags.Aggregate(string.Empty, (current, tag) => current + (", " + tag.Name)).TrimStart(',')" />
+    <meta name="keyword" content="@tags.Aggregate(string.Empty, (current, tag) => current + ", " + tag.Name).TrimStart(',')" />
     <meta name="description" content="@Model.Title" />
-    <link href="~/lib/prism/themes/prism.css" rel="stylesheet" />
 }
 
 <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -32,7 +31,3 @@
 
     <div id="disqus_thread"></div>
 </div>
-
-@section scripts {
-    <script src="~/lib/prism/prism.js"></script>
-}

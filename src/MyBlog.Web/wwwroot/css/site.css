@@ -668,3 +668,15 @@ img::-moz-selection {
         top: -20px !important;
         font-size: 0 !important;
     }
+
+pre {
+    direction: ltr;
+}
+
+    code[class*="language-"], pre[class*="language-"] {
+        font-size: 0.88em !important;
+    }
+
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+        background: black !important;
+    }

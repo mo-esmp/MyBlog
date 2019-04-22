@@ -8,6 +8,7 @@
       "wwwroot/lib/bootstrap-rtl/dist/css/bootstrap-rtl.css",
       "wwwroot/css/site.css",
       "wwwroot/css/fonts.css",
+      "wwwroot/css/prism.css",
       "wwwroot/lib/pace/themes/pace-theme-flat-top.css"
     ]
   },
@@ -16,7 +17,8 @@
     "inputFiles": [
       "wwwroot/lib/respond/dest/respond.min.js",
       "wwwroot/lib/jquery.lazyload/jquery.lazyload.js",
-      "wwwroot/js/site.js"
+      "wwwroot/js/site.js",
+      "wwwroot/js/prism.js"
     ],
     // Optionally specify minification options
     "minify": {
