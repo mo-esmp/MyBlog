@@ -1,4 +1,9 @@
-﻿'use strict';
+﻿"use strict";
+
+$(function () {
+    initializePage(false);
+});
+
 var postKey = 'myBlogPost';
 var expireDayCount = 3;
 
@@ -19,7 +24,7 @@ function initializePage(isEditMode, tags) {
 
     setInterval(savePostTemporary, 30000);
 
-    $('#Title').blur(function() {
+    $('#Title').blur(function () {
         var title = $(this).val();
         var slug = slugify(title);
         $('#Slug').val(slug);
@@ -43,7 +48,7 @@ function slugify(text) {
         slug = slug.substring(0, 100);
     }
 
-    if(slug.substr(slug.length - 1) === '-') {
+    if (slug.substr(slug.length - 1) === '-') {
         slug = slug.substring(0, slug.length - 1);
     }
 
@@ -52,11 +57,15 @@ function slugify(text) {
 
 function initializeTagsInput() {
     var tags = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: '/admin/api/tags'
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: '/admin/api/tags',
+        remote: '/admin/api/tags'
     });
-    tags.initialize();
+    var promise = tags.initialize();
+    promise
+        .done(function () { console.log('ready to go!'); })
+        .fail(function () { console.log('err, something went wrong :('); });
 
     var elt = $('#Tags');
     elt.tagsinput({
