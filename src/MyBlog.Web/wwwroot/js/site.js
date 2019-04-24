@@ -88,10 +88,3 @@ function imageLazyLoad() {
         effect: 'fadeIn'
     });
 }
-
-//function autoSize() {
-//    var autoGrow = $('.auto-size');
-//    if (autoGrow.length > 0) {
-//        $(autoGrow).autosize();
-//    }
-//}

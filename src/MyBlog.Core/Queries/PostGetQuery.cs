@@ -22,9 +22,9 @@ namespace MyBlog.Core.Queries
         public string PostSlug { get; }
     }
 
-    public class PostGetDateQuery : IRequest<DateTime?>
+    public class PostGetOldBySlugQuery : IRequest<PostEntity>
     {
-        public PostGetDateQuery(string postSlug)
+        public PostGetOldBySlugQuery(string postSlug)
         {
             PostSlug = postSlug;
         }

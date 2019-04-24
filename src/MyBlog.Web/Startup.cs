@@ -10,6 +10,7 @@ using MyBlog.Core;
 using MyBlog.Core.Queries;
 using MyBlog.Infrastructure;
 using MyBlog.Infrastructure.Data;
+using MyBlog.Web.Models;
 
 namespace MyBlog.Web
 {
@@ -38,11 +39,17 @@ namespace MyBlog.Web
                 .AddDefaultTokenProviders();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.Configure<AppSettings>(settings =>
+            {
+                Configuration.GetSection("AppSettings").Bind(settings);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var s = app.ApplicationServices.GetService<AppSettings>();
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else
@@ -61,6 +68,11 @@ namespace MyBlog.Web
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    name: "oldBlog",
+                    template: "post/{id}/{slug}",
+                    defaults: new { Controller = "Redirect", Action = "OldBlog" });
             });
 
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())

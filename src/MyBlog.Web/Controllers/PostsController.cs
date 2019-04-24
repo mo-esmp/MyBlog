@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using MyBlog.Core.Queries;
 using MyBlog.Web.Models;
 using System;
@@ -11,10 +12,12 @@ namespace MyBlog.Web.Controllers
     public class PostsController : Controller
     {
         private readonly IMediator _mediator;
+        private readonly AppSettings _appSettings;
 
-        public PostsController(IMediator mediator)
+        public PostsController(IMediator mediator, IOptions<AppSettings> settings)
         {
             _mediator = mediator;
+            _appSettings = settings.Value;
         }
 
         // GET: Post/PostDetail
@@ -34,14 +37,22 @@ namespace MyBlog.Web.Controllers
 
         // GET: Post/PostDetail
         [Route("post/{id}/{slug}")]
-        public async Task<ActionResult> PostDetail(int id, string slug)
+        public async Task<ActionResult> PostDetail(string id, string slug)
         {
-            var date = await _mediator.Send(new PostGetDateQuery(slug));
-            if (date == null)
+            if (_appSettings.Redirect.ContainsKey(id))
+            {
+                //var url = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.Value}/{_appSettings.Redirect[id]}";
+                //var uri = new Uri(url);
+                //return RedirectPermanent(uri.ToString());
+                var parts = _appSettings.Redirect[id].Split('/');
+                return RedirectPermanent(Url.Action("PostDetail", new { year = parts[0], month = parts[1], day = parts[2], slug = parts[3] }));
+            }
+            var post = await _mediator.Send(new PostGetOldBySlugQuery(slug));
+            if (post == null)
                 return NotFound();
 
             return RedirectPermanent(
-                Url.Action("PostDetail", new {date.Value.Year, date.Value.Month, date.Value.Day, slug}));
+                Url.Action("PostDetail", new { post.CreateDate.Year, post.CreateDate.Month, post.CreateDate.Day, post.Slug }));
         }
 
         // GET: Post/PostsByTag
@@ -49,7 +60,7 @@ namespace MyBlog.Web.Controllers
         public async Task<ActionResult> PostsByTag(string slug, int page = 1)
         {
             if (string.IsNullOrEmpty(slug))
-                return new StatusCodeResult((int) HttpStatusCode.BadRequest);
+                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
 
             var (posts, postCount) = await _mediator.Send(new PostGetsPagedQuery(page, slug));
             var homeViewModel = new HomeViewModel

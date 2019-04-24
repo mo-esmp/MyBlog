@@ -136,7 +136,10 @@ $(function () {
         }
     });
 
+    autosize($('.auto-size'));
+
     typeDirection();
+
     helper.deleteFromTable();
 });
 

@@ -15,7 +15,7 @@ namespace MyBlog.Infrastructure.Queries
         IRequestHandler<PostGetsPagedQuery, Tuple<IEnumerable<PostEntity>, int>>,
         IRequestHandler<PostGetsQuery, IEnumerable<PostEntity>>,
         IRequestHandler<PostGetActiveBySlugAndDateQuery, PostEntity>,
-        IRequestHandler<PostGetDateQuery, DateTime?>,
+        IRequestHandler<PostGetOldBySlugQuery, PostEntity>,
         IRequestHandler<PostGetQuery, PostEntity>
     {
         private readonly DataContext _context;
@@ -76,14 +76,13 @@ namespace MyBlog.Infrastructure.Queries
                     cancellationToken);
         }
 
-        public async Task<DateTime?> Handle(PostGetDateQuery message, CancellationToken cancellationToken)
+        public Task<PostEntity> Handle(PostGetOldBySlugQuery message, CancellationToken cancellationToken)
         {
-            var date = await _context.Posts
-                .Where(p => p.IsActive && p.Slug == message.PostSlug)
-                .Select(p => p.CreateDate)
+            var post = _context.Posts
+                .Where(p => p.IsActive && EF.Functions.Like(p.Slug, $"%{message.PostSlug}%"))
                 .SingleOrDefaultAsync(cancellationToken);
 
-            return date == default(DateTime) ? (DateTime?)null : date;
+            return post;
         }
     }
 }
