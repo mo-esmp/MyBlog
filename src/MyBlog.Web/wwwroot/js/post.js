@@ -7,7 +7,7 @@ $(function () {
 var postKey = 'myBlogPost';
 var expireDayCount = 3;
 
-function initializePage(isEditMode, tags) {
+function initializePage() {
     CKEDITOR.replace('Content', {
         contentsLangDirection: 'rtl',
         filebrowserImageUploadUrl: '/base/uploadimage'
@@ -15,8 +15,10 @@ function initializePage(isEditMode, tags) {
     setTimeout(function () { $('.cke_top').addClass('cke_rtl'); }, 1000);
 
     var elt = initializeTagsInput();
-    if (isEditMode) {
-        rebindTags(elt, tags);
+    var tags = $('#postTags');
+    if ($(tags).length > 0) {
+        var tagList = JSON.parse($(tags).val());
+        rebindTags(elt, tagList);
         retrievePostEditMode(elt);
     } else {
         retrievePost(elt);
