@@ -55,9 +55,7 @@ namespace MyBlog.Infrastructure.Commands
             postDb.IsActive = editedPost.IsActive;
             postDb.Title = editedPost.Title;
             postDb.UpdateDte = DateTime.Now;
-
-            if (string.IsNullOrEmpty(editedPost.Slug))
-                editedPost.Slug = UrlHelper.GenerateSlug(editedPost.Title);
+            postDb.Slug = UrlHelper.GenerateSlug(editedPost.Title);
 
             _context.PostTags.RemoveRange(postDb.PostTags.Except(editedPost.PostTags, t => t.TagId));
             _context.PostTags.AddRange(editedPost.PostTags.Except(postDb.PostTags, t => t.TagId));

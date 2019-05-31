@@ -7,7 +7,7 @@
 }
 
 @section header {
-    <meta name="keyword" content="@tags.Aggregate(string.Empty, (current, tag) => current + ", " + tag.Name).TrimStart(',')" />
+    <meta name="keyword" content="@tags.Aggregate(string.Empty, (current, tag) => current + " , " + tag.Name).TrimStart(',')" />
     <meta name="description" content="@Model.Title" />
 }
 
@@ -23,7 +23,7 @@
         <span>
             @foreach (var tag in tags)
             {
-                <a asp-action="PostsByTag" asp-controller="Posts" asp-route-slug="@tag.Slug">@tag.Name</a><text>&nbsp;</text>
+            <a asp-action="PostsByTag" asp-controller="Posts" asp-route-slug="@tag.Slug">@tag.Name</a><text>&nbsp;</text>
             }
         </span>
     </p>
@@ -32,3 +32,19 @@
     <p>برای گذاشتن نظر از disquas استفاده شده کە مجبورید از ضده فیلتر استفاده کنید تا بتوانید نظر دهید.</p>
     <div id="disqus_thread"></div>
 </div>
+
+@section Scripts {
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'mohsen.es';
+            this.page.identifier = @Model.Id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://mohsenes.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+}

@@ -67,6 +67,8 @@
                 <input type="submit" value="ویرایش" class="btn btn-primary" />
             </div>
         </form>
+        
+        <input id="postTags" type="hidden" value='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(tags.Select(t => new { value = t.Key, text = t.Value })))'/>
     </div>
 
     <div>
@@ -87,10 +89,4 @@
         <script src="~/lib/typeahead.js/dist/typeahead.bundle.min.js"></script>
     </environment>
     <script src="~/js/post.js"></script>
-    <script>
-        $(function() {
-            var tags = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(tags.Select(t => new { value = t.Key, text = t.Value })));
-            initializePage(true, tags);
-        })
-    </script>
 }
