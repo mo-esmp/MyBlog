@@ -10,7 +10,7 @@ var expireDayCount = 3;
 function initializePage() {
     CKEDITOR.replace('Content', {
         contentsLangDirection: 'rtl',
-        filebrowserImageUploadUrl: '/base/uploadimage'
+        filebrowserImageUploadUrl: '/admin/home/uploadimage'
     });
     setTimeout(function () { $('.cke_top').addClass('cke_rtl'); }, 1000);
 
