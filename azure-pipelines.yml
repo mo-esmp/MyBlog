@@ -5,7 +5,6 @@
 
 trigger:
 - master
-- coremvc
 
 pool:
   vmImage: 'windows-latest'
