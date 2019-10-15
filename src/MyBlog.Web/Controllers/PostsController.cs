@@ -41,12 +41,10 @@ namespace MyBlog.Web.Controllers
         {
             if (_appSettings.Redirect.ContainsKey(id))
             {
-                //var url = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.Value}/{_appSettings.Redirect[id]}";
-                //var uri = new Uri(url);
-                //return RedirectPermanent(uri.ToString());
                 var parts = _appSettings.Redirect[id].Split('/');
                 return RedirectPermanent(Url.Action("PostDetail", new { year = parts[0], month = parts[1], day = parts[2], slug = parts[3] }));
             }
+
             var post = await _mediator.Send(new PostGetOldBySlugQuery(slug));
             if (post == null)
                 return NotFound();
